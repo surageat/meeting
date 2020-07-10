@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Blank</title>
+  <title>Meet informatic system</title>
 
   <!-- Custom fonts for this template-->
   <link href="{{asset('all/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
@@ -41,6 +41,7 @@
 
       <!-- Divider -->
       <hr class="sidebar-divider">
+
 
       <!-- Heading -->
       <div class="sidebar-heading">
