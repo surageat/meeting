@@ -33,7 +33,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
         <img src="{{asset('img/logo-icon.png')}}" alt="homepage" class="dark-logo" />
         </div>
-        <div class="sidebar-brand-text mx-3">Information </div>
+        <div class="sidebar-brand-text mx-3">Meet Informatic </div>
       </a>
 
       <!-- Divider -->
