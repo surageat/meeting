@@ -16,3 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('layout.home');
 });
+Route::get('/invitation', function () {
+    return view('user.invitation');
+});
+Route::get('/profile', function () {
+    return view('user.profile');
+});
+
