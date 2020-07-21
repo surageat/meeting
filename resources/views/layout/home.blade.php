@@ -266,7 +266,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>informaticc &copy; Meeting System</span>
+            <span>informatic &copy; Meeting System</span>
           </div>
         </div>
       </footer>
