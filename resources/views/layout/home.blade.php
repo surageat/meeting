@@ -37,16 +37,9 @@
         <div class="sidebar-brand-text mx-3">Information</div>
       </a>
          <!-- Divider -->
-         <hr class="sidebar-divider my-0">
+         <hrstyle="height:2px;border-width:0;color:gray;background-color:gray>
 
-<!-- Nav Item - Dashboard -->
-<li class="nav-item">
-  <a class="nav-link">
-    <h5>Meeting informatic</h5>
-  </a>
-</li>
-      <!-- Divider -->
-      <hr class="sidebar-divider my-0">
+    
 
       <!-- Divider -->
       <hr class="sidebar-divider">
@@ -54,34 +47,34 @@
        <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-cog"></i>
-          <span>การประชุม</span>
+          <span style="font-size: 135%; line-height: 1.5em;">การประชุม</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item active" href="blank.html">Blank Page</a>
-            <a class="collapse-item active" href="blank.html">Blank Page</a>
+            <a class="collapse-item active" href="blank.html" style="font-size: 125%; line-height: 1.5em;">Blank Page</a>
+            <a class="collapse-item active" href="blank.html" style="font-size: 125%; line-height: 1.5em;">Blank Page</a>
           </div>
         </div>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="charts.html">
           <i class="fas fa-fw fa-chart-area"></i>
-          <span>วาระการประชุม</span></a>
+          <span style="font-size: 135%; line-height: 1.5em;">วาระการประชุม</span></a>
       </li>
 
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-wrench"></i>
-          <span>รายงานการประชุม</span>
+          <span style="font-size: 125%; line-height: 1.5em;">รายงานการประชุม</span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             
-            <a class="collapse-item active" href="blank.html">Blank Page</a>
-            <a class="collapse-item active" href="blank.html">Blank Page</a>
-            <a class="collapse-item active" href="blank.html">Blank Page</a>
-            <a class="collapse-item active" href="blank.html">Blank Page</a>
+            <a class="collapse-item active" href="blank.html" style="font-size: 125%; line-height: 1.5em;">Blank Page</a>
+            <a class="collapse-item active" href="blank.html" style="font-size: 125%; line-height: 1.5em;">Blank Page</a>
+            <a class="collapse-item active" href="blank.html" style="font-size: 125%; line-height: 1.5em;">Blank Page</a>
+            <a class="collapse-item active" href="blank.html" style="font-size: 125%; line-height: 1.5em;">Blank Page</a>
           </div>
         </div>
       </li>
@@ -98,17 +91,17 @@
       <li class="nav-item active">
         <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
           <i class="fas fa-fw fa-folder"></i>
-          <span>Pages</span>
+          <span style="font-size: 135%; line-height: 1.5em;">Pages</span>
         </a>
         <div id="collapsePages" class="collapse show" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             
-            <a class="collapse-item active" href="blank.html">Blank Page</a>
-            <a class="collapse-item active" href="blank.html">Blank Page</a>
-            <a class="collapse-item active" href="blank.html">Blank Page</a>
+            <a class="collapse-item active" href="blank.html" style="font-size: 125%; line-height: 1.5em;">Blank Page</a>
+            <a class="collapse-item active" href="blank.html" style="font-size: 125%; line-height: 1.5em;">Blank Page</a>
+            <a class="collapse-item active" href="blank.html" style="font-size: 125%; line-height: 1.5em;">Blank Page</a>
             <div class="collapse-divider"></div>
-            <a class="collapse-item active" href="blank.html">Blank Page</a>
-            <a class="collapse-item active" href="blank.html">Blank Page</a>
+            <a class="collapse-item active" href="blank.html" style="font-size: 125%; line-height: 1.5em;">Blank Page</a>
+            <a class="collapse-item active" href="blank.html" style="font-size: 125%; line-height: 1.5em;">Blank Page</a>
           </div>
         </div>
       </li>
@@ -117,14 +110,14 @@
       <li class="nav-item">
         <a class="nav-link" href="charts.html">
           <i class="fas fa-fw fa-chart-area"></i>
-          <span>Charts</span></a>
+          <span style="font-size: 135%; line-height: 1.5em;">Charts</span></a>
       </li>
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
         <a class="nav-link" href="tables.html">
           <i class="fas fa-fw fa-table"></i>
-          <span>Tables</span></a>
+          <span style="font-size: 135%; line-height: 1.5em;">Tables</span></a>
       </li>
 
 
