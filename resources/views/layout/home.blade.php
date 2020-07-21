@@ -37,7 +37,7 @@
         <div class="sidebar-brand-text mx-3">Information</div>
       </a>
          <!-- Divider -->
-         <hrstyle="height:2px;border-width:0;color:gray;background-color:gray>
+         <hr class="sidebar-divider my-0">
 
     
 
