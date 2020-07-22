@@ -30,7 +30,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="้home">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="home">
         <div class="sidebar-brand-icon rotate-n-15">
         <img src="{{asset('img/logo-icon.png')}}" alt="homepage" class="dark-logo" />
         </div>
@@ -51,8 +51,8 @@
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item active" href="blank.html" style="font-size: 125%; line-height: 1.5em;">Blank Page</a>
-            <a class="collapse-item active" href="blank.html" style="font-size: 125%; line-height: 1.5em;">Blank Page</a>
+            <a class="collapse-item active" href="blank.html" style="font-size: 125%; line-height: 1.5em;">เรื่องประชุม</a>
+            <a class="collapse-item active" href="blank.html" style="font-size: 120%; line-height: 1.5em;">ดาวน์โหลดการประชุม</a>
           </div>
         </div>
       </li>
@@ -79,45 +79,55 @@
         </div>
       </li>
 
+       <!-- Nav Item - บันทึกข้อคิดเห็น -->
+       <li class="nav-item">
+        <a class="nav-link" href="charts.html">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span style="font-size: 135%; line-height: 1.5em;">ข้อคิดเห็น</span></a>
+      </li>
+
+        <!-- Nav Item - ปฏิทิน -->
+        <li class="nav-item">
+        <a class="nav-link" href="charts.html">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span style="font-size: 135%; line-height: 1.5em;">ปฎิทิน</span></a>
+      </li>
+
       <!-- Divider -->
       <hr class="sidebar-divider">
 
       <!-- Heading -->
       <div class="sidebar-heading">
-        Addons
+        เอกสารคู่มือและติดต่อ
       </div>
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item active">
         <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
           <i class="fas fa-fw fa-folder"></i>
-          <span style="font-size: 135%; line-height: 1.5em;">Pages</span>
+          <span style="font-size: 135%; line-height: 1.5em;">คู่มือใช้งาน</span>
         </a>
         <div id="collapsePages" class="collapse show" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             
+            <a class="collapse-item active" href="blank.html" style="font-size: 125%; line-height: 1.5em;">คู่มือผู้ใช้งาน</a>
             <a class="collapse-item active" href="blank.html" style="font-size: 125%; line-height: 1.5em;">Blank Page</a>
             <a class="collapse-item active" href="blank.html" style="font-size: 125%; line-height: 1.5em;">Blank Page</a>
-            <a class="collapse-item active" href="blank.html" style="font-size: 125%; line-height: 1.5em;">Blank Page</a>
-            <div class="collapse-divider"></div>
-            <a class="collapse-item active" href="blank.html" style="font-size: 125%; line-height: 1.5em;">Blank Page</a>
-            <a class="collapse-item active" href="blank.html" style="font-size: 125%; line-height: 1.5em;">Blank Page</a>
-          </div>
         </div>
       </li>
 
-      <!-- Nav Item - Charts -->
+      <!-- Nav Item - ผู้ดูแล -->
       <li class="nav-item">
         <a class="nav-link" href="charts.html">
           <i class="fas fa-fw fa-chart-area"></i>
-          <span style="font-size: 135%; line-height: 1.5em;">Charts</span></a>
+          <span style="font-size: 135%; line-height: 1.5em;">ติดต่อผู้ดูแล</span></a>
       </li>
 
-      <!-- Nav Item - Tables -->
+      <!-- Nav Item - เกี่ยวกับ -->
       <li class="nav-item">
         <a class="nav-link" href="tables.html">
           <i class="fas fa-fw fa-table"></i>
-          <span style="font-size: 135%; line-height: 1.5em;">Tables</span></a>
+          <span style="font-size: 135%; line-height: 1.5em;">เกี่ยวกับ</span></a>
       </li>
 
 

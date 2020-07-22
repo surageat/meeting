@@ -22,4 +22,7 @@ Route::get('/invitation', function () {
 Route::get('/profile', function () {
     return view('user.profile');
 });
+Route::get('/home', function () {
+    return view('layout.home');
+});
 
