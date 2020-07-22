@@ -46,7 +46,7 @@
        <!-- Nav Item - Pages Collapse Menu -->
        <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-          <i class="fas fa-fw fa-cog"></i>
+          <i class="fas fa-fw fa fa-file"></i>
           <span style="font-size: 135%; line-height: 1.5em;">การประชุม</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -58,14 +58,14 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="charts.html">
-          <i class="fas fa-fw fa-chart-area"></i>
+          <i class="fas fa-fw fa-file-word"></i>
           <span style="font-size: 135%; line-height: 1.5em;">วาระการประชุม</span></a>
       </li>
 
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-          <i class="fas fa-fw fa-wrench"></i>
+          <i class="fas fa-fw fa fa-file-pdf"></i>
           <span style="font-size: 125%; line-height: 1.5em;">รายงานการประชุม</span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
@@ -82,14 +82,14 @@
        <!-- Nav Item - บันทึกข้อคิดเห็น -->
        <li class="nav-item">
         <a class="nav-link" href="charts.html">
-          <i class="fas fa-fw fa-chart-area"></i>
+          <i class="fas fa-fw fa fa-comments"></i>
           <span style="font-size: 135%; line-height: 1.5em;">ข้อคิดเห็น</span></a>
       </li>
 
         <!-- Nav Item - ปฏิทิน -->
         <li class="nav-item">
         <a class="nav-link" href="charts.html">
-          <i class="fas fa-fw fa-chart-area"></i>
+          <i class="fas fa-fw fa fa-calendar"></i>
           <span style="font-size: 135%; line-height: 1.5em;">ปฎิทิน</span></a>
       </li>
 
@@ -119,7 +119,7 @@
       <!-- Nav Item - ผู้ดูแล -->
       <li class="nav-item">
         <a class="nav-link" href="charts.html">
-          <i class="fas fa-fw fa-chart-area"></i>
+          <i class="fas fa-fw fa fa-telegram"></i>
           <span style="font-size: 135%; line-height: 1.5em;">ติดต่อผู้ดูแล</span></a>
       </li>
 
