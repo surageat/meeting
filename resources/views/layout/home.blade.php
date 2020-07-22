@@ -46,18 +46,18 @@
        <!-- Nav Item - Pages Collapse Menu -->
        <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-          <i class="fas fa-fw fa fa-file"></i>
+          <i class="fas fa-fw fa-file"></i>
           <span style="font-size: 135%; line-height: 1.5em;">การประชุม</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item active" href="blank.html" style="font-size: 125%; line-height: 1.5em;">เรื่องประชุม</a>
-            <a class="collapse-item active" href="blank.html" style="font-size: 120%; line-height: 1.5em;">ดาวน์โหลดการประชุม</a>
+            <a class="collapse-item active" href="document" style="font-size: 125%; line-height: 1.5em;">เอกสารการประชุม</a>
+            <a class="collapse-item active" href="blank.html" style="font-size: 120%; line-height: 1.5em;">ดาวน์โหลดเอกสาร</a>
           </div>
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+        <a class="nav-link" href="agenda">
           <i class="fas fa-fw fa-file-word"></i>
           <span style="font-size: 135%; line-height: 1.5em;">วาระการประชุม</span></a>
       </li>
@@ -65,13 +65,13 @@
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-          <i class="fas fa-fw fa fa-file-pdf"></i>
+          <i class="fas fa-fw fa-file-pdf"></i>
           <span style="font-size: 125%; line-height: 1.5em;">รายงานการประชุม</span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             
-            <a class="collapse-item active" href="blank.html" style="font-size: 125%; line-height: 1.5em;">Blank Page</a>
+            <a class="collapse-item active" href="report" style="font-size: 125%; line-height: 1.5em;">รายงานการประชุม</a>
             <a class="collapse-item active" href="blank.html" style="font-size: 125%; line-height: 1.5em;">Blank Page</a>
             <a class="collapse-item active" href="blank.html" style="font-size: 125%; line-height: 1.5em;">Blank Page</a>
             <a class="collapse-item active" href="blank.html" style="font-size: 125%; line-height: 1.5em;">Blank Page</a>
@@ -81,16 +81,9 @@
 
        <!-- Nav Item - บันทึกข้อคิดเห็น -->
        <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-          <i class="fas fa-fw fa fa-comments"></i>
+        <a class="nav-link" href="comment">
+          <i class="fas fa-fw fa-comments"></i>
           <span style="font-size: 135%; line-height: 1.5em;">ข้อคิดเห็น</span></a>
-      </li>
-
-        <!-- Nav Item - ปฏิทิน -->
-        <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-          <i class="fas fa-fw fa fa-calendar"></i>
-          <span style="font-size: 135%; line-height: 1.5em;">ปฎิทิน</span></a>
       </li>
 
       <!-- Divider -->
@@ -119,14 +112,14 @@
       <!-- Nav Item - ผู้ดูแล -->
       <li class="nav-item">
         <a class="nav-link" href="charts.html">
-          <i class="fas fa-fw fa fa-telegram"></i>
+          <i class="fas fa-fw fa-phone-square"></i>
           <span style="font-size: 135%; line-height: 1.5em;">ติดต่อผู้ดูแล</span></a>
       </li>
 
       <!-- Nav Item - เกี่ยวกับ -->
       <li class="nav-item">
         <a class="nav-link" href="tables.html">
-          <i class="fas fa-fw fa-table"></i>
+          <i class="fas fa-fw fa-university"></i>
           <span style="font-size: 135%; line-height: 1.5em;">เกี่ยวกับ</span></a>
       </li>
 
@@ -254,7 +247,13 @@
         </nav>
         <!-- End of Topbar -->
 
-        <!-- Begin Page Content -->
+        <!-- Begin Page header -->
+        <div class="container-fluid">
+
+          @yield('header')
+
+        </div>
+        <!-- Begin Page content -->
         <div class="container-fluid">
 
           @yield('content')

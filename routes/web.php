@@ -25,4 +25,20 @@ Route::get('/profile', function () {
 Route::get('/home', function () {
     return view('layout.home');
 });
+Route::get('/comment', function () {
+    return view('user.comment');
+});
+
+Route::get('/agenda', function () {
+    return view('user.agenda');
+});
+
+Route::get('/report', function () {
+    return view('user.report');
+});
+
+Route::get('/document', function () {
+    return view('user.document');
+});
+
 
