@@ -41,4 +41,9 @@ Route::get('/document', function () {
     return view('user.document');
 });
 
+Route::get('/admin', function () {
+    return view('layout.adminlayout');
+});
+
+
 
