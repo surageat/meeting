@@ -34,19 +34,19 @@
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="home">
         <div class="sidebar-brand-icon rotate-n-15">
-        <img src="{{asset('img/logo-icon.png')}}" alt="homepage" class="dark-logo" />
+          <img src="{{asset('img/logo-icon.png')}}" alt="homepage" class="dark-logo" />
         </div>
         <div class="sidebar-brand-text mx-3">Information</div>
       </a>
-         <!-- Divider -->
-         <hr class="sidebar-divider my-0">
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
 
-    
+
 
       <!-- Divider -->
       <hr class="sidebar-divider">
-       <!-- Nav Item - Pages Collapse Menu -->
-       <li class="nav-item">
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-file"></i>
           <span style="font-size: 135%; line-height: 1.5em;">การประชุม</span>
@@ -72,7 +72,7 @@
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            
+
             <a class="collapse-item active" href="report" style="font-size: 125%; line-height: 1.5em;">รายงานการประชุม</a>
             <a class="collapse-item active" href="blank.html" style="font-size: 125%; line-height: 1.5em;">ข้อคิดเห็น</a>
             <a class="collapse-item active" href="blank.html" style="font-size: 125%; line-height: 1.5em;">รายงาน PDF</a>
@@ -80,13 +80,13 @@
         </div>
       </li>
 
-       <!-- Nav Item - บันทึกข้อคิดเห็น -->
-       <li class="nav-item">
+      <!-- Nav Item - บันทึกข้อคิดเห็น -->
+      <li class="nav-item">
         <a class="nav-link" href="comment">
           <i class="fas fa-fw fa-comments"></i>
           <span style="font-size: 135%; line-height: 1.5em;">ข้อคิดเห็น</span></a>
       </li>
-      
+
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item active">
         <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
@@ -95,11 +95,11 @@
         </a>
         <div id="collapsePages" class="collapse show" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            
+
             <a class="collapse-item active" href="blank.html" style="font-size: 125%; line-height: 1.5em;">คู่มือผู้ใช้งาน</a>
             <a class="collapse-item active" href="blank.html" style="font-size: 125%; line-height: 1.5em;">Blank Page</a>
             <a class="collapse-item active" href="blank.html" style="font-size: 125%; line-height: 1.5em;">Blank Page</a>
-        </div>
+          </div>
       </li>
 
       <!-- Nav Item - ผู้ดูแล -->
@@ -167,7 +167,7 @@
                     <div class="small text-gray-500">December 12, 2019</div>
                     <span class="font-weight-bold">A new monthly report is ready to download!</span>
                   </div>
-                </a>    
+                </a>
                 <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="mr-3">
                     <div class="icon-circle bg-warning">
@@ -277,7 +277,7 @@
   <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
   </a>
- 
+
 
   <!-- Bootstrap core JavaScript-->
   <script src="{{asset('all/jquery/jquery.min.js')}}"></script>

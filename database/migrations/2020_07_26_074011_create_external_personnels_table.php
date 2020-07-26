@@ -15,12 +15,12 @@ class CreateExternalPersonnelsTable extends Migration
     {
         Schema::create('external_personnels', function (Blueprint $table) {
             $table->increments('EP_id');
+            $table->string('EP_user');
+            $table->string('EP_pass');
             $table->string('EP_name');
             $table->linestring('EP_position');
             $table->string('EP_tel');
             $table->string('EP_institution');
-            $table->string('EP_user');
-            $table->string('EP_pass');
             $table->timestamps();
         });
     }

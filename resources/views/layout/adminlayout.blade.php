@@ -36,7 +36,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
         <img src="{{asset('img/logo-icon.png')}}" alt="homepage" class="dark-logo" />
         </div>
-        <div class="sidebar-brand-text mx-3">Information</div>
+        <div class="sidebar-brand-text mx-3">ADMIN</div>
       </a>
          <!-- Divider -->
          <hr class="sidebar-divider my-0">
@@ -50,8 +50,8 @@
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item active" href="document" style="font-size: 125%; line-height: 1.5em;">เอกสารการประชุม</a>
-            <a class="collapse-item active" href="blank.html" style="font-size: 120%; line-height: 1.5em;">ดาวน์โหลดเอกสาร</a>
+            <a class="collapse-item active" href="" style="font-size: 125%; line-height: 1.5em;">เชิญประชุม</a>
+            <a class="collapse-item active" href="" style="font-size: 120%; line-height: 1.5em;">เพิ่มการประชุม</a>
           </div>
         </div>
       </li>
@@ -62,7 +62,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="userinternal">
           <i class="fas fa-fw fa-file-word"></i>
           <span style="font-size: 135%; line-height: 1.5em;">ผู้ใช้งานระบบ</span></a>
       </li>
@@ -86,14 +86,14 @@
       <li class="nav-item active">
         <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
           <i class="fas fa-fw fa-folder"></i>
-          <span style="font-size: 135%; line-height: 1.5em;">คู่มือใช้งาน</span>
+          <span style="font-size: 135%; line-height: 1.5em;">เอกสาร</span>
         </a>
         <div id="collapsePages" class="collapse show" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             
-            <a class="collapse-item active" href="blank.html" style="font-size: 125%; line-height: 1.5em;">คู่มือผู้ใช้งาน</a>
-            <a class="collapse-item active" href="blank.html" style="font-size: 125%; line-height: 1.5em;">Blank Page</a>
-            <a class="collapse-item active" href="blank.html" style="font-size: 125%; line-height: 1.5em;">Blank Page</a>
+            <a class="collapse-item active" href="blank.html" style="font-size: 125%; line-height: 1.5em;">การประชุม</a>
+            <a class="collapse-item active" href="blank.html" style="font-size: 125%; line-height: 1.5em;">วาระการประชุม</a>
+            <a class="collapse-item active" href="blank.html" style="font-size: 125%; line-height: 1.5em;">รายงานการประชุม</a>
         </div>
       </li>
 
@@ -132,7 +132,7 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 ">แม่ใหญ่สี บ่มักบักมี่</span>
                 <img class="img-profile rounded-circle" src="{{asset('img/user/user1.jpg')}}">
               </a>
               <!-- Dropdown - User Information -->

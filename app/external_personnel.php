@@ -4,7 +4,15 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class external_personnel extends Model
+class External_personnel extends Model
 {
-    //
+    protected $fillable = [
+        'EP_user',
+        'EP_pass',
+        'EP_name',
+        'EP_position',
+        'EP_tel',
+        'EP_institution'
+       
+      ];
 }

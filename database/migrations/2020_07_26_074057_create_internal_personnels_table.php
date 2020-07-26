@@ -14,17 +14,18 @@ class CreateInternalPersonnelsTable extends Migration
     public function up()
     {
         Schema::create('internal_personnels', function (Blueprint $table) {
-           
-    $table->increments('IP_id');
-    $table->string('IP_name');
-    $table->linestring('IP_position');
-    $table->string('IP_faculty');
-    $table->string('IP_department');
-    $table->string('IP_institution');
-    $table->string('IP_tel');
-    $table->string('ip_email')->uniqid();
-    $table->string('IP_user');
-    $table->string('IP_pass');
+            $table->increments('IP_id');
+            $table->string('IP_user');
+            $table->string('IP_pass');
+            $table->string('IP_name');
+            $table->string('IP_lname');
+            $table->linestring('IP_position');
+            $table->string('IP_faculty');
+            $table->string('IP_department');
+            $table->string('IP_institution');
+            $table->string('IP_tel');
+            $table->string('ip_email')->uniqid();
+            
             $table->timestamps();
         });
     }

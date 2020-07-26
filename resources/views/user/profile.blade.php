@@ -106,12 +106,7 @@
                                                     <input type="password" placeholder="ระบุรหัสผ่าน" class="form-control form-control-line">
                                                 </div>
                                             </div>
-                                            <div class="form-group">
-                                                <label class="col-md-12">ที่อยู่</label>
-                                                <div class="col-md-12">
-                                                    <input type="text" placeholder="เพิ่มที่อยู่" class="form-control form-control-line">
-                                                </div>
-                                            </div>
+  
                                             <div class="form-group">
                                                 <label class="col-md-12">เบอร์โทรศัพท์</label>
                                                 <div class="col-md-12">
