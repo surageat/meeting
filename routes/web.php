@@ -52,5 +52,9 @@ Route::get('/userinternal', function () {
     return view('Admin.Internal');
 });
 
+Route::get('/login', function () {
+    return view('login.login');
+});
+
 
 

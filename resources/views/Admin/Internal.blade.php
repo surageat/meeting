@@ -59,14 +59,14 @@
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">แผนก/สาขา</label>
                             <select class="form-control form-control-line">
-                                                        <option>---ไม่ระบุ-----</option>
-                                                        <option>เทคโนโลยีสารสนเทศ</option>
-                                                        <option>ภูมิสารสนเทศ</option>
-                                                        <option>สารสนเทศศาสตร์</option>
-                                                        <option>นิเทศศาสตร์</option>
-                                                        <option>สื่อนฤมิต</option>
-                                                        <option>วิทยาการคอมพิวเตอร์</option>                 
-                                                    </select>
+                                <option>---ไม่ระบุ-----</option>
+                                <option>เทคโนโลยีสารสนเทศ</option>
+                                <option>ภูมิสารสนเทศ</option>
+                                <option>สารสนเทศศาสตร์</option>
+                                <option>นิเทศศาสตร์</option>
+                                <option>สื่อนฤมิต</option>
+                                <option>วิทยาการคอมพิวเตอร์</option>
+                            </select>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputPassword4">สังกัด/หน่วยงาน</label>
@@ -89,9 +89,17 @@
                         <button type="button" class="btn btn-danger">Cancel</button>
                     </div>
                 </form>
+
             </div>
+
         </div>
     </div>
+
+</div>
+<div col-md-6 col-8 align-self-center >
+    <a href="userexternal">
+        <button type="button" class="btn btn-secondary btn-lg" style="font-size: 200%; line-height: 1.5em;">รายชื่อผู้ใช้งาน</button>
+    </a>
 </div>
 <!-- Row -->
 

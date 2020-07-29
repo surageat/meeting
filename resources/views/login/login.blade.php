@@ -11,19 +11,19 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
-    <title>Monster Admin Template - The Most Complete & Trusted Bootstrap 4 Admin Template</title>
+    <link rel="icon" type="img/png" sizes="16x16" href="{{asset('img/logo-icon.png')}}">
+    <title>Meet informatic system</title>
     <!-- Bootstrap Core CSS -->
-    <link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{asset('all/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="{{asset('all/bootstrap/css/style.css')}}" rel="stylesheet">
     <!-- You can change the theme colors from here -->
-    <link href="css/colors/blue.css" id="theme" rel="stylesheet">
+    <link href="{{asset('all/bootstrap/css/blue.css')}}" id="theme" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
 </head>
 
 <body>
@@ -38,10 +38,10 @@
     <!-- Main wrapper - style you can find in pages.scss -->
     <!-- ============================================================== -->
     <section id="wrapper">
-        <div class="login-register" style="background-image:url(../assets/images/background/login-register.jpg);">        
+        <div class="login-register">        
             <div class="login-box card">
             <div class="card-body">
-                <form class="form-horizontal form-material" id="loginform" action="https://www.wrappixel.com/demos/admin-templates/monster-admin/main/index.html">
+                <form class="form-horizontal form-material" id="loginform" >
                     <h3 class="box-title mb-3">Sign In</h3>
                     <div class="form-group ">
                         <div class="col-xs-12">
@@ -77,7 +77,7 @@
                         </div>
                     </div>
                 </form>
-                <form class="form-horizontal" id="recoverform" action="https://www.wrappixel.com/demos/admin-templates/monster-admin/main/index.html">
+                <form class="form-horizontal" id="recoverform" >
                     <div class="form-group ">
                         <div class="col-xs-12">
                             <h3>Recover Password</h3>
@@ -105,26 +105,23 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    <script src="../assets/plugins/jquery/jquery.min.js"></script>
+    <script src=" {{asset('all/bootstrap/')}}"></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="../assets/plugins/bootstrap/js/popper.min.js"></script>
-    <script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="{{asset('all/bootstrap/')}}"></script>
+    <script src="{{asset('all/bootstrap/')}}"></script>
     <!-- slimscrollbar scrollbar JavaScript -->
-    <script src="js/jquery.slimscroll.js"></script>
+    <script src="{{asset('all/bootstrap/js/jquery.slimscroll.js')}}"></script>
     <!--Wave Effects -->
-    <script src="js/waves.js"></script>
+    <script src="{{asset('all/bootstrap/js/waves.js')}}"></script>
     <!--Menu sidebar -->
-    <script src="js/sidebarmenu.js"></script>
+    <script src="{{asset('all/bootstrap/js/sidebarmenu.js')}}"></script>
     <!--stickey kit -->
-    <script src="../assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
+    <script src="{{asset('all/bootstrap/js/sticky-kit.min.js')}}"></script>
     <!--Custom JavaScript -->
-    <script src="js/custom.min.js"></script>
+    <script src="{{asset('all/bootstrap/js/custom.min.js')}}"></script>
     <!-- ============================================================== -->
     <!-- Style switcher -->
     <!-- ============================================================== -->
-    <script src="../assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
+    <script src="{{asset('all/bootstrap/js/jQuery.style.switcher.js')}}"></script>
 </body>
-
-
-<!-- Mirrored from www.wrappixel.com/demos/admin-templates/monster-admin/main/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 11 Feb 2019 11:35:44 GMT -->
 </html>
