@@ -12,13 +12,13 @@
                     <div id="login-box" class="col-md-12">
 
                         <form id="login-form" class="form" action="" method="post">
-                            <h3 class="text-center text-info">Login</h3>
+                            <h3 class="text-center text-info">เข้าสู่ระบบเว็บไซต์การประชุม</h3>
                             <div class="form-group">
-                                <label for="username" class="text-info">Username:</label><br>
+                                <label for="username" class="text-info">ผู้ใช้งาน :</label><br>
                                 <input type="text" name="username" id="username" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label for="password" class="text-info">Password:</label><br>
+                                <label for="password" class="text-info">รหัสผ่าน :</label><br>
                                 <input type="text" name="password" id="password" class="form-control">
                             </div>
                             <div class="form-group">
