@@ -32,7 +32,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="home">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="admin">
         <div class="sidebar-brand-icon rotate-n-15">
         <img src="{{asset('img/logo-icon.png')}}" alt="homepage" class="dark-logo" />
         </div>
@@ -146,7 +146,7 @@
                   แก้ไขโปรไฟล์
                 </a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                <a class="dropdown-item" href="login" >
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   ออกจากระบบ
                 </a>
