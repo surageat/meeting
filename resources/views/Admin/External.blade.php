@@ -42,7 +42,7 @@
 
 
                     <div class="form-row">
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-6 ">
                             <label for="inputEmail4">เบอร์โทรศัพท์</label>
                             <input type="text" class="form-control" id="inputEmail4" placeholder="08x-xxxx-xxx">
                         </div>
@@ -52,9 +52,9 @@
                         </div>
                     </div>
 
-                    <div class="form-actions">
-                        <button type="submit" class="btn btn-primary"> <i class="fa fa-check"></i>ตกลง</button>
-                        <button type="button" class="btn btn-danger">Cancel</button>
+                    <div class=" text-center">
+                        <button type="submit" class="btn btn-primary btn-lg"><i class="fa fa-inbox"></i> เพิ่มผู้ใช้</button>
+                        <button type="button" class="btn btn-danger btn-lg">ยกเลิก</button>
                     </div>
                 </form>
             </div>

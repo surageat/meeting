@@ -74,7 +74,7 @@
           <div class="bg-white py-2 collapse-inner rounded">
 
             <a class="collapse-item active" href="report" style="font-size: 125%; line-height: 1.5em;">รายงานการประชุม</a>
-            <a class="collapse-item active" href="blank.html" style="font-size: 125%; line-height: 1.5em;">ข้อคิดเห็น</a>
+            <a class="collapse-item active" href="blank.html" style="font-size: 125%; line-height: 1.5em;">ข้อคิดเห็นรายงาน</a>
             <a class="collapse-item active" href="blank.html" style="font-size: 125%; line-height: 1.5em;">รายงาน PDF</a>
           </div>
         </div>

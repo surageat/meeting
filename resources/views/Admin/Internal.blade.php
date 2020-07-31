@@ -22,11 +22,11 @@
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="inputEmail4">Username</label>
-                                <input type="text" class="form-control" id="inputEmail4" placeholder="user">
+                                <input type="text" class="form-control" id="inputEmail4" placeholder="">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputPassword4">Password</label>
-                                <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                                <input type="password" class="form-control" id="inputPassword4" placeholder="s">
                             </div>
                         </div>
 
@@ -38,7 +38,7 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputPassword4">นามสกุล</label>
-                                <input type="text" class="form-control" id="inputPassword4" placeholder="position">
+                                <input type="text" class="form-control" id="inputPassword4" placeholder="">
                             </div>
                         </div>
 
@@ -88,8 +88,8 @@
 
                     </form>
                     <div class="text-center">
-            <button type="submit" class="btn btn-primary btn-lg"> <i class="fa fa-check"></i>ตกลง</button>
-            <button type="button" class="btn btn-danger btn-lg">Cancel</button>
+            <button type="submit" class="btn btn-primary btn-lg"><i class="fa fa-inbox"></i> เพิ่มผู้ใช้</button>
+            <button type="button" class="btn btn-danger btn-lg">ยกเลิก</button>
         </div>
                 </div>
 
