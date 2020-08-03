@@ -56,5 +56,9 @@ Route::get('/login', function () {
     return view('login.login');
 });
 
+Route::get('/meeting', function () {
+    return view('user.meeting');
+});
+
 
 
