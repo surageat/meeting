@@ -57,5 +57,27 @@ Route::get('/meeting', function () {
     return view('user.meeting');
 });
 
+Route::get('/meeting', function () {
+    return view('Admin.meeting');
+});
+
+Route::get('/addmeeting', function() {
+    return view('Admin.addmeeting');
+});
+
+Route::get('/Meetinginvitation', function() {
+    return view('Admin.Meetinginvitation');
+});
+
+Route::get('/meet_topic', function() {
+    return view('Admin.meet_topic');
+});
+
+Route::get('/report', function() {
+    return view('Admin.report');
+});
+
+
+
 
 Route::resource('userexternal','ExternalController');
