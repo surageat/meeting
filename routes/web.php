@@ -60,10 +60,6 @@ Route::get('/meeting', function () {
     return view('user.meeting');
 });
 
-Route::get('/meeting', function () {
-    return view('Admin.meeting');
-});
-
 Route::get('/addmeeting', function() {
     return view('Admin.addmeeting');
 });
@@ -80,7 +76,19 @@ Route::get('/report', function() {
     return view('Admin.report');
 });
 
+Route::get('/comment', function() {
+    return view('Admin.comment');
+});
 
+Route::get('/report_pdf', function() {
+    return view('Admin.report_pdf');
+});
 
+Route::get('/document', function() {
+    return view('Admin.document');
+});
 
+Route::get('/Meeting', function() {
+    return view('Admin.Meeting');   
+});
 

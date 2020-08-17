@@ -44,9 +44,9 @@
       <hr class="sidebar-divider">
        <!-- Nav Item - Pages Collapse Menu -->
        <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+        <a class="nav-link collapsed" href="meeting" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-file"></i>
-          <span style="font-size: 135%; line-height: 1.5em;">การประชุม</span>
+          <span style="font-size: 135%; line-height: 1.5em;">จัดการการประชุม</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
@@ -59,35 +59,35 @@
       <li class="nav-item">
         <a class="nav-link" href="meet_topic">
           <i class="fas fa-fw fa-file-word"></i>
-          <span style="font-size: 135%; line-height: 1.5em;">วาระการประชุม</span></a>
+          <span style="font-size: 135%; line-height: 1.5em;">จัดการวาระการประชุม</span></a>
       </li>
 
       <li class="nav-item">
         <a class="nav-link" href="userinternal">
           <i class="fas fa-fw fa-file-word"></i>
-          <span style="font-size: 135%; line-height: 1.5em;">ผู้ใช้งานระบบ</span></a>
+          <span style="font-size: 135%; line-height: 1.5em;">จัดการผู้ใช้งานระบบ</span></a>
       </li>
 
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="report" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-file-pdf"></i>
-          <span style="font-size: 125%; line-height: 1.5em;">รายงานการประชุม</span>
+          <span style="font-size: 125%; line-height: 1.5em;">จัดการรายงานการประชุม</span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             
             <a class="collapse-item active" href="report" style="font-size: 125%; line-height: 1.5em;">รายงานการประชุม</a>
-            <a class="collapse-item active" href="blank.html" style="font-size: 125%; line-height: 1.5em;">ข้อคิดเห็น</a>
-            <a class="collapse-item active" href="blank.html" style="font-size: 125%; line-height: 1.5em;">รายงาน PDF</a>
+            <a class="collapse-item active" href="comment" style="font-size: 125%; line-height: 1.5em;">ข้อคิดเห็น</a>
+            <a class="collapse-item active" href="report_pdf"style="font-size: 125%; line-height: 1.5em;">รายงาน PDF</a>
           </div>
         </div>
       </li>
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item active">
-        <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+        <a class="nav-link" href="document" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
           <i class="fas fa-fw fa-folder"></i>
-          <span style="font-size: 135%; line-height: 1.5em;">เอกสาร</span>
+          <span style="font-size: 135%; line-height: 1.5em;">จัดการเอกสารการประชุม</span>
         </a>
         <div id="collapsePages" class="collapse show" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
