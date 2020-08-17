@@ -45,9 +45,6 @@ Route::get('/admin', function () {
     return view('layout.adminlayout');
 });
 
-Route::get('/userexternal', function () {
-    return view('Admin.External');
-});
 Route::get('/userinternal', function () {
     return view('Admin.Internal');
 });
@@ -76,6 +73,7 @@ Route::get('/report', function() {
     return view('Admin.report');
 });
 
+<<<<<<< HEAD
 Route::get('/comment', function() {
     return view('Admin.comment');
 });
@@ -92,3 +90,6 @@ Route::get('/Meeting', function() {
     return view('Admin.Meeting');   
 });
 
+=======
+Route::resource('userexternal','ExternalController');
+>>>>>>> fcbe479f1dbc81854bd1bd1c0682848029b20192
