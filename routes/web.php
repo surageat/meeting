@@ -77,7 +77,4 @@ Route::get('/report', function() {
     return view('Admin.report');
 });
 
-
-
-
 Route::resource('userexternal','ExternalController');

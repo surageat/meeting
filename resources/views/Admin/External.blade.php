@@ -15,7 +15,7 @@
 @section('content')
 <div class="row">
     <div class="col-lg-12">
-        @if(count($errors) > 0)
+        @if(count($errors)> 0)
         <div class="alert alert-dnnger">
             <ul>
                 @foreach($errors->all as $error)
