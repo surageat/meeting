@@ -5,7 +5,7 @@
         <a href="userinternal">
             <button type="button" class="btn btn-success btn-lg" style="font-size: 200%; line-height: 1.5em;">บุคลากรภายใน</button>
         </a>
-        <a href="userexternal">
+        <a href="{{route('userexternal.create')}}">
             <button type="button" class="btn btn-secondary btn-lg" style="font-size: 200%; line-height: 1.5em;">บุคลากรภายนอก</button>
         </a>
     </div>
