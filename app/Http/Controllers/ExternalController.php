@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\External_personnel;
 use Illuminate\Http\Request;
 
 class ExternalController extends Controller
@@ -14,7 +15,7 @@ class ExternalController extends Controller
     public function index()
     {
         //
-        
+
     }
 
     /**
@@ -36,7 +37,26 @@ class ExternalController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'Ep_user' => 'required',
+            'Ep_pass' => 'required',
+            'Ep_name' => 'required',
+            'Ep_position' => 'required',
+            'Ep_tel' => 'requird',
+            'Ep_institution' => 'required'
+        ]);
+        $external = new External_personnel(
+            [
+            'Ep_user' => $request->get('Ep_user'),
+            'Ep_pass' => $request->get('Ep_pass'),
+            'Ep_name' => $request->get('Ep_name'),
+            'Ep_position' => $request->get('Ep_position'),
+            'Ep_tel' => $request->get('Ep_tel'),
+            'Ep_institution' => $request->get('Ep_institution')
+        ]);
+        $external->save();
+        return redirect()->route('Admin.External')->with('success','บันทึกสำเร็จ');
+
     }
 
     /**

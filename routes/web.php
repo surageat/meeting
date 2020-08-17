@@ -45,9 +45,6 @@ Route::get('/admin', function () {
     return view('layout.adminlayout');
 });
 
-Route::get('/userexternal', function () {
-    return view('Admin.External');
-});
 Route::get('/userinternal', function () {
     return view('Admin.Internal');
 });
@@ -61,4 +58,4 @@ Route::get('/meeting', function () {
 });
 
 
-
+Route::resource('userexternal','ExternalController');

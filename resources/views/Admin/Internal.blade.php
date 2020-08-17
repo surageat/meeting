@@ -26,7 +26,7 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputPassword4">Password</label>
-                                <input type="password" class="form-control" id="inputPassword4" placeholder="s">
+                                <input type="password" class="form-control" id="inputPassword4" placeholder="">
                             </div>
                         </div>
 
@@ -34,7 +34,7 @@
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="inputEmail4">ชื่อ</label>
-                                <input type="text" class="form-control" id="inputEmail4" placeholder="name">
+                                <input type="text" name="" class="form-control" id="inputEmail4" placeholder="name">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputPassword4">นามสกุล</label>
