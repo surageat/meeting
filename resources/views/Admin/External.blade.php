@@ -32,7 +32,7 @@
         @endif
         <div class="card card-outline-info">
             <div class="card-body">
-                <form action="{{url('userexternal')}}" method="POST" id="formInsertPost">
+                <form action="{{url('userexternal')}}" method="post" >
                     {{csrf_field()}}
                     <div class="form-row">
                         <div class="form-group col-md-6">

@@ -14,8 +14,7 @@ class ExternalController extends Controller
      */
     public function index()
     {
-        //
-
+        return view('Admin.External');
     }
 
     /**
@@ -47,16 +46,16 @@ class ExternalController extends Controller
         ]);
         $external = new External_personnel(
             [
-            'Ep_user' => $request->get('Ep_user'),
-            'Ep_pass' => $request->get('Ep_pass'),
-            'Ep_name' => $request->get('Ep_name'),
-            'Ep_position' => $request->get('Ep_position'),
-            'Ep_tel' => $request->get('Ep_tel'),
-            'Ep_institution' => $request->get('Ep_institution')
-        ]);
+                'Ep_user' => $request->get('Ep_user'),
+                'Ep_pass' => $request->get('Ep_pass'),
+                'Ep_name' => $request->get('Ep_name'),
+                'Ep_position' => $request->get('Ep_position'),
+                'Ep_tel' => $request->get('Ep_tel'),
+                'Ep_institution' => $request->get('Ep_institution')
+            ]
+        );
         $external->save();
-        return redirect()->route('Admin.External')->with('success','บันทึกสำเร็จ');
-
+        return redirect()->route('Admin.External')->with('success', 'บันทึกสำเร็จ');
     }
 
     /**
