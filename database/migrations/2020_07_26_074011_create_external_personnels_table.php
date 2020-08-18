@@ -18,13 +18,14 @@ class CreateExternalPersonnelsTable extends Migration
             $table->string('EP_user');
             $table->string('EP_pass');
             $table->string('EP_name');
-            $table->linestring('EP_position');
+            $table->string('EP_position');
             $table->string('EP_tel');
             $table->string('EP_institution');
             $table->timestamps();
         });
     }
 
+    
     /**
      * Reverse the migrations.
      *

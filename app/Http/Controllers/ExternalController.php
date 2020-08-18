@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\External_personnel;
 use Illuminate\Http\Request;
+use Validator;
 
 class ExternalController extends Controller
 {
@@ -36,7 +37,26 @@ class ExternalController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
+        $validator = Validator::make($request->all(), [
+            'EP_user' => 'required',
+        ]);
+        if (!$validator->fails()) {
+            $External_personnel = new External_personnel;
+            $External_personnel->EP_user = $request->input('EP_user');
+            $External_personnel->EP_pass = \Hash::make($request->input('EP_pass'));
+            $External_personnel->EP_name = $request->input('EP_name');
+            $External_personnel->EP_position = $request->input('EP_position');
+            $External_personnel->EP_tel = $request->input('EP_tel');
+            $External_personnel->EP_institution = $request->input('EP_institution');
+            $External_personnel->save();
+            $return['status'] = 1;
+            $return['content'] = 'Success';  
+        } else {
+            $return['status'] = 0;
+            $return['content'] = 'กรุณากรอกข้อมูล';  
+        }
+        return $return;
+        /*$this->Validator($request, [
             'Ep_user' => 'required',
             'Ep_pass' => 'required',
             'Ep_name' => 'required',
@@ -44,6 +64,7 @@ class ExternalController extends Controller
             'Ep_tel' => 'requird',
             'Ep_institution' => 'required'
         ]);
+        return $request->all();
         $external = new External_personnel(
             [
                 'Ep_user' => $request->get('Ep_user'),
@@ -54,8 +75,9 @@ class ExternalController extends Controller
                 'Ep_institution' => $request->get('Ep_institution')
             ]
         );
+        return $external;
         $external->save();
-        return redirect()->route('Admin.External')->with('success', 'บันทึกสำเร็จ');
+        return redirect()->route('Admin.External')->with('success', 'บันทึกสำเร็จ');*/
     }
 
     /**
