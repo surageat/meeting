@@ -20,6 +20,9 @@
   <!-- Custom styles for this template-->
   <link href="{{asset('css/sb-admin-2.min.css')}}" rel="stylesheet">
   <link href="{{asset('css/app.css')}}" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+  @yield('script')
 
 </head>
 
@@ -34,16 +37,16 @@
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="admin">
         <div class="sidebar-brand-icon rotate-n-15">
-        <img src="{{asset('img/logo-icon.png')}}" alt="homepage" class="dark-logo" />
+          <img src="{{asset('img/logo-icon.png')}}" alt="homepage" class="dark-logo" />
         </div>
         <div class="sidebar-brand-text mx-3">ADMIN</div>
       </a>
-         <!-- Divider -->
-         <hr class="sidebar-divider my-0">
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
       <!-- Divider -->
       <hr class="sidebar-divider">
-       <!-- Nav Item - Pages Collapse Menu -->
-       <li class="nav-item">
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
         <a class="nav-link collapsed" href="meeting" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-file"></i>
           <span style="font-size: 135%; line-height: 1.5em;">การประชุม</span>
@@ -76,10 +79,10 @@
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            
+
             <a class="collapse-item active" href="report" style="font-size: 125%; line-height: 1.5em;">รายงานการประชุม</a>
             <a class="collapse-item active" href="comment" style="font-size: 125%; line-height: 1.5em;">ข้อคิดเห็น</a>
-            <a class="collapse-item active" href="report_pdf"style="font-size: 125%; line-height: 1.5em;">รายงาน PDF</a>
+            <a class="collapse-item active" href="report_pdf" style="font-size: 125%; line-height: 1.5em;">รายงาน PDF</a>
           </div>
         </div>
       </li>
@@ -91,11 +94,11 @@
         </a>
         <div id="collapsePages" class="collapse show" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            
+
             <a class="collapse-item active" href="blank.html" style="font-size: 125%; line-height: 1.5em;">การประชุม</a>
             <a class="collapse-item active" href="blank.html" style="font-size: 125%; line-height: 1.5em;">วาระการประชุม</a>
             <a class="collapse-item active" href="blank.html" style="font-size: 125%; line-height: 1.5em;">รายงานการประชุม</a>
-        </div>
+          </div>
       </li>
 
       <!-- Divider -->
@@ -126,7 +129,7 @@
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
 
-           
+
 
             <div class="topbar-divider d-none d-sm-block"></div>
 
@@ -147,7 +150,7 @@
                   แก้ไขโปรไฟล์
                 </a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="login" >
+                <a class="dropdown-item" href="login">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   ออกจากระบบ
                 </a>
@@ -196,7 +199,7 @@
   <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
   </a>
- 
+
 
   <!-- Bootstrap core JavaScript-->
   <script src="{{asset('all/jquery/jquery.min.js')}}"></script>

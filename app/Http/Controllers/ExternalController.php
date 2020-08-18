@@ -55,7 +55,7 @@ class ExternalController extends Controller
             $return['status'] = 0;
             $return['content'] = 'กรุณากรอกข้อมูล';  
         }
-        return $return;
+        return redirect()->route('userexternal.create')->with('success', 'บันทึกสำเร็จ');
         /*$this->Validator($request, [
             'Ep_user' => 'required',
             'Ep_pass' => 'required',

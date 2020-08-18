@@ -65,3 +65,31 @@
 <!-- Row -->
 
 @endsection
+
+@section('script')
+
+<script>
+    $('#submit').on('click', function() {
+      console.log("btn click");
+      var data = $('#namid').val();
+      console.log(data);
+      if (data == 'status=1') {
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'บันทึกข้อมูลสำเร็จ',
+          showConfirmButton: false,
+          timer: 1500
+        })
+      } else if (data == 'status=0') {
+        Swal.fire({
+          position: 'top-end',
+          icon: 'error',
+          title: 'บันทึกข้อมูลไม่สำเร็จ',
+          showConfirmButton: false,
+          timer: 1500
+        })
+      }
+    })
+  </script>
+@endsection
