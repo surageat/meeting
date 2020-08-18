@@ -15,7 +15,7 @@ class ExternalController extends Controller
      */
     public function index()
     {
-        return view('Admin.External');
+        
     }
 
     /**
