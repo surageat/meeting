@@ -15,4 +15,5 @@ class External_personnel extends Model
         'EP_institution'
        
       ];
+      protected $primaryKey = 'EP_id';
 }

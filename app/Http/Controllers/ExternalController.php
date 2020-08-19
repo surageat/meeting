@@ -17,7 +17,7 @@ class ExternalController extends Controller
     public function index()
     {
         $External_personnel=External_personnel::all()->toArray();
-        return view('Admin.Meetinginvitation',compact('External_personnel'));
+        return view('Admin.external.usernameexternal',compact('External_personnel'));
 
     }
 
@@ -29,7 +29,7 @@ class ExternalController extends Controller
     public function create()
     {
         //
-        return view('Admin.External');
+        return view('Admin.external.External');
     }
 
     /**
@@ -119,8 +119,10 @@ class ExternalController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
+        $External_personnel = External_personnel::find($id);
+        $External_personnel->delete();
+        return redirect()->route('userexternal.index')->with('success', 'ลบข้อมูลสำเร็จ');
     }
-        //แสดงข้อมูล
     
 }

@@ -25,6 +25,8 @@
             <th>name</th>
             <th>tel</th>
             <th>institution</th>
+            <th>edit</th>
+            <th>delete</th>
         </tr> 
         @foreach($External_personnel as $row)  
         <tr>
@@ -34,13 +36,35 @@
             <td>{{$row['EP_name']}}</td>
             <td>{{$row['EP_tel']}}</td>
             <td>{{$row['EP_institution']}}</td>
+            <td><a action="{{action('ExternalController@destroy',$row['EP_id'])}}" class="btn btn-warning"><i class="fa fa-wrench"></i> Edit</a></td>
+            <td>
+                <form method="post" class="delete_form" action="{{action('ExternalController@destroy',$row['EP_id'])}}" >
+                    {{csrf_field()}}
+                <input type="hidden" name="_method" value="DELETE">
+                <button class="btn btn-danger" type="submit"><i class="fa fa-trash"></i> Delete</button>
+                </form>
+          </td>
         </tr>
         @endforeach
     </table>
 </div>
 </div>
 </div>
+<script type="text/javascript">
+$(document).ready(function(){
+    $('.delete_form').on('submit',function(){
+        if(confirm("ต้องการลบข้อมูลหรือไม่ ?")){
+            return true;
+        }else{
+            return false;
+        }
+    });
+});
+
+</script>
+@include('sweetalert::alert')
 @endsection
+
     
 
     
