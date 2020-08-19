@@ -16,6 +16,6 @@ class Internal_personnel extends Model
         'IP_department',
         'IP_institution',
         'IP_tel',
-        'ip_email'
+        ''
       ];
 }
