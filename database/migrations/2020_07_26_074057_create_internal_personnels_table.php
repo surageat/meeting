@@ -24,7 +24,7 @@ class CreateInternalPersonnelsTable extends Migration
             $table->string('IP_department');
             $table->string('IP_institution');
             $table->string('IP_tel');
-            $table->string('ip_email')->uniqid();
+            $table->string('IP_email')->uniqid();
             
             $table->timestamps();
         });

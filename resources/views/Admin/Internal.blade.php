@@ -1,15 +1,21 @@
 @extends('layout.adminlayout')
 @section('header')
-<div class="row page-titles">
-    <div class="col-md-6 col-8 align-self-center">
+<table class="table table-hover">
+    <th>
         <a href="{{route('userinternal.create')}}">
             <button type="button" class="btn btn-success btn-lg" style="font-size: 200%; line-height: 1.5em;">บุคลากรภายใน</button>
         </a>
         <a href="{{route('userexternal.create')}}">
             <button type="button" class="btn btn-secondary btn-lg" style="font-size: 200%; line-height: 1.5em;">บุคลากรภายนอก</button>
         </a>
-    </div>
-</div>
+    </th>
+    <th></th>
+    <th>
+        <a href="{{route('userexternal.create')}}">
+            <button type="button" class="btn btn-primary btn-lg">รายชื่อผู้ใช้</button>
+        </a>
+    </th>
+</table>
 <br>
 @endsection
 @section('content')
@@ -81,7 +87,7 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputPassword4">Email</label>
-                                <input type="email" class="form-control" name="ip_email" placeholder="" required="">
+                                <input type="email" class="form-control" name="IP_email" placeholder="" required="">
                             </div>
                         </div>
                         <div class="text-center">

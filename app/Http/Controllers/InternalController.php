@@ -52,7 +52,7 @@ class InternalController extends Controller
             $Internal_personnel->IP_department =$request->input('IP_department');
             $Internal_personnel->IP_institution =$request->input('IP_institution');
             $Internal_personnel->IP_tel =$request->input('IP_tel');
-            $Internal_personnel->ip_email =$request->input('ip_email');
+            $Internal_personnel->ip_email =$request->input('IP_email');
             $Internal_personnel->save(); 
         return redirect()->route('userinternal.create')->with('success', 'บันทึกสำเร็จ');
         } else {

@@ -15,7 +15,7 @@ class CreateMeetingAgendasTable extends Migration
     {
         Schema::create('meeting_agendas', function (Blueprint $table) {
             $table->increments('MA_id');
-            $table->linestring('MA_agenda');
+            $table->string('MA_agenda');
             $table->timestamps();
         });
     }
