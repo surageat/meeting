@@ -96,8 +96,8 @@ class ExternalController extends Controller
      */
     public function edit($id)
     {
-        $External_personnel = External_personnel::find($id);
-        return  view('Admin.external.Editexternal',compact('External_personnel ','id'));
+        $external_personnel = External_personnel::find($id);
+        return  view('Admin.external.Editexternal',compact('external_personnel ','id'));
     }
 
     /**
@@ -109,7 +109,22 @@ class ExternalController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'EP_user' => 'required',
+        ]);
+        if (!$validator->fails()) {
+            $External_personnel = new External_personnel;
+            $External_personnel->EP_user = $request->input('EP_user');
+            $External_personnel->EP_pass = \Hash::make($request->input('EP_pass'));
+            $External_personnel->EP_name = $request->input('EP_name');
+            $External_personnel->EP_position = $request->input('EP_position');
+            $External_personnel->EP_tel = $request->input('EP_tel');
+            $External_personnel->EP_institution = $request->input('EP_institution');
+            $External_personnel->save();
+            return redirect()->route('userexternal.index')->with('success', 'แก้ไขสำเร็จ');
+        } else {
+            return redirect()->route('userexternal.index')->with('warning', 'แก้ไขไม่สำเร็จ');
+        }
     }
 
     /**
