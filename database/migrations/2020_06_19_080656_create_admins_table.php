@@ -16,7 +16,7 @@ class CreateAdminsTable extends Migration
         Schema::create('admin', function (Blueprint $table) {
             $table->increments('Admin_id');
             $table->string('Admin_name');
-            $table->linestring('Admin_position');
+            $table->string('Admin_position');
             $table->string('Admin_tel');
             $table->string('Admin_instition');
             $table->string('Admin_email')->uniqid();
