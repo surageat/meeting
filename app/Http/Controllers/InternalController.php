@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Internal_personnel;
 use Validator;
 use Alert;
-use Dotenv\Validator as DotenvValidator;
 
 class InternalController extends Controller
 {
@@ -27,7 +26,7 @@ class InternalController extends Controller
      */
     public function create()
     {
-        return view('Admin.internal');
+        return view('Admin.Internal');
     }
 
     /**
@@ -38,25 +37,28 @@ class InternalController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
+        $validator = Validator::make($request->all(),
+         [
             'IP_user' => 'required',
         ]);
         if(!$validator->fails()){
+            $Internal_personnel= new Internal_personnel;
             $Internal_personnel->IP_user =$request->input('IP_user');
-            $Internal_personnel->IP_pass =$request->input('IP_pass');
+            $Internal_personnel->IP_pass =\Hash::make($request->input('IP_pass'));
             $Internal_personnel->IP_name =$request->input('IP_name');
             $Internal_personnel->IP_lname =$request->input('IP_lname');
             $Internal_personnel->IP_position =$request->input('IP_position');
             $Internal_personnel->IP_faculty =$request->input('IP_faculty');
             $Internal_personnel->IP_department =$request->input('IP_department');
-            $Internal_personnel->IP_user =$request->input('IP_user');
-            $Internal_personnel->IP_user =$request->input('IP_user');
-            $Internal_personnel->IP_user =$request->input('IP_user');
-            $Internal_personnel->IP_user =$request->input('IP_user');
-
+            $Internal_personnel->IP_institution =$request->input('IP_institution');
+            $Internal_personnel->IP_tel =$request->input('IP_tel');
+            $Internal_personnel->ip_email =$request->input('ip_email');
+            $Internal_personnel->save(); 
+        return redirect()->route('userinternal.create')->with('success', 'บันทึกสำเร็จ');
+        } else {
+            return redirect()->route('userinternal.create')->with('warning', 'บันทึกไม่สำเร็จ');
         }
     }
-
     /**
      * Display the specified resource.
      *

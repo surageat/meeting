@@ -18,38 +18,37 @@
         <div class="col-sm-12">
             <div class="card card-outline-info">
                 <div class="card-body">
-                    <form action="#">
+                    <form action="{{url('userinternal')}}" method="post">
+                        {{csrf_field()}}
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="inputEmail4">Username</label>
-                                <input type="text" class="form-control" name="IP_user" placeholder="">
+                                <input type="text" class="form-control" name="IP_user" placeholder="" required="">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputPassword4">Password</label>
-                                <input type="password" class="form-control" name="IP_pass" placeholder="">
+                                <input type="password" class="form-control" name="IP_pass" placeholder="" required="">
                             </div>
                         </div>
-
-
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="inputEmail4">ชื่อ</label>
-                                <input type="text"  class="form-control" name="IP_name" placeholder="name">
+                                <input type="text" class="form-control" name="IP_name" placeholder="name" required="">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputPassword4">นามสกุล</label>
-                                <input type="text" class="form-control" name="IP_lname" placeholder="">
+                                <input type="text" class="form-control" name="IP_lname" placeholder="" required="">
                             </div>
                         </div>
 
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="inputEmail4">ตำแหน่ง</label>
-                                <input type="text" class="form-control" name="IP_position" placeholder="">
+                                <input type="text" class="form-control" name="IP_position" placeholder="" required="">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputPassword4">คณะ</label>
-                                <select class="form-control form-control-line" name="IP_faculty">
+                                <select class="form-control form-control-line" name="IP_faculty" required="">
                                     <option>---ไม่ระบุ-----</option>
                                     <option>วิทยาการสารสนเทศ</option>
                                 </select>
@@ -59,7 +58,7 @@
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="inputEmail4">แผนก/สาขา</label>
-                                <select class="form-control form-control-line" name="IP_department">
+                                <select class="form-control form-control-line" name="IP_department" required="">
                                     <option>---ไม่ระบุ-----</option>
                                     <option>เทคโนโลยีสารสนเทศ</option>
                                     <option>ภูมิสารสนเทศ</option>
@@ -71,34 +70,34 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputPassword4">สังกัด/หน่วยงาน</label>
-                                <input type="text" class="form-control" name="IP_institution" placeholder="หน่วยงาน">
+                                <input type="text" class="form-control" name="IP_institution" placeholder="หน่วยงาน" required="">
                             </div>
                         </div>
 
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="inputEmail4">เบอร์โทรศัพท์</label>
-                                <input type="text" class="form-control" name="IP_tel" placeholder="">
+                                <input type="text" class="form-control" name="IP_tel" placeholder="" required="">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputPassword4">Email</label>
-                                <input type="email" class="form-control" name="ip_email" placeholder="">
+                                <input type="email" class="form-control" name="ip_email" placeholder="" required="">
                             </div>
                         </div>
-
+                        <div class="text-center">
+                        <button type="submit" class="btn btn-primary btn-lg"><i class="fa fa-inbox"></i> เพิ่มผู้ใช้</button>
+                        <button type="button" class="btn btn-danger btn-lg">ยกเลิก</button>
+                    </div>
                     </form>
-                    <div class="text-center">
-            <button type="submit" class="btn btn-primary btn-lg"><i class="fa fa-inbox"></i> เพิ่มผู้ใช้</button>
-            <button type="button" class="btn btn-danger btn-lg">ยกเลิก</button>
-        </div>
+                   
                 </div>
 
             </div>
         </div>
-        
+
     </div>
 
 </div>
 <!-- Row -->
-
+@include('sweetalert::alert')
 @endsection

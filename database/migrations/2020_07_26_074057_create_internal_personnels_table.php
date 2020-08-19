@@ -19,7 +19,7 @@ class CreateInternalPersonnelsTable extends Migration
             $table->string('IP_pass');
             $table->string('IP_name');
             $table->string('IP_lname');
-            $table->linestring('IP_position');
+            $table->string('IP_position');
             $table->string('IP_faculty');
             $table->string('IP_department');
             $table->string('IP_institution');
