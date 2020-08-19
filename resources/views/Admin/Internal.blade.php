@@ -2,7 +2,7 @@
 @section('header')
 <div class="row page-titles">
     <div class="col-md-6 col-8 align-self-center">
-        <a href="userinternal">
+        <a href="{{route('userinternal.create')}}">
             <button type="button" class="btn btn-success btn-lg" style="font-size: 200%; line-height: 1.5em;">บุคลากรภายใน</button>
         </a>
         <a href="{{route('userexternal.create')}}">
@@ -22,11 +22,11 @@
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="inputEmail4">Username</label>
-                                <input type="text" class="form-control" id="inputEmail4" placeholder="">
+                                <input type="text" class="form-control" name="IP_user" placeholder="">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputPassword4">Password</label>
-                                <input type="password" class="form-control" id="inputPassword4" placeholder="">
+                                <input type="password" class="form-control" name="IP_pass" placeholder="">
                             </div>
                         </div>
 
@@ -34,22 +34,22 @@
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="inputEmail4">ชื่อ</label>
-                                <input type="text" name="" class="form-control" id="inputEmail4" placeholder="name">
+                                <input type="text"  class="form-control" name="IP_name" placeholder="name">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputPassword4">นามสกุล</label>
-                                <input type="text" class="form-control" id="inputPassword4" placeholder="">
+                                <input type="text" class="form-control" name="IP_lname" placeholder="">
                             </div>
                         </div>
 
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="inputEmail4">ตำแหน่ง</label>
-                                <input type="text" class="form-control" id="inputEmail4" placeholder="">
+                                <input type="text" class="form-control" name="IP_position" placeholder="">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputPassword4">คณะ</label>
-                                <select class="form-control form-control-line">
+                                <select class="form-control form-control-line" name="IP_faculty">
                                     <option>---ไม่ระบุ-----</option>
                                     <option>วิทยาการสารสนเทศ</option>
                                 </select>
@@ -59,7 +59,7 @@
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="inputEmail4">แผนก/สาขา</label>
-                                <select class="form-control form-control-line">
+                                <select class="form-control form-control-line" name="IP_department">
                                     <option>---ไม่ระบุ-----</option>
                                     <option>เทคโนโลยีสารสนเทศ</option>
                                     <option>ภูมิสารสนเทศ</option>
@@ -71,18 +71,18 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputPassword4">สังกัด/หน่วยงาน</label>
-                                <input type="text" class="form-control" id="inputPassword4" placeholder="หน่วยงาน">
+                                <input type="text" class="form-control" name="IP_institution" placeholder="หน่วยงาน">
                             </div>
                         </div>
 
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="inputEmail4">เบอร์โทรศัพท์</label>
-                                <input type="text" class="form-control" id="inputEmail4" placeholder="">
+                                <input type="text" class="form-control" name="IP_tel" placeholder="">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputPassword4">Email</label>
-                                <input type="email" class="form-control" id="inputPassword4" placeholder="">
+                                <input type="email" class="form-control" name="ip_email" placeholder="">
                             </div>
                         </div>
 

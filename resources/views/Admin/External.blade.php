@@ -2,7 +2,7 @@
 @section('header')
 <div class="row page-titles">
     <div class="col-md-6 col-8 align-self-center">
-        <a href="userinternal">
+        <a href="{{route('userinternal.create')}}">
             <button type="button" class="btn btn-success btn-lg" style="font-size: 200%; line-height: 1.5em;">บุคลากรภายใน</button>
         </a>
         <a href="{{route('userexternal.create')}}">

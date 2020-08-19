@@ -50,10 +50,7 @@ class ExternalController extends Controller
             $External_personnel->EP_institution = $request->input('EP_institution');
             $External_personnel->save();
             return redirect()->route('userexternal.create')->with('success', 'บันทึกสำเร็จ');
-        } else if($validator=""){
-
-            return redirect()->route('userexternal.create')->with('warning', 'บันทึกไม่สำเร็จ');
-        }else{
+        } else {
             return redirect()->route('userexternal.create')->with('warning', 'บันทึกไม่สำเร็จ');
         }
 

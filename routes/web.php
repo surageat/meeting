@@ -47,10 +47,6 @@ Route::get('/admin', function () {
     return view('layout.adminlayout');
 });
 
-Route::get('/userinternal', function () {
-    return view('Admin.Internal');
-});
-
 Route::get('/login', function () {
     return view('login.login');
 });
@@ -92,3 +88,4 @@ Route::get('/Meeting', function() {
 });
 
 Route::resource('userexternal','ExternalController');
+Route::resource('userinternal','InternalController');
