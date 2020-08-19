@@ -17,27 +17,27 @@
     <div class="col-lg-12">
         <div class="card card-outline-info">
             <div class="card-body">
-                <form action="{{url('userexternal')}}" method="post" >
+                <form action="{{url('userexternal')}}" method="post">
                     {{csrf_field()}}
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">Username</label>
-                            <input type="text" name="EP_user" class="form-control" id="inputEmail4" placeholder="">
+                            <input type="text" name="EP_user" class="form-control" id="inputEmail4" placeholder="" required="">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputPassword4">Password</label>
-                            <input type="password" name="EP_pass" class="form-control" id="inputPassword4" placeholder="Password">
+                            <input type="password" name="EP_pass" class="form-control" id="inputPassword4" placeholder="Password" required="">
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">ชื่อ</label>
-                            <input type="text" name="EP_name" class="form-control" id="inputEmail4" placeholder="name">
+                            <input type="text" name="EP_name" class="form-control" id="inputEmail4" placeholder="name" required="">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputPassword4">ตำแหน่ง</label>
-                            <input type="text" name="EP_position" class="form-control" id="inputPassword4" placeholder="position">
+                            <input type="text" name="EP_position" class="form-control" id="inputPassword4" placeholder="position" required="">
                         </div>
                     </div>
 
@@ -45,11 +45,11 @@
                     <div class="form-row">
                         <div class="form-group col-md-6 ">
                             <label for="inputEmail4">เบอร์โทรศัพท์</label>
-                            <input type="text" name="EP_tel" class="form-control" id="inputEmail4" placeholder="08x-xxxx-xxx">
+                            <input type="text" name="EP_tel" class="form-control" id="inputEmail4" placeholder="08x-xxxx-xxx" required="">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputPassword4">สถานที่ทำงาน</label>
-                            <input type="text" name="EP_institution" class="form-control" id="inputPassword4" placeholder="หน่วยงาน">
+                            <input type="text" name="EP_institution" class="form-control" id="inputPassword4" placeholder="หน่วยงาน" required="">
                         </div>
                     </div>
 

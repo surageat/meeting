@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use App\External_personnel;
 use Illuminate\Http\Request;
 use Validator;
-Use Alert;
+use Alert;
+
 class ExternalController extends Controller
 {
     /**
@@ -15,7 +16,6 @@ class ExternalController extends Controller
      */
     public function index()
     {
-        
     }
 
     /**
@@ -50,7 +50,10 @@ class ExternalController extends Controller
             $External_personnel->EP_institution = $request->input('EP_institution');
             $External_personnel->save();
             return redirect()->route('userexternal.create')->with('success', 'บันทึกสำเร็จ');
-        } else {
+        } else if($validator=""){
+
+            return redirect()->route('userexternal.create')->with('warning', 'บันทึกไม่สำเร็จ');
+        }else{
             return redirect()->route('userexternal.create')->with('warning', 'บันทึกไม่สำเร็จ');
         }
 
