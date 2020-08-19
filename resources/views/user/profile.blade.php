@@ -9,7 +9,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <center class="mt-4"> <img src="{{asset('img/user/user1.jpg')}}" class="img-circle" width="150" />
-                                    <h4 class="card-title mt-2">คมสันต์ ประริทร</h4>
+                                    <h4 class="card-title mt-2">คมสันต์ ปะรินทร</h4>
                                     <h6 class="card-subtitle">แม่บ้าน</h6>
         
                                 </center>

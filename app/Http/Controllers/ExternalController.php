@@ -16,6 +16,9 @@ class ExternalController extends Controller
      */
     public function index()
     {
+        $External_personnel=External_personnel::all()->toArray();
+        return view('Admin.Meetinginvitation',compact('External_personnel'));
+
     }
 
     /**
@@ -84,11 +87,7 @@ class ExternalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-    }
-
+   
     /**
      * Show the form for editing the specified resource.
      *
@@ -122,4 +121,6 @@ class ExternalController extends Controller
     {
         //
     }
+        //แสดงข้อมูล
+    
 }

@@ -87,5 +87,7 @@ Route::get('/Meeting', function() {
     return view('Admin.Meeting');   
 });
 
+
 Route::resource('userexternal','ExternalController');
 Route::resource('userinternal','InternalController');
+
