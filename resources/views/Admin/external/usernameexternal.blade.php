@@ -38,7 +38,7 @@
             <td>{{$row['EP_institution']}}</td>
             <td><a action="{{action('ExternalController@destroy',$row['EP_id'])}}" class="btn btn-warning"><i class="fa fa-wrench"></i> Edit</a></td>
             <td>
-                <form method="post" class="delete_form" action="{{action('ExternalController@destroy',$row['EP_id'])}}" >
+                <form method="post" class="delete_form" action="{{action('ExternalController@edit',$row['EP_id'])}}" >
                     {{csrf_field()}}
                 <input type="hidden" name="_method" value="DELETE">
                 <button class="btn btn-danger" type="submit"><i class="fa fa-trash"></i> Delete</button>

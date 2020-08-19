@@ -96,7 +96,8 @@ class ExternalController extends Controller
      */
     public function edit($id)
     {
-        //
+        $External_personnel = External_personnel::find($id);
+        return  view('Admin.external.Editexternal',compact('External_personnel ','id'));
     }
 
     /**
