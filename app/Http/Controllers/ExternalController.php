@@ -97,7 +97,7 @@ class ExternalController extends Controller
     public function edit($id)
     {
         $external_personnel = External_personnel::find($id);
-        return  view('Admin.external.Editexternal',compact('external_personnel ','id'));
+        return  view('Admin.external.Editexternal',compact('external_personnel','id'));
     }
 
     /**
@@ -109,24 +109,25 @@ class ExternalController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $validator = Validator::make($request->all(), [
-            'EP_user' => 'required',
+        $this->Validate($request, 
+        [
+            'Ep_user' => 'required',
+            'Ep_pass' => 'required',
+            'Ep_name' => 'required',
+            'Ep_position' => 'required',
+            'Ep_tel' => 'requird',
+            'Ep_institution' => 'required'
         ]);
-        if (!$validator->fails()) {
-            $External_personnel = new External_personnel;
-            $External_personnel->EP_user = $request->input('EP_user');
-            $External_personnel->EP_pass = \Hash::make($request->input('EP_pass'));
-            $External_personnel->EP_name = $request->input('EP_name');
-            $External_personnel->EP_position = $request->input('EP_position');
-            $External_personnel->EP_tel = $request->input('EP_tel');
-            $External_personnel->EP_institution = $request->input('EP_institution');
-            $External_personnel->save();
-            return redirect()->route('userexternal.index')->with('success', 'แก้ไขสำเร็จ');
-        } else {
-            return redirect()->route('userexternal.index')->with('warning', 'แก้ไขไม่สำเร็จ');
+        $external_personnel = External_personnel::find($id);
+        $external_personnel->EP_user=$request->get('EP_user');
+        $external_personnel->EP_pass=\Hash::make($request->get('EP_pass'));
+        $external_personnel->EP_name=$request->get('EP_name');
+        $external_personnel->EP_position=$request->get('EP_possition');
+        $external_personnel->EP_tel=$request->get('EP_tel');
+        $external_personnel->EP_institution=$request->get('EP_institution');
+        $external_personnel->save();
+        return redirect()->route('userexternal.create')->with('success', 'แก้ไขข้อมูลสำเร็จ');
         }
-    }
-
     /**
      * Remove the specified resource from storage.
      *

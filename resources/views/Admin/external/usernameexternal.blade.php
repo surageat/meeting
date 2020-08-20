@@ -52,16 +52,6 @@
         </div>
     </div>
 </div>
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('.delete_form').on('submit', function() {
-            if (confirm("ต้องการลบข้อมูลหรือไม่ ?")) {
-                return true;
-            } else {
-                return false;
-            }
-        });
-    });
-</script>
+
 @include('sweetalert::alert')
 @endsection
