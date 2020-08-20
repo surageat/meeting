@@ -109,7 +109,7 @@ class ExternalController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->Validate($request, 
+        $this->Validator($request, 
         [
             'Ep_user' => 'required',
             'Ep_pass' => 'required',

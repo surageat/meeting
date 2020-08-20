@@ -11,7 +11,7 @@
     </th>
     <th></th>
     <th>
-        <a href="{{route('userexternal.create')}}">
+        <a href="{{route('userexternal.index')}}">
             <button type="button" class="btn btn-primary btn-lg">รายชื่อผู้ใช้</button>
         </a>
     </th>

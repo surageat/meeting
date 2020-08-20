@@ -2,18 +2,11 @@
 @section('header')
 <table class="table table-hover">
     <th>
-        <a href="{{route('userinternal.create')}}">
-            <button type="button" class="btn btn-success btn-lg" style="font-size: 200%; line-height: 1.5em;">บุคลากรภายใน</button>
-        </a>
-        <a href="{{route('userexternal.create')}}">
-            <button type="button" class="btn btn-secondary btn-lg" style="font-size: 200%; line-height: 1.5em;">บุคลากรภายนอก</button>
-        </a>
+        <a href="{{route('userinternal.create')}}" type="button" class="btn btn-success btn-lg" style="font-size: 200%; line-height: 1.5em;">บุคลากรภายใน</a>
+        <a href="{{route('userexternal.create')}}" type="button" class="btn btn-secondary btn-lg" style="font-size: 200%; line-height: 1.5em;">บุคลากรภายนอก</a>
     </th>
-    <th></th>
     <th>
-        <a href="{{route('userexternal.index')}}">
-            <button type="button" class="btn btn-primary btn-lg">รายชื่อผู้ใช้</button>
-        </a>
+        <a href="{{route('userexternal.index')}}" class="btn btn-primary btn-lg" type="button">รายชื่อผู้ใช้งานระบบ </a>
     </th>
 </table>
 <br>
@@ -28,22 +21,22 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">Username</label>
-                            <input type="text" name="EP_user" class="form-control"  placeholder="" required="" value="{{$external_personnel->EP_user}}">
+                            <input type="text" name="EP_user" class="form-control" placeholder="" required="" value="{{$external_personnel->EP_user}}">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputPassword4">Password</label>
-                            <input type="password" name="EP_pass" class="form-control"  placeholder="Password" required="" value="{{$external_personnel->EP_pass}}">
+                            <input type="password" name="EP_pass" class="form-control" placeholder="Password" required="" value="{{$external_personnel->EP_pass}}">
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">ชื่อ</label>
-                            <input type="text" name="EP_name" class="form-control"  placeholder="name" required="" value="{{$external_personnel->EP_name}}">
+                            <input type="text" name="EP_name" class="form-control" placeholder="name" required="" value="{{$external_personnel->EP_name}}">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputPassword4">ตำแหน่ง</label>
-                            <input type="text" name="EP_position" class="form-control"  placeholder="position" required="" value="{{$external_personnel->EP_position}}">
+                            <input type="text" name="EP_position" class="form-control" placeholder="position" required="" value="{{$external_personnel->EP_position}}">
                         </div>
                     </div>
 
