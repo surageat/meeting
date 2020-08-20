@@ -13,7 +13,7 @@
 
 
 @section('content')
-<div class="container">
+
     <div class="col-md-12">
         <br><br>
         <div Align="right">
@@ -23,9 +23,9 @@
                     <table class="table  tabel-bordered  table-striped">
                         <tr>
                             <th>ลำดับ</th>
-                            <th>ผู้ใช้</th>
+                            <th>ผู้ใช้งานระบบ</th>
                             <th>รหัสผ่าน</th>
-                            <th>ชื่อ-นามสกุล</th>
+                            <th>ชื่อ</th>
                             <th>เบอร์โทรศัพท์</th>
                             <th>หน่วยงาน</th>
                             <th>แก้ไขข้อมูล</th>
@@ -40,13 +40,13 @@
                             <td>{{$row['EP_tel']}}</td>
                             <td>{{$row['EP_institution']}}</td>
                             <td>
-                                <a href="{{action('ExternalController@edit',$row['EP_id'])}}" class="btn btn-warning"><i class="fa fa-wrench"></i> Edit</a>
+                                <a href="{{action('ExternalController@edit',$row['EP_id'])}}" class="btn btn-warning"><i class="fa fa-wrench"></i></a>
                             </td>
                             <td>
                                 <form method="post" class="delete_form" action="{{action('ExternalController@destroy',$row['EP_id'])}}">
                                     {{csrf_field()}}
                                     <input type="hidden" name="_method" value="DELETE">
-                                    <button class="btn btn-danger" type="submit"><i class="fa fa-trash"></i> Delete</button>
+                                    <button class="btn btn-danger" type="submit"><i class="fa fa-trash"></i></button>
                                 </form>
                             </td>
                         </tr>
@@ -54,7 +54,6 @@
                     </table>
         </div>
     </div>
-</div>
 
 @include('sweetalert::alert')
 @endsection
