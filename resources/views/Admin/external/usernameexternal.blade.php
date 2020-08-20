@@ -22,14 +22,14 @@
                     
                     <table class="table  tabel-bordered  table-striped">
                         <tr>
-                            <th>id</th>
-                            <th>user</th>
-                            <th>pass</th>
-                            <th>name</th>
-                            <th>tel</th>
-                            <th>institution</th>
-                            <th>edit</th>
-                            <th>delete</th>
+                            <th>ลำดับ</th>
+                            <th>ผู้ใช้</th>
+                            <th>รหัสผ่าน</th>
+                            <th>ชื่อ-นามสกุล</th>
+                            <th>เบอร์โทรศัพท์</th>
+                            <th>หน่วยงาน</th>
+                            <th>แก้ไขข้อมูล</th>
+                            <th>ลบข้อมูล</th>
                         </tr>
                         @foreach($External_personnel as $row)
                         <tr>
