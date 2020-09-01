@@ -47,8 +47,7 @@ class ExternalController extends Controller
             $External_personnel = new External_personnel;
             $External_personnel->EP_user = $request->input('EP_user');
             $External_personnel->EP_pass = \Hash::make($request->input('EP_pass'));
-            $External_personnel->EP_name = $request->input('EP_name');
-            $External_personnel->EP_position = $request->input('EP_position');
+            $External_personnel->EP_name = $request->input('EP_name');            $External_personnel->EP_position = $request->input('EP_position');
             $External_personnel->EP_tel = $request->input('EP_tel');
             $External_personnel->EP_institution = $request->input('EP_institution');
             $External_personnel->save();

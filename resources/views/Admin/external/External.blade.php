@@ -28,22 +28,22 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">Username</label>
-                            <input type="text" name="EP_user" class="form-control" id="inputEmail4" placeholder="" required="">
+                            <input type="text" name="EP_user" class="form-control" id="inputEmail4" placeholder="" required="กรุณาใช้ตัว ภาษาอังกฤษ และ ตัวเลข">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputPassword4">Password</label>
-                            <input type="password" name="EP_pass" class="form-control" id="inputPassword4" placeholder="Password" required="">
+                            <input type="password" name="EP_pass" class="form-control" id="inputPassword4" placeholder="" required="">
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">ชื่อ</label>
-                            <input type="text" name="EP_name" class="form-control" id="inputEmail4" placeholder="name" required="">
+                            <input type="text" name="EP_name" class="form-control" id="inputEmail4" placeholder="" required="">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputPassword4">ตำแหน่ง</label>
-                            <input type="text" name="EP_position" class="form-control" id="inputPassword4" placeholder="position" required="">
+                            <input type="text" name="EP_position" class="form-control" id="inputPassword4" placeholder="" required="">
                         </div>
                     </div>
 
@@ -51,11 +51,11 @@
                     <div class="form-row">
                         <div class="form-group col-md-6 ">
                             <label for="inputEmail4">เบอร์โทรศัพท์</label>
-                            <input type="text" name="EP_tel" class="form-control" id="inputEmail4" placeholder="08x-xxxx-xxx" required="">
+                            <input type="text" name="EP_tel" class="form-control" id="inputEmail4" placeholder="" required="">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputPassword4">สถานที่ทำงาน</label>
-                            <input type="text" name="EP_institution" class="form-control" id="inputPassword4" placeholder="หน่วยงาน" required="">
+                            <input type="text" name="EP_institution" class="form-control" id="inputPassword4" placeholder="" required="">
                         </div>
                     </div>
 

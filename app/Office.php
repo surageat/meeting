@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class External_personnel extends Model
+class Office extends Model
 {
     protected $fillable = [
         'EP_user',
