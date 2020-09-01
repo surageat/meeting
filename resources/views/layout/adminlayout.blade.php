@@ -69,7 +69,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('userinternal.create') }}">
+                <a class="nav-link" href="{{ route('offices.create') }}">
                     <i class="fas fa-fw fa-file-word"></i>
                     <span style="font-size: 135%; line-height: 1.5em;">ผู้ใช้งานระบบ</span></a>
             </li>
