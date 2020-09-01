@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class participate__meetings extends Model
+class conclusion_meetings extends Model
 {
     //
 }

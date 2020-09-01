@@ -14,14 +14,16 @@ class CreateMeetingReportsTable extends Migration
     public function up()
     {
         Schema::create('meeting_reports', function (Blueprint $table) {
-            
-            $table->increments('MRP_id');
-                 $table->string('MRP_heading');
-       $table->string('MRP_date');
-      $table->string('MRP_Report');
-      $table->string('Meet_id');
-
+            $table->Increments('id');
+            $table->string('Detail');
+            $table->integer('HA_id')->unsigned();
+            $table->integer('Meet_id')->unsigned();
+            $table->integer('OF_id')->unsigned();
             $table->timestamps();
+            //foreign key
+            $table->foreign('HA_id')->references('id')->on('heading_agendas')->onDelete('cascade');
+            $table->foreign('Meet_id')->references('id')->on('meetings')->onDelete('cascade');
+            $table->foreign('OF_id')->references('id')->on('offices')->onDelete('cascade');
         });
     }
 

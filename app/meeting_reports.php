@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Meeting_Agenda extends Model
+class meeting_reports extends Model
 {
     //
 }

@@ -14,14 +14,13 @@ class CreateMeetingDocumentsTable extends Migration
     public function up()
     {
         Schema::create('meeting_documents', function (Blueprint $table) {
-            
-            $table->increments('MD_id');
-            $table->string('MD_No');
-            $table->string('MD_Details');
-              $table->string('MD_subject');
-             $table->string('MD_Resolution');
-             $table->string('MA_id');
+            $table->Increments('id');
+            $table->string('MD_name');
+            $table->string('MD_file');
+            $table->integer('HA_id')->unsigned();
             $table->timestamps();
+             //foreign key
+             $table->foreign('HA_id')->references('id')->on('heading_agendas')->onDelete('cascade');
         });
     }
 

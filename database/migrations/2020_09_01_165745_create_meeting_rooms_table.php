@@ -14,9 +14,8 @@ class CreateMeetingRoomsTable extends Migration
     public function up()
     {
         Schema::create('meeting_rooms', function (Blueprint $table) {
-            
-      $table->increments('MR_id');
-      $table->string('MR_name');
+            $table->Increments('id');
+            $table->string('MR_name');
             $table->timestamps();
         });
     }
