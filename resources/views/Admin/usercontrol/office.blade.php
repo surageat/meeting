@@ -11,15 +11,11 @@
 </div>
 @endsection
 
-
 @section('content')
 
     <div class="col-md-12">
         <br><br>
         <div Align="right">
-            <a href="{{route('userexternal.index')}}" class="btn btn-secondary  btn-lg" type="button" >รายชื่อบุคลากรภายใน</a>
-            <a href="{{route('userexternal.index')}}" class="btn btn-success btn-lg" type="button" >รายชื่อบุคลากรภายนอก</a><br/><br/>
-                    
                     <table class="table  tabel-bordered  table-striped">
                         <tr>
                             <th>ลำดับ</th>
