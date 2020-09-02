@@ -2,7 +2,7 @@
 @section('header')
 <div class="row page-titles">
     <div class="col-md-6 col-8 align-self-center">
-        <h3 class="text-themecolor mb-0 mt-0">ผู้ใช้งานระบบ</h3>
+        <h3 class="text-themecolor mb-0 mt-0">รายชื่อผู้ใช้งานระบบ</h3>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="javascript:void(0)">หน้าหลัก</a></li>
             <li class="breadcrumb-item active">รายชื่อผู้ใช้งานระบบ</li>
@@ -18,28 +18,34 @@
         <div Align="right">
                     <table class="table  tabel-bordered  table-striped">
                         <tr>
-                            <th>ลำดับ</th>
-                            <th>ผู้ใช้งานระบบ</th>
-                            <th>รหัสผ่าน</th>
-                            <th>ชื่อ</th>
-                            <th>เบอร์โทรศัพท์</th>
+                       
+                            <th>ชื่อผู้ใช้</th>
+                            <th>นามสกุล</th>
+                            <th>ตำแหน่ง</th>
+                            <th>แผนกงาน</th>
                             <th>หน่วยงาน</th>
+                            <th>เบอร์โทรศัพท์</th>
+                            <th>อีเมลล์</th>
+                            <th>สถานะ</th>
                             <th>แก้ไขข้อมูล</th>
                             <th>ลบข้อมูล</th>
                         </tr>
-                        @foreach($External_personnel as $row)
+                        @foreach($offices as $row)
                         <tr>
-                            <td>{{$row['EP_id']}}</td>
-                            <td>{{$row['EP_user']}}</td>
-                            <td>{{$row['EP_pass']}}</td>
-                            <td>{{$row['EP_name']}}</td>
-                            <td>{{$row['EP_tel']}}</td>
-                            <td>{{$row['EP_institution']}}</td>
+                       
+                            <td>{{$row['OF_name']}}</td>
+                            <td>{{$row['OF_lname']}}</td>
+                            <td>{{$row['OF_rank']}}</td>
+                            <td>{{$row['OF_department']}}</td>
+                            <td>{{$row['OF_institution']}}</td>
+                            <td>{{$row['OF_tel']}}</td>
+                            <td>{{$row['OF_email']}}</td>
+                            <td>{{$row['OF_status']}}</td>
                             <td>
-                                <a href="{{action('ExternalController@edit',$row['EP_id'])}}" class="btn btn-warning"><i class="fa fa-wrench"></i></a>
+                                <a href="{{action('OfficeController@edit',$row['id'])}}" class="btn btn-warning"><i class="fa fa-wrench"></i></a>
                             </td>
                             <td>
-                                <form method="post" class="delete_form" action="{{action('ExternalController@destroy',$row['EP_id'])}}">
+                                <form method="post" class="delete_form" action="{{action('OfficeController@destroy',$row['id'])}}">
                                     {{csrf_field()}}
                                     <input type="hidden" name="_method" value="DELETE">
                                     <button class="btn btn-danger" type="submit"><i class="fa fa-trash"></i></button>

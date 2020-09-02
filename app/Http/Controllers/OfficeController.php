@@ -16,7 +16,7 @@ class OfficeController extends Controller
     public function index()
     {
         //
-        $Office=offices::all()->toArray();
+        $offices=offices::all()->toArray();
         return view('Admin.usercontrol.office',compact('offices'));
 
         
@@ -84,6 +84,8 @@ class OfficeController extends Controller
     public function edit($id)
     {
         //
+        $external_personnel = External_personnel::find($id);
+        return  view('Admin.external.Editexternal',compact('external_personnel','id'));
     }
 
     /**
@@ -96,6 +98,24 @@ class OfficeController extends Controller
     public function update(Request $request, $id)
     {
         //
+         $this->Validator($request, 
+        [
+            'Ep_user' => 'required',
+            'Ep_pass' => 'required',
+            'Ep_name' => 'required',
+            'Ep_position' => 'required',
+            'Ep_tel' => 'requird',
+            'Ep_institution' => 'required'
+        ]);
+        $external_personnel = External_personnel::find($id);
+        $external_personnel->EP_user=$request->get('EP_user');
+        $external_personnel->EP_pass=\Hash::make($request->get('EP_pass'));
+        $external_personnel->EP_name=$request->get('EP_name');
+        $external_personnel->EP_position=$request->get('EP_possition');
+        $external_personnel->EP_tel=$request->get('EP_tel');
+        $external_personnel->EP_institution=$request->get('EP_institution');
+        $external_personnel->save();
+        return redirect()->route('userexternal.create')->with('success', 'แก้ไขข้อมูลสำเร็จ');
     }
 
     /**

@@ -74,7 +74,7 @@
                             <label >สถานะ</label>
                             <select class="form-control form-control-line" name="OF_status" required="" placeholder="ระบุ">
                                     <option>ผู้ดูแล</option>
-                                    <option>บุุคลากรภายนอก</option>
+                                    <option>บุคลากรภายนอก</option>
                                     <option>บุคคลากรภายใน</option>
                                    
                                 </select>
