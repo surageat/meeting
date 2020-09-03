@@ -11,15 +11,16 @@
                 <div id="login-column" class="col-md-6">
                     <div id="login-box" class="col-md-12">
 
-                        <form id="login-form" class="form" action="" method="post">
+                        <form  method="post">
+                            {{csrf_field() }}
                             <h3 class="text-center text-info">เข้าสู่ระบบเว็บไซต์การประชุม</h3>
                             <div class="form-group">
                                 <label for="username" class="text-info">ผู้ใช้งาน :</label><br>
-                                <input type="text" name="username" id="username" class="form-control">
+                                <input type="text" name="OF_user"  class="form-control">
                             </div>
                             <div class="form-group">
                                 <label for="password" class="text-info">รหัสผ่าน :</label><br>
-                                <input type="text" name="password" id="password" class="form-control">
+                                <input type="text" name="OF_pass"  class="form-control">
                             </div>
                             <div class="form-group">
                                 <label for="remember-me" class="text-info"><span>Remember me</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>

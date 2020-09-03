@@ -1,9 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use App\offices;
 use Illuminate\Http\Request;
 use Validator;
+
+
+
 use Alert;
 
 class OfficeController extends Controller
@@ -16,10 +22,8 @@ class OfficeController extends Controller
     public function index()
     {
         //
-        $offices=offices::all()->toArray();
-        return view('Admin.usercontrol.office',compact('offices'));
-
-        
+        $offices = offices::all()->toArray();
+        return view('Admin.usercontrol.office', compact('offices'));
     }
 
     /**
@@ -48,9 +52,9 @@ class OfficeController extends Controller
             $Office = new offices;
             $Office->OF_user = $request->input('OF_user');
             $Office->OF_pass = \Hash::make($request->input('OF_pass'));
-            $Office->OF_name = $request->input('OF_name');      
-            $Office->OF_lname = $request->input('OF_lname');      
-            $Office->OF_rank = $request->input('OF_rank');           
+            $Office->OF_name = $request->input('OF_name');
+            $Office->OF_lname = $request->input('OF_lname');
+            $Office->OF_rank = $request->input('OF_rank');
             $Office->OF_department = $request->input('OF_department');
             $Office->OF_institution = $request->input('OF_institution');
             $Office->OF_tel = $request->input('OF_tel');
@@ -61,7 +65,6 @@ class OfficeController extends Controller
         } else {
             return redirect()->route('offices.create')->with('warning', 'บันทึกไม่สำเร็จ');
         }
-
     }
 
     /**
@@ -84,8 +87,8 @@ class OfficeController extends Controller
     public function edit($id)
     {
         //
-        $external_personnel = External_personnel::find($id);
-        return  view('Admin.external.Editexternal',compact('external_personnel','id'));
+        $offices = offices::find($id);
+        return  view('Admin.usercontrol.editoffice', compact('offices', 'id'));
     }
 
     /**
@@ -98,24 +101,49 @@ class OfficeController extends Controller
     public function update(Request $request, $id)
     {
         //
-         $this->Validator($request, 
-        [
-            'Ep_user' => 'required',
-            'Ep_pass' => 'required',
-            'Ep_name' => 'required',
-            'Ep_position' => 'required',
-            'Ep_tel' => 'requird',
-            'Ep_institution' => 'required'
+        //$this->validate($request, [
+            $validatedData = $request->validate([
+            'OF_user' => ['required'],
+            'OF_pass' => ['required'],
+            'OF_name' => ['required'],
+            'OF_lname' => ['required'],
+            'OF_rank' => ['required'],
+            'OF_department' => ['required'],
+            'OF_institution' => ['required'],
+            'OF_tel' => ['required'],
+            'OF_email' => ['required'],
+            'OF_status' => ['required'],
         ]);
-        $external_personnel = External_personnel::find($id);
-        $external_personnel->EP_user=$request->get('EP_user');
-        $external_personnel->EP_pass=\Hash::make($request->get('EP_pass'));
-        $external_personnel->EP_name=$request->get('EP_name');
-        $external_personnel->EP_position=$request->get('EP_possition');
-        $external_personnel->EP_tel=$request->get('EP_tel');
-        $external_personnel->EP_institution=$request->get('EP_institution');
-        $external_personnel->save();
-        return redirect()->route('userexternal.create')->with('success', 'แก้ไขข้อมูลสำเร็จ');
+        // $offices = offices::where('id', '=', $id)->first();
+        // $offices->update($request->all());
+
+        $offices = offices::find($id);
+        $offices->OF_user = $request->get('OF_user');
+        $offices->OF_pass = $request->get('OF_pass');
+        $offices->OF_name = $request->get('OF_name');
+        $offices->OF_lname = $request->get('OF_lname');
+        $offices->OF_rank = $request->get('OF_rank');
+        $offices->OF_department = $request->get('OF_department');
+        $offices->OF_institution = $request->get('OF_institution');
+        $offices->OF_tel = $request->get('OF_tel');
+        $offices->OF_email = $request->get('OF_email');
+        $offices->OF_status = $request->get('OF_status');
+        
+        $offices->save();
+        return redirect()->route('offices.index')->with('success', 'แก้ไขข้อมูลสำเร็จ');
+
+        //  $offices = offices::find($id);
+        //  $offices->OF_user = $request->OF_user;
+        //  $offices->OF_pass = $request->OF_pass;
+        //    $offices->OF_name = $request->OF_name;
+        //    $offices->OF_lname = $request->OF_lname;
+        //   $offices->OF_rank = $request->OF_rank;
+        //   $offices->OF_department = $request->OF_department;
+        //   $offices->OF_institution = $request->OF_institution;
+        //    $offices->OOF_tel = $request->OF_tel;
+        //  $offices->OF_email = $request->OF_email;
+        //  $offices->OF_status = $request->OF_status;
+
     }
 
     /**

@@ -12,8 +12,9 @@
     <div class="col-lg-12">
         <div class="card card-outline-info">
             <div class="card-body">
-                <form action="{{action('OfficeController@update', $id)}}" method="post">
+                <form action="{{action('OfficeController@update',$id)}}" method="post">
                     {{csrf_field()}}
+                    {{ method_field('PATCH') }}
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label>Username</label>

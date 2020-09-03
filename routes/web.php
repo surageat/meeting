@@ -88,6 +88,5 @@ Route::get('/Meeting', function() {
 });
 
 
-Route::resource('userexternal','ExternalController');
 Route::resource('offices','OfficeController');
 
