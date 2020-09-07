@@ -92,5 +92,4 @@
 </div>
 <!-- Row -->
 @include('sweetalert::alert')
-
 @endsection

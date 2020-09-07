@@ -8,10 +8,6 @@ use App\offices;
 use Illuminate\Http\Request;
 use Validator;
 
-
-
-use Alert;
-
 class OfficeController extends Controller
 {
     /**

@@ -39,7 +39,4 @@ class offices extends Model
   protected $primaryKey = 'id';
 
 //
-  protected $hidden = [
-    'OF_pass', 'remember_token',
-];
 }
