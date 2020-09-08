@@ -4,19 +4,22 @@
 <!------ Include the above in your HEAD tag ---------->
 <link href="{{asset('css/app.css')}}" rel="stylesheet">
 
-<body>
+    
+
+
+<body  style="background-image: url({{url('img/background/b1.jpg')}})">
     <div id="login">
         <div class="container">
             <div id="login-row" class="row justify-content-center ">
                 <div id="login-column" class="col-md-6">
                     <div id="login-box" class="col-md-12">
 
-                        <form method="post" action="{{ route('login') }}" class="col-md5">
+                        <form method="post" action="{{ route('login') }}" id="login-form" class="form">
                             {{csrf_field() }}
-                            <h3 class="text-center text-info">เข้าสู่ระบบเว็บไซต์การประชุม</h3>
+                            <h3 class="text-center text-primary ">เข้าสู่ระบบเว็บไซต์การประชุม</h3><br>
                             <div class="form-group">
-                                <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label><br>
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <label for="email" class="col-form-label text-dark " ><h4>E-Mail Address</h4></label><br>  
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus >
                                 @error('email')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -24,7 +27,7 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label><br>
+                                <label for="password" class=" col-form-label text-dark"><h4>Password</h4></label><br>
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
@@ -34,17 +37,18 @@
 
                             </div>
                             <div class="form-group">
-                                <label for="remember" class="text-info">
-                                    <span>{{ __('Remember Me') }}</span> 
-                                    <span><input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}></span>
-                                </label><br>
+                                <label for="remember me" class="text-dark">
+                                    <span Align="">จดจำรหัสผ่าน </span> 
+                                    <span> <input type="checkbox"> {{ old('remember') ? 'checked' : '' }}</span>
+                                </label>
+                                <br>
 
                                 <button type="submit" class="col-md-12 btn btn-info">
-                                    {{ __('Login') }}
+                                    เข้าสู่ระบบ
                                 </button>
                                 @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
+                                    <a class="btn btn-link " href="{{ route('password.request') }}">
+                                        <h4> Forgot Your Password?</h4>
                                     </a>
                                 @endif
                             </div>
