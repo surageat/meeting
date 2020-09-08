@@ -40,13 +40,8 @@ Route::get('/Meeting', function() { return view('Admin.Meeting');  });
 Route::resource('offices','OfficeController');
 
 
-
-
-
-
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
 // Route::get('/', function() { return view('layouts.app');  });
-Route::get('/', function () { return view('login.login');});
+Route::get('/', function () { return view('login.login'); });
 
