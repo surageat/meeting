@@ -7,11 +7,11 @@
 <body>
     <div id="login">
         <div class="container">
-            <div id="login-row" class="row justify-content-center align-items-center">
+            <div id="login-row" class="row justify-content-center ">
                 <div id="login-column" class="col-md-6">
                     <div id="login-box" class="col-md-12">
 
-                        <form method="post" action="{{ route('login') }}">
+                        <form method="post" action="{{ route('login') }}" class="col-md5">
                             {{csrf_field() }}
                             <h3 class="text-center text-info">เข้าสู่ระบบเว็บไซต์การประชุม</h3>
                             <div class="form-group">
