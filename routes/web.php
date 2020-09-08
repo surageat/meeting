@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/invitation', function () {  return view('user.invitation');});
 Route::get('/profile', function () { return view('user.profile');});
-Route::get('/home', function () { return view('layout.homelayout');});
+// Route::get('/home', function () { return view('layout.homelayout');});
 Route::get('/comment', function () {  return view('user.comment');});
 Route::get('/agenda', function () { return view('user.agenda');});
 Route::get('/report', function () { return view('user.report');});
@@ -45,3 +45,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 // Route::get('/', function() { return view('layouts.app');  });
 Route::get('/', function () { return view('login.login'); });
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
