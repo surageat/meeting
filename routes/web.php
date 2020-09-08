@@ -24,7 +24,7 @@ Route::get('/agenda', function () { return view('user.agenda');});
 Route::get('/report', function () { return view('user.report');});
 Route::get('/document', function () {return view('user.document');});
 Route::get('/admin', function () { return view('layout.adminlayout');});
-Route::get('/login', function () { return view('login.login');});
+
 Route::get('/meeting', function () { return view('user.meeting');});
 Route::get('/addmeeting', function() {return view('Admin.addmeeting');});
 Route::get('/Meetinginvitation', function() { return view('Admin.Meetinginvitation');});
@@ -47,5 +47,6 @@ Route::resource('offices','OfficeController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/', function() { return view('layouts.app');  });
+// Route::get('/', function() { return view('layouts.app');  });
+Route::get('/', function () { return view('login.login');});
 
