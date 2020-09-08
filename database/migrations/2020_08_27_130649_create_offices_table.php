@@ -25,6 +25,8 @@ class CreateOfficesTable extends Migration
             $table->string('OF_tel');
             $table->string('OF_email')->uniqid();
             $table->string('OF_status');
+            $table->boolean('type')->default(0);
+            $table->rememberToken();
             $table->timestamps();
         });
     }
