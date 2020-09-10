@@ -18,11 +18,11 @@
                             {{csrf_field() }}
                             <h3 class="text-center text-primary ">เข้าสู่ระบบเว็บไซต์การประชุม</h3><br>
                             <div class="form-group">
-                                <label for="email" class="col-form-label text-dark ">
+                                <label  class="col-form-label text-dark ">
                                     <h4>E-Mail :</h4>
                                 </label><br>
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-                                @error('email')
+                                <input id="username" type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus>
+                                @error('username')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>

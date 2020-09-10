@@ -18,8 +18,8 @@
         <div Align="right">
                     <table class="table  tabel-bordered  table-striped">
                         <tr>
-                       
-                            <th>ชื่อผู้ใช้</th>
+                            <th>ผู้ใช้งาน</th>
+                            <th>ชื่อ</th>
                             <th>นามสกุล</th>
                             <th>ตำแหน่ง</th>
                             <th>แผนกงาน</th>
@@ -32,14 +32,14 @@
                         </tr>
                         @foreach($offices as $row)
                         <tr>
-                       
-                            <td>{{$row['OF_name']}}</td>
+                            <td>{{$row['username']}}</td>
+                            <td>{{$row['name']}}</td>
                             <td>{{$row['OF_lname']}}</td>
                             <td>{{$row['OF_rank']}}</td>
                             <td>{{$row['OF_department']}}</td>
                             <td>{{$row['OF_institution']}}</td>
                             <td>{{$row['OF_tel']}}</td>
-                            <td>{{$row['OF_email']}}</td>
+                            <td>{{$row['email']}}</td>
                             <td>{{$row['OF_status']}}</td>
                             <td>
                                 <a href="{{action('OfficeController@edit',$row['id'])}}" class="btn btn-warning"><i class="fa fa-wrench"></i></a>

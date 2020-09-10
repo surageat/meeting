@@ -18,18 +18,18 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label>Username</label>
-                            <input type="text" name="OF_user" class="form-control" required="" value="{{$offices->OF_user}}">
+                            <input type="text" name="username" class="form-control" required="" value="{{$offices->username}}">
                         </div>
                         <div class="form-group col-md-6">
                             <label>Password</label>
-                            <input type="password" name="OF_pass" class="form-control" required="" value="{{$offices->OF_pass}}">
+                            <input type="password" name="password" class="form-control" required="" value="{{$offices->password}}">
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label>ชื่อ</label>
-                            <input type="text" name="OF_name" class="form-control" required="" value="{{$offices->OF_name}}">
+                            <input type="text" name="name" class="form-control" required="" value="{{$offices->name}}">
                         </div>
                         <div class="form-group col-md-6">
                             <label>นามสกุล</label>
@@ -69,7 +69,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-6 ">
                             <label>อีเมลล์</label>
-                            <input type="email" name="OF_email" class="form-control" placeholder="example@email.com" required="" value="{{$offices->OF_email}}">
+                            <input type="email" name="email" class="form-control" placeholder="example@email.com" required="" value="{{$offices->email}}">
                         </div>
                         <div class="form-group col-md-6">
                             <label>สถานะ</label>

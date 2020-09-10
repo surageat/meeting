@@ -50,9 +50,18 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+
+            'username' => ['required', 'string' , 'max:255', 'unique:offices'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'name' => ['required', 'string', 'max:255'],
+            'OF_lname' => ['required', 'string',],
+            'OF_lname' => ['required', 'string', 'max:255' ],
+            'OF_rank' => ['required', 'string', 'max:255' ],
+            'OF_department' => ['required', 'string', 'max:255' ],
+            'OF_institution' => ['required', 'string'],
+            'OF_tel' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:offices'],
+            'OF_status' => ['required', 'string', 'max:255'],
         ]);
     }
 
@@ -65,9 +74,58 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
+            'username' => $data['username'],
             'password' => Hash::make($data['password']),
+            'name' => $data['name'],
+            'OF_lname' => $data['OF_lname'],
+            'OF_rank' => $data['OF_rank'],
+            'OF_department' => $data['OF_department'],
+            'OF_institution' => $data['OF_institution'],
+            'OF_tel' => $data['OF_tel'],
+            'email' => $data['email'],
+            'OF_status' => $data['OF_status'],
         ]);
     }
 }
+
+
+
+
+// protected function validator(array $data)
+// {
+//     return Validator::make($data, [
+//         
+//         'OF_pass' => ['required', 'string', 'min:8','confirmed'],
+//         'OF_name' => ['required', 'string' , 'max:255'],
+//         'OF_lname' => ['required', 'string', 'max:255' ],
+//         'OF_rank' => ['required', 'string', 'max:255' ],
+//         'OF_department' => ['required', 'string', 'max:255' ],
+//         'OF_institution' => ['required', 'string'],
+//         'OF_tel' => ['required', 'string', 'max:255'],
+//         'OF_email' => ['required', 'string', 'email', 'max:255', 'unique:offices'],
+//         'OF_status' => ['required', 'string', 'max:255'],
+
+//     ]);
+// }
+
+// /**
+//  * Create a new user instance after a valid registration.
+//  *
+//  * @param  array  $data
+//  * @return \App\User
+//  */
+// protected function create(array $data)
+// {
+//     return User::create([
+//         'OF_user' => $data['OF_user'],
+//         'OF_pass' => Hash::make($data['OF_pass']),
+//         'OF_name' => $data['OF_name'],
+//         'OF_lname' => $data['OF_lname'],
+//         'OF_rank' => $data['OF_rank'],
+//         'OF_department' => $data['OF_department'],
+//         'OF_institution' => $data['OF_institution'],
+//         'OF_tel' => $data['OF_tel'],
+//         'OF_email' => $data['OF_email'],
+//         'OF_status' => $data['OF_status'],
+//     ]);
+// }

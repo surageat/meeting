@@ -14,7 +14,17 @@
         // protected $guard = 'users';
 
         protected $fillable = [
-            'name', 'email', 'password',
+            'username',
+            'password',
+            'name',
+            'OF_lname',
+            'OF_rank',
+            'OF_department',
+            'OF_institution',
+            'OF_tel',
+            'email',
+            'OF_status',
+
         ];
 
         protected $hidden = [
@@ -25,5 +35,7 @@
             'email_verified_at' => 'datetime',
         ];
 
-        // protected $table ='offices';
+        protected $table ='admin';
+
+        protected $primaryKey = 'id';
     }
