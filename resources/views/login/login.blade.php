@@ -4,10 +4,10 @@
 <!------ Include the above in your HEAD tag ---------->
 <link href="{{asset('css/app.css')}}" rel="stylesheet">
 
-    
 
 
-<body  style="background-image: url({{url('img/background/b1.jpg')}})">
+
+<body style="background-image: url('img/background/b1.jpg')">
     <div id="login">
         <div class="container">
             <div id="login-row" class="row justify-content-center ">
@@ -18,8 +18,10 @@
                             {{csrf_field() }}
                             <h3 class="text-center text-primary ">เข้าสู่ระบบเว็บไซต์การประชุม</h3><br>
                             <div class="form-group">
-                                <label for="email" class="col-form-label text-dark " ><h4>E-Mail Address</h4></label><br>  
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus >
+                                <label for="email" class="col-form-label text-dark ">
+                                    <h4>E-Mail :</h4>
+                                </label><br>
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                                 @error('email')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -27,7 +29,9 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label for="password" class=" col-form-label text-dark"><h4>Password</h4></label><br>
+                                <label for="password" class=" col-form-label text-dark">
+                                    <h4>Password :</h4>
+                                </label><br>
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
@@ -37,20 +41,16 @@
 
                             </div>
                             <div class="form-group">
-                                <label for="remember me" class="text-dark">
-                                    <span Align="">จดจำรหัสผ่าน </span> 
-                                    <span> <input type="checkbox"> {{ old('remember') ? 'checked' : '' }}</span>
-                                </label>
-                                <br>
-
-                                <button type="submit" class="col-md-12 btn btn-info">
-                                    เข้าสู่ระบบ
-                                </button>
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link " href="{{ route('password.request') }}">
-                                        <h4> Forgot Your Password?</h4>
-                                    </a>
+                                <label for="remember me" class="text-dark"><h4>จดจำรหัสผ่าน</h4></label>
+                                 <input type="checkbox" {{ old('remember') ? 'checked' : '' }} >
+                                    @if (Route::has('password.request'))
+                                    <a class="btn btn-link col-md-8" href="{{ route('password.request') }}">
+                                    <h4> Forgot Your Password?</h4>
+                                </a>
                                 @endif
+                                
+                                <br>
+                                <button class="btn btn-primary col-md-12 " type="submit"><i class="fas fa-user-plus"></i>เข้าสู่ระบบ</button>
                             </div>
                         </form>
                     </div>
