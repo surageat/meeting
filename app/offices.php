@@ -7,19 +7,19 @@ use Illuminate\Database\Eloquent\Model;
 class offices extends Model
 {
 //
-  const ADMIN_TYPE = 2;
-  const USER_TYPE = 1;
-  const DEFAULT_TYPE = 0;
+//   const ADMIN_TYPE = "ผู้ดูแลระบบ";
+//   const USER_TYPE = "บุคคลากรภายใน";
+//   const DEFAULT_TYPE = "บุคคลากรภายนอก";
 
-//
-  public function isAdmin()
-  {
-    return $this->type === self::ADMIN_TYPE;
-  }
-  public function isUser()
-  {
-    return $this->type === self::USER_TYPE;
-  }
+// //
+//   public function isAdmin()
+//   {
+//     return $this->type === self::ADMIN_TYPE;
+//   }
+//   public function isUser()
+//   {
+//     return $this->type === self::USER_TYPE;
+//   }
 
 //
   protected $fillable = [
