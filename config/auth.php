@@ -71,6 +71,12 @@ return [
             'model' => App\User::class,
         ],
 
+        'offices' => [
+            'driver' => 'eloquent',
+            'model' => App\Office::class,
+        ],
+
+
         //  'users' => [
         //     'driver' => 'database',
         // 'table' => 'users',
