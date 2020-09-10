@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use App\Http\Controllers\Controller;
+use App\Providers\RouteServiceProvider;
 use App\offices;
 use Illuminate\Http\Request;
-use Validator;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class OfficeController extends Controller
 {
@@ -47,7 +50,7 @@ class OfficeController extends Controller
         if (!$validator->fails()) {
             $Office = new offices;
             $Office->OF_user = $request->input('OF_user');
-            $Office->OF_pass = \Hash::make($request->input('OF_pass'));
+            $Office->OF_pass = Hash::make($request->input('OF_pass'));
             $Office->OF_name = $request->input('OF_name');
             $Office->OF_lname = $request->input('OF_lname');
             $Office->OF_rank = $request->input('OF_rank');
@@ -110,8 +113,7 @@ class OfficeController extends Controller
             'OF_email' => ['required'],
             'OF_status' => ['required'],
         ]);
-        // $offices = offices::where('id', '=', $id)->first();
-        // $offices->update($request->all());
+        
 
         $offices = offices::find($id);
         $offices->OF_user = $request->get('OF_user');
@@ -127,19 +129,6 @@ class OfficeController extends Controller
         
         $offices->save();
         return redirect()->route('offices.index')->with('success', 'แก้ไขข้อมูลสำเร็จ');
-
-        //  $offices = offices::find($id);
-        //  $offices->OF_user = $request->OF_user;
-        //  $offices->OF_pass = $request->OF_pass;
-        //    $offices->OF_name = $request->OF_name;
-        //    $offices->OF_lname = $request->OF_lname;
-        //   $offices->OF_rank = $request->OF_rank;
-        //   $offices->OF_department = $request->OF_department;
-        //   $offices->OF_institution = $request->OF_institution;
-        //    $offices->OOF_tel = $request->OF_tel;
-        //  $offices->OF_email = $request->OF_email;
-        //  $offices->OF_status = $request->OF_status;
-
     }
 
     /**
@@ -154,4 +143,5 @@ class OfficeController extends Controller
         $Office->delete();
         return redirect()->route('offices.index')->with('success', 'ลบข้อมูลสำเร็จ');
     }
+
 }

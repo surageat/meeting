@@ -32,9 +32,12 @@ class offices extends Model
     'OF_institution',
     'OF_tel',
     'OF_email',
-    'OF_status'
+    'OF_status',
 
   ];
+  protected $hidden = [
+    'password', 'remember_token',
+];
   //
   protected $primaryKey = 'id';
 

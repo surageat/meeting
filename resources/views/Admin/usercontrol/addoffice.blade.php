@@ -62,7 +62,7 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label >เบอร์โทรศัพท์</label>
-                            <input type="text" name="OF_tel" class="form-control"   required="" >
+                            <input type="tel" name="OF_tel" class="form-control"   required="" >
                         </div>
                     </div>
                     <div class="form-row">

@@ -73,7 +73,7 @@ return [
 
         'offices' => [
             'driver' => 'eloquent',
-            'model' => App\Office::class,
+            'model' => App\offices::class,
         ],
 
 

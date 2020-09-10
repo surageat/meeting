@@ -27,7 +27,7 @@
 
         <div class="form-group  col-md-4 ">
             <label for="meeting" class="text-info">ครั้งที่</label><br>
-            <input type="text" name="meeting" id="meeting" class="form-control">
+            <input type="number" name="meeting" id="meeting" class="form-control">
         </div> 
     
         <div class="form-group  col-md-4 ">
@@ -41,6 +41,7 @@
             <input type="text" name="meeting" id="meeting" class="form-control">
         </div> 
         
+        <label for="meeting" class="text-info">เพิ่มไฟล์ ที่เกี่ยวข้องกับการประชุม</label><br>
         <div class="custom-file  col-md-2">
             <input type="file" class="custom-file-input" id="customFile">
             <label class="custom-file-label" for="customFile">เพิ่มไฟล์</label>

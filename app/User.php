@@ -11,7 +11,7 @@
     {
         use Notifiable;
 
-        protected $guard = 'users';
+        // protected $guard = 'users';
 
         protected $fillable = [
             'name', 'email', 'password',
@@ -24,4 +24,6 @@
         protected $casts = [
             'email_verified_at' => 'datetime',
         ];
+
+        // protected $table ='offices';
     }
