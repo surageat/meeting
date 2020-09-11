@@ -64,14 +64,14 @@
                     </div>
                 </div>
 
-            </li>
-            <div class="nav-item">
-                <a class="nav-link" href="meetingroom">
-                    <i class="fas fa-fw fa-file-word"></i>
-                    <span style="font-size: 135%; line-height: 1.5em;">ห้องประชุม</span></a>
 
-            </li>
-            
+                    </a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('room.create') }}">
+                            <i class="fas fa-fw fa-file-word"></i>
+                            <span style="font-size: 135%; line-height: 1.5em;">ห้องประชุม</span></a>
+                    </li>
+
             <li class="nav-item">
                 <a class="nav-link" href="meet_topic">
                     <i class="fas fa-fw fa-file-word"></i>

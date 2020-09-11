@@ -82,7 +82,6 @@
                         </div>
                     </div>
 
-
                     <div class=" text-center">
                         <button type="submit" class="btn btn-primary btn-lg"><i class="fa fa-inbox"></i>แก้ไขข้อมูล</button>
                         <button type="button" class="btn btn-danger btn-lg">ยกเลิก</button>
