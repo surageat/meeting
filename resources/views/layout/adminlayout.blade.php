@@ -58,12 +58,20 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item active" href="#" style="font-size: 125%; line-height: 1.5em;">เชิญประชุม</a>
-                        <a class="collapse-item active" href="addmeeting"
+                    <a class="collapse-item active" href="" style="font-size: 125%; line-height: 1.5em;">เชิญประชุม</a>
+                        <a class="collapse-item active" href="add_meeting"
                             style="font-size: 120%; line-height: 1.5em;">เพิ่มการประชุม</a>
                     </div>
                 </div>
+
             </li>
+            <div class="nav-item">
+                <a class="nav-link" href="meetingroom">
+                    <i class="fas fa-fw fa-file-word"></i>
+                    <span style="font-size: 135%; line-height: 1.5em;">ห้องประชุม</span></a>
+
+            </li>
+            
             <li class="nav-item">
                 <a class="nav-link" href="meet_topic">
                     <i class="fas fa-fw fa-file-word"></i>

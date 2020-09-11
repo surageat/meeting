@@ -15,10 +15,12 @@ class CreateMeetingsTable extends Migration
     {
         Schema::create('meetings', function (Blueprint $table) {
             $table->Increments('id');
-            $table->string('Meet_table');
             $table->string('Meet_heading');
             $table->string('Meet_date');
             $table->string('Meet_no');
+            $table->string('Meet_time');
+            $table->string('Meet_place');
+            $table->string('Meet_table');
             $table->integer('OF_id')->unsigned();
             $table->integer('MR_id')->unsigned();
             $table->timestamps();

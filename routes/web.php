@@ -26,7 +26,7 @@ Route::get('/document', function () {return view('user.document');});
 Route::get('/admin', function () { return view('layout.adminlayout');});
 
 Route::get('/meeting', function () { return view('user.meeting');});
-Route::get('/addmeeting', function() {return view('Admin.addmeeting');});
+
 Route::get('/Meetinginvitation', function() { return view('Admin.Meetinginvitation');});
 Route::get('/meet_topic', function() { return view('Admin.meet_topic');});
 Route::get('/report', function() { return view('Admin.report');});
@@ -36,9 +36,14 @@ Route::get('/document', function() { return view('Admin.document');});
 Route::get('/Meeting', function() { return view('Admin.Meeting');  });
 
 
+// controller meeting addmin
+Route::resource('add_meeting','MeetingController');
+
+
+
+
 
 Route::resource('offices','OfficeController');
-
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');

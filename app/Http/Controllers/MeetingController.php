@@ -1,0 +1,113 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use App\Http\Controllers\Controller;
+use App\Providers\RouteServiceProvider;
+use App\meetings;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+
+
+
+class MeetingController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $meetings = meetings::all()->toArray();
+        return view('Admin.add_meeting', compact('meetings'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        return view('Admin.add_meeting');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'Meet_table' => 'required',
+        ]);
+        if (!$validator->fails()) {
+            $Meetings = new meetings;
+            
+            $Meetings->Meet_heading = $request->input('Meet_heading');
+            $Meetings->Meet_date = $request->input('Meet_date');
+            $Meetings->Meet_no = $request->input('Meet_no');
+            $Meetings->Meet_place = $request->input('Meet_place');
+            $Meetings->Meet_table = $request->input('Meet_table');
+            $Meetings->Meet_table = $request->input('Meet_table');
+            $Meetings->OF_id = $request->input('OF_id');
+            $Meetings->MR_id = $request->input('MR_id');
+            
+            $Meetings->save();
+            return redirect()->route('meetings.create')->with('success', 'บันทึกสำเร็จ');
+        } else {
+            return redirect()->route('meetings.create')->with('warning', 'บันทึกไม่สำเร็จ');
+        }
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
+    }
+}
