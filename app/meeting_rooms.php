@@ -13,6 +13,7 @@ protected $fillable = [
   //
   protected $primaryKey = 'id';
 
+
 //
 }
 

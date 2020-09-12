@@ -22,10 +22,8 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label>ห้องประชุม</label>
-                            <input type="text" name="MR_name" class="form-control" required="" value="{{$meeting_rooms->MR_name}}">
+                            <input type="text" name="MR_name" class="form-control" required="" value="{{$meeting_rooms -> MR_name}}">
                         </div>
-                        
-
                     <div class=" text-center">
                         <button type="submit" class="btn btn-primary btn-lg"><i class="fa fa-inbox"></i>แก้ไขข้อมูล</button>
                         <button type="button" class="btn btn-danger btn-lg">ยกเลิก</button>
@@ -37,5 +35,4 @@
     </div>
 </div>
 @include('sweetalert::alert')
-
 @endsection
