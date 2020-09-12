@@ -197,6 +197,7 @@
                 <div class="container-fluid">
 
                     @yield('content')
+                    @yield('reportcontent')
 
                 </div>
                 <!-- /.container-fluid -->

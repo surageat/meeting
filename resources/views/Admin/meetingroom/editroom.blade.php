@@ -1,13 +1,17 @@
 @extends('layout.adminlayout')
 @section('header')
-    <table class="table table-hover">
-        <th>
-            <a href="{{ route('room.index') }}" class="btn btn-primary btn-lg" type="button">รายชื่อห้องประชุม </a>
-        </th>
-    </table>
+<div class="row page-titles">
+    <div class="col-md-6 col-8 align-self-center">
+        <h4 class="text-themecolor mb-0 mt-0">รายชื่อห้องประชุม</h4>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)">หน้าหลัก</a></li>
+            <li class="breadcrumb-item active">รายชื่อห้องประชุม</li>
+        </ol>
+    </div>
+</div>
+@endsection
 
-    @endsection
-    @section('content')
+   @section('content')
 <div class="row">
     <div class="col-lg-12">
         <div class="card card-outline-info">
@@ -17,8 +21,8 @@
                     {{ method_field('PATCH') }}
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label>MR_name</label>
-                            <input type="text" name="MR_name" class="form-control" required="" value="{{$meeting_room->MR_name}}">
+                            <label>ห้องประชุม</label>
+                            <input type="text" name="MR_name" class="form-control" required="" value="{{$meeting_rooms->MR_name}}">
                         </div>
                         
 
@@ -32,7 +36,6 @@
         </div>
     </div>
 </div>
-<!-- Row -->
 @include('sweetalert::alert')
 
 @endsection
