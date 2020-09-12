@@ -30,7 +30,8 @@ class RoomController extends Controller
      */
     public function create()
     {
-        return view('Admin.meetingroom.room');
+        $meeting_rooms = meeting_rooms::all();
+        return view('Admin.meetingroom.room')->with('meeting_rooms',$meeting_rooms);
     }
 
     /**

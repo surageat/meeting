@@ -37,11 +37,17 @@
             <input type="text" name="Meet_time"  class="form-control" required="">
         </div> 
 
-
         <div class="form-group  col-md-4 ">
             <label for="meeting" class="text-info">สถานที่</label><br>
             <input type="text" name="Meet_place"   class="form-control" required="">
         </div> 
+        <select type="text" name="OF_id"   class="form-control" required="" >
+            @foreach($meeting_rooms as $room)
+            <option value="{{$room->id}}">{{$room->MR_name}}</option>
+        </select>
+        <select type="text" name="MR_id"   class="form-control" required="" >
+            <option ></option>
+        </select>
         
         <div class="custom-file  col-md-2">
             <input type="file"  name="Meet_table" class="custom-file-input" id="customFile"  required="">
