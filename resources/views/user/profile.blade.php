@@ -21,9 +21,9 @@
 
                 <h4 class="text-muted p-t-30 db"> <i class="fa fa-users fa-sm fa-fw mr-2 text-black-400"></i>{{ Auth::user()->OF_rank }}</h4>
                 <h1 class="text-muted p-t-30 db"></h1>
-                <h4 class="text-muted p-t-30 db"> <i class="fa fa-address-card fa-sm fa-fw mr-2 text-black-400"></i>{{ Auth::user()->OF_department }}</h4>
+                <h4 class="text-muted p-t-30 db"> <i class="fa fa-database fa-sm fa-fw mr-2 text-black-400"></i>{{ Auth::user()->OF_department }}</h4>
 
-                <h4> <i class="fa fa-envelope fa-sm fa-fw mr-2 text-black-400"></i><a href="https://www.wrappixel.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="95fdf4fbfbf4f2fae3f0e7d5f2f8f4fcf9bbf6faf8">{{ Auth::user()->email}}</a></h4>
+                <h4> <i class="fa fa-envelope fa-sm fa-fw mr-2 text-black-400"></i><a href="{{url('https://accounts.google.com/signin/v2/identifier?service=accountsettings&continue=https%3A%2F%2Fmyaccount.google.com%2F&flowName=GlifWebSignIn&flowEntry=AddSession')}}" class="__cf_email__" >{{ Auth::user()->email}}</a></h4>
                 <h4 class="text-muted p-t-30 db"> <i class="fa fa-university fa-sm fa-fw mr-2 text-black-400"></i>{{ Auth::user()->OF_institution }}</h4>
 
                 <h4 class="text-muted p-t-30 db"> <i class="fa fa-mobile fa-sm fa-fw mr-2 text-black-400"></i> {{ Auth::user()->OF_tel }}</h4>
@@ -81,18 +81,14 @@
                                 <input type="text" name="OF_institution" class="form-control" required="" value="{{ Auth::user()->OF_institution }}">
                                 </div>
                             </div>
-                            <!-- <div class="form-group">
-                                <label class="col-md-12">username</label>
-                                <div class="col-md-12">
-                                    <input type="text" name="username" class="form-control" required="" value="{{ Auth::user()->username }}">
-                                </div>
-                            </div> -->
+                           
                             <div class="form-group">
                                 <label class="col-md-12">Password</label>
                                 <div class="col-md-12">
                                     <input type="password" name="password" class="form-control" required="" value="{{ Auth::user()->password}}">
                                 </div>
                             </div>
+                            
 
                             <div class="form-group">
                                 <label class="col-md-12">เบอร์โทรศัพท์</label>
