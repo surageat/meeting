@@ -9,24 +9,23 @@
                         <div class="card">
                             <div class="card-body">
                                 <center class="mt-4"> <img src="{{asset('img/user/user1.jpg')}}" class="img-circle" width="150" />
-                                    <h4 class="card-title mt-2">คมสันต์ ปะรินทร</h4>
-                                    <h6 class="card-subtitle">แม่บ้าน</h6>
+                                    <h3 ><a href="profile">{{ Auth::user()->name }}&nbsp;&nbsp; {{ Auth::user()->OF_lname }}</a></h3>
+                                    <h4 class="card-subtitle text-muted"><i class="fa fa-id-card fa-sm fa-fw mr-2 text-black-400"></i>{{ Auth::user()->OF_status }}</h4>
         
                                 </center>
                             </div>
                             <div>
                                 <hr> </div>
                             <div class="card-body"> 
-                                <small class="text-muted p-t-30 db">คณะ</small>
-                                <h6>วิทยาการสารสนเทศ</h6>
-                                <small class="text-muted p-t-30 db">สาขา</small>
-                                <h6>เทคโนโลยีสารสนเทศ</h6>
-                                <small class="text-muted">Email </small>
-                                <h6><a href="https://www.wrappixel.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="95fdf4fbfbf4f2fae3f0e7d5f2f8f4fcf9bbf6faf8">[email&#160;protected]</a></h6>
-                                <small class="text-muted p-t-30 db">Address</small>
-                                <h6>6/5 หกดพ อใกดกดก จ.หกดเหกเกด 154444</h6>
-                                <small class="text-muted p-t-30 db">Phone</small>
-                                <h6>+91 654 784 547</h6>
+                                
+                                <h4 class="text-muted p-t-30 db">  <i class="fa fa-users fa-sm fa-fw mr-2 text-black-400"></i>{{ Auth::user()->OF_rank }}</h4>
+                                <h1 class="text-muted p-t-30 db"></h1>
+                                <h4 class="text-muted p-t-30 db">  <i class="fa fa-address-card fa-sm fa-fw mr-2 text-black-400""></i>{{ Auth::user()->OF_department }}</h4>
+                               
+                                <h4> <i class="fa fa-envelope fa-sm fa-fw mr-2 text-black-400"></i><a href="https://www.wrappixel.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="95fdf4fbfbf4f2fae3f0e7d5f2f8f4fcf9bbf6faf8">{{ Auth::user()->email}}</a></h4>
+                                <h4  class="text-muted p-t-30 db"> <i class="fa fa-university fa-sm fa-fw mr-2 text-black-400"></i>{{ Auth::user()->OF_institution }}</h4>
+                                
+                                <h4 class="text-muted p-t-30 db"> <i class="fa fa-mobile fa-sm fa-fw mr-2 text-black-400"></i> {{ Auth::user()->OF_tel }}</h4>
                                 
                                 
                             </div>
