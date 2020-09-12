@@ -20,7 +20,7 @@ class RoomController extends Controller
     public function index()
     {
         $meeting_rooms = meeting_rooms::all()->toArray();
-        return view('Admin.meetingroom.room', compact('meeting_rooms'));
+        return view('Admin.meetingroom.editroom', compact('meeting_rooms'));
     }
 
     /**
@@ -30,7 +30,7 @@ class RoomController extends Controller
      */
     public function create()
     {
-        return view('Admin.meetingroom.room');
+        return view('Admin.meetingroom.addroom');
     }
 
     /**
@@ -75,8 +75,8 @@ class RoomController extends Controller
      */
     public function edit($id)
     {
-        $meeting_rooms = meeting_rooms::all()->toArray();
-        return view('Admin.meetingroom.room', compact('meeting_rooms'));
+        $meeting_rooms = meeting_rooms::all($id);
+        return view('Admin.meetingroom.editroom', compact('meeting_rooms','id'));
     }
 
     /**
@@ -90,15 +90,14 @@ class RoomController extends Controller
     {
         //
         //$this->validate($request, [
-            $validatedData = $request->validate([
+            $validateData = $request->validate([
             'MR_name' => ['required'],
             
         ]);
         
 
         $meeting_rooms = meeting_rooms::find($id);
-        $meeting_rooms->MR_name = $request->get('mr_mane');
-        
+        $meeting_rooms->MR_name = $request->get('MR_name');
         $meeting_rooms->save();
         return redirect()->route('room.index')->with('success', 'แก้ไขข้อมูลสำเร็จ');
     }
@@ -111,7 +110,7 @@ class RoomController extends Controller
      */
     public function destroy($id)
     {
-        $meeting_rooms = ofmeeting_rooms::find($id);
+        $meeting_rooms = meeting_rooms::find($id);
         $meeting_rooms->delete();
         return redirect()->route('room.index')->with('success', 'ลบข้อมูลสำเร็จ');
     }
