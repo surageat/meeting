@@ -35,7 +35,7 @@
             'email_verified_at' => 'datetime',
         ];
 
-        protected $table ='admin';
+        protected $table ='offices';
 
         protected $primaryKey = 'id';
     }

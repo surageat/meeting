@@ -25,7 +25,7 @@ class CreateofficesTable extends Migration
             $table->string('OF_tel');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('OF_status');
+            $table->string('OF_status')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

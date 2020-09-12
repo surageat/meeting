@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Auth;
 
 
 Route::get('/invitation', function () {  return view('user.invitation');});
-Route::get('/profile', function () { return view('user.profile');});
+
 // Route::get('/home', function () { return view('layout.homelayout');});
 Route::get('/comment', function () {  return view('user.comment');});
 Route::get('/agenda', function () { return view('user.agenda');});
@@ -42,9 +42,11 @@ Route::resource('addmeeting','MeetingController');
 //controler room admin
 Route::resource('room','RoomController'); 
 
-
-
 Route::resource('offices','OfficeController');
+
+
+//updateprofile user
+Route::resource('profile','ProfileController');
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
