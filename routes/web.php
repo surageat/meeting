@@ -37,7 +37,7 @@ Route::get('/Meeting', function() { return view('Admin.Meeting');  });
 
 
 // controller meeting addmin
-Route::resource('addmeeting','MeetingController');
+Route::resource('meeting','MeetingController');
 
 //controler room admin
 Route::resource('room','RoomController'); 

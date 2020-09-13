@@ -25,7 +25,7 @@ class MeetingController extends Controller
     public function index()
     {
         $meetings = meetings::all()->toArray();
-        return view('Admin.meetingcontrol.addmeeting', compact('meetings'));
+        return view('Admin.meetingcontrol.meeting', compact('meetings'));
     }
 
     /**
@@ -36,7 +36,7 @@ class MeetingController extends Controller
     public function create()
     {
         $meetings = meetings::all();
-        return view('Admin.meetingcontrol.addmeeting');
+        return view('Admin.meetingcontrol.addmeeting', compact('meetings'));
     }
 
     /**
@@ -53,6 +53,7 @@ class MeetingController extends Controller
            ]);
             if (!$validator->fails()) {
             $Meetings = new meetings;
+           
             $Meetings->Meet_heading = $request->input('Meet_heading');
             $Meetings->Meet_date = $request->input('Meet_date');
             $Meetings->Meet_no = $request->input('Meet_no');

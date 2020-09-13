@@ -41,24 +41,25 @@
             <label for="meeting" class="text-info">สถานที่</label><br>
             <input type="text" name="Meet_place"   class="form-control" required="">
         </div> 
-        <div>
+        <div class="form-group  col-md-4 ">
+            <label for="meeting" class="text-info">ผู้ดูแลการประชุม</label><br>
         <select type="text" name="OF_id"   class="form-control" required="" >
-            @foreach($offices  as $office)
-            <option value="{{$office->id}}">{{$office->OF_name}}</option>
+        @foreach($meetings as $meeting)
+            <option value="{{$meeting->id}}">{{$meeting->OF_name}}</option>
             @endforeach
         </select>
         </div>
-        <div>
+        <div class="form-group  col-md-4 ">
+            <label for="meeting" class="text-info">ห้องประชุม</label><br>
         <select type="text" name="MR_id"   class="form-control" required="" >
-        @foreach($meeting_rooms as $room)
-            <option value="{{$room->id}}">{{$room->MR_name}}</option>
+        @foreach($meetings as $meeting)
+            <option value="{{ $meeting->id}}">{{ $meeting->MR_name}}</option>
             @endforeach
         </select>
         </div>
         
         <div class="custom-file  col-md-2">
-            <input type="file"  name="Meet_table" class="custom-file-input" id="customFile"  required="">
-            <label class="custom-file-label" for="customFile">เพิ่มไฟล์</label>
+            <input type="file"  name="Meet_table"  id="input-b2" class="file" data-show-preview="false"  required="">
         </div>
 
          <div class=" text-center">

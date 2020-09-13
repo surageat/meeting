@@ -59,7 +59,7 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                     <a class="collapse-item active" href="" style="font-size: 125%; line-height: 1.5em;">เชิญประชุม</a>
-                        <a class="collapse-item active" href="addmeeting"
+                        <a class="collapse-item active" href="{{ route('meeting.create') }}"
                             style="font-size: 120%; line-height: 1.5em;">เพิ่มการประชุม</a>
                     </div>
                 </div>
