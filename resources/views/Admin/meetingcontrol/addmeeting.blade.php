@@ -60,6 +60,7 @@
         
         <div class="custom-file  col-md-2">
             <input type="file"  name="Meet_table"  id="input-b2" class="file" data-show-preview="false"  required="">
+
         </div>
 
          <div class=" text-center">
