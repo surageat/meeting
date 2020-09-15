@@ -12,7 +12,6 @@ protected $fillable = [
   ];
   //
   protected $primaryKey = 'id';
-  protected $table ='meeting_rooms';
 
 
 //

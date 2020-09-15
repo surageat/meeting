@@ -23,7 +23,7 @@ Route::get('/comment', function () {  return view('user.comment');});
 Route::get('/agenda', function () { return view('user.agenda');});
 Route::get('/report', function () { return view('user.report');});
 Route::get('/document', function () {return view('user.document');});
-Route::get('/admin', function () { return view('layout.adminlayout');});
+Route::get('/adminlayout', function () { return view('layout.adminlayout');});
 
 Route::get('/meeting', function () { return view('user.meeting');});
 
@@ -43,6 +43,7 @@ Route::resource('meeting','MeetingController');
 Route::resource('room','RoomController'); 
 
 Route::resource('offices','OfficeController');
+Route::resource('admin','AdminController');
 
 
 //updateprofile user

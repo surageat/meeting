@@ -21,11 +21,11 @@ class CreateMeetingsTable extends Migration
             $table->string('Meet_time');
             $table->string('Meet_place');
             $table->string('Meet_table');
-            $table->integer('OF_id')->unsigned();
+            $table->integer('admin_id')->unsigned();
             $table->integer('MR_id')->unsigned();
             $table->timestamps();
             
-            $table->foreign('OF_id')->references('id')->on('offices')->onDelete('cascade');
+            $table->foreign('admin_id')->references('id')->on('admin')->onDelete('cascade');
             $table->foreign('MR_id')->references('id')->on('meeting_rooms')->onDelete('cascade');
         });
     }

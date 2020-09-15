@@ -15,7 +15,7 @@ class meetings extends Model
     'Meet_time',
     'Meet_place',
     'Meet_table',
-    'OF_id',
+    'admin_id',
     'MR_id',
   ];
   //

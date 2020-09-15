@@ -10,15 +10,20 @@
                  </ol>
         </div>
     </div>
-
+    <table class="table table-hover">
+    <th>
+        <a href="{{route('meeting.index')}}" class="btn btn-primary btn-lg" type="button">รายการประชุม </a>
+    </th>
+</table>
+<br>
     @endsection
 
     @section('content')
 <div class="container ">
-    <form action="{{url('addmeeting')}}" method="post">
+    <form action="{{url('meeting')}}" method="post">
         {{csrf_field()}}
         <div class="form-group col-md-4">
-            <label for="date" class="text-info">หัวข้อเรื่อง</label><br>
+            <label for="date" class="text-info">หัวข้อเรื่องประชุม</label><br>
             <input type="text" name="Meet_heading"  class="form-control"  required="">
         </div> 
         
@@ -43,17 +48,19 @@
         </div> 
         <div class="form-group  col-md-4 ">
             <label for="meeting" class="text-info">ผู้ดูแลการประชุม</label><br>
-        <select type="text" name="OF_id"   class="form-control" required="" >
-        @foreach($meetings as $meeting)
-            <option value="{{$meeting->id}}">{{$meeting->OF_name}}</option>
+        <select type="text" name="admin_id"   class="form-control" required="" >
+            <option value="">เลือก</option>
+            @foreach($admin as $of)
+                <option value="{{$of->id}}">{{$of->name}}</option>
             @endforeach
         </select>
         </div>
         <div class="form-group  col-md-4 ">
             <label for="meeting" class="text-info">ห้องประชุม</label><br>
         <select type="text" name="MR_id"   class="form-control" required="" >
-        @foreach($meetings as $meeting)
-            <option value="{{ $meeting->id}}">{{ $meeting->MR_name}}</option>
+            <option value="">เลือก</option>
+            @foreach($meeting_rooms as $mr)
+                <option value="{{ $mr->id}}">{{ $mr->MR_name}}</option>
             @endforeach
         </select>
         </div>

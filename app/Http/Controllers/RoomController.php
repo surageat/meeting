@@ -20,7 +20,8 @@ class RoomController extends Controller
      */
     public function index()
     {
-        $meeting_rooms = meeting_rooms::all()->toArray();
+        
+        $meeting_rooms = meeting_rooms::get();
         return view('Admin.meetingroom.room', compact('meeting_rooms'));
     }
 
@@ -77,8 +78,8 @@ class RoomController extends Controller
     public function edit($id)
   
     {
-        $meeting_rooms = meeting_rooms::all($id);
-        return view('Admin.meetingroom.editroom', compact('meeting_rooms','id'));
+        $data['meeting_rooms'] = meeting_rooms::find($id);
+        return view('Admin.meetingroom.editroom',  $data);
     }
 
     /**

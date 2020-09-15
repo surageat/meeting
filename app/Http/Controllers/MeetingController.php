@@ -9,9 +9,10 @@ use App\Http\Controllers\Controller;
 use App\meeting_rooms;
 use App\Providers\RouteServiceProvider;
 use App\meetings;
-use App\offices;
+use App\admin;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 
 
 
@@ -24,8 +25,42 @@ class MeetingController extends Controller
      */
     public function index()
     {
-        $meetings = meetings::all()->toArray();
-        return view('Admin.meetingcontrol.meeting', compact('meetings'));
+        $data = DB::table('meetings')
+            ->join('admin', 'admin.id', 'meetings.admin_id')
+            ->join('meeting_rooms', 'meeting_rooms.id', 'meetings.MR_id')
+            ->select(
+                'meetings.Meet_heading',
+                'meetings.Meet_date',
+                'meetings.Meet_no',
+                'meetings.Meet_time',
+                'meetings.Meet_place',
+                'meetings.Meet_table',
+                'admin.name',
+                'meeting_rooms.name'
+            )
+            ->get();
+        // dd($data);
+        return view('Admin.meetingcontrol.meeting', $data);
+        //$per = Personals_info::all();
+        //dd($dep);
+        // $meet = DB::table('meetings')
+        //     ->join('meetings', 'admin.id', '=', 'meeting_rooms.id')
+        //     ->select(
+        //         'meetings.Meet_heading',
+        //         'meetings.Meet_date',
+        //         'meetings.Meet_no',
+        //         'meetings.Meet_time',
+        //         'meetings.Meet_place',
+        //         'meetings.Meet_table',
+        //         'admin.name',
+        //         'meeting_rooms.name'     
+        //     )
+        //     ->get();
+        // $data = array(
+        //     'meet' => $meet
+        // );
+        // //dd($data);
+        // return view('Admin.meetingcontrol.meeting', $data);
     }
 
     /**
@@ -35,8 +70,11 @@ class MeetingController extends Controller
      */
     public function create()
     {
-        $meetings = meetings::all();
-        return view('Admin.meetingcontrol.addmeeting', compact('meetings'));
+
+        $data['admin'] = admin::get();
+        $data['meeting_rooms'] = meeting_rooms::get();
+        // dd($data);
+        return view('Admin.meetingcontrol.addmeeting', $data);
     }
 
     /**
@@ -47,25 +85,25 @@ class MeetingController extends Controller
      */
     public function store(Request $request)
     {
-        
+
         $validator = Validator::make($request->all(), [
             'Meet_heading' => 'required',
-           ]);
-            if (!$validator->fails()) {
+        ]);
+        if (!$validator->fails()) {
             $Meetings = new meetings;
-           
+
             $Meetings->Meet_heading = $request->input('Meet_heading');
             $Meetings->Meet_date = $request->input('Meet_date');
             $Meetings->Meet_no = $request->input('Meet_no');
             $Meetings->Meet_time = $request->input('Meet_time');
             $Meetings->Meet_place = $request->input('Meet_place');
             $Meetings->Meet_table = $request->input('Meet_table');
-            $Meetings->OF_id = $request->input('OF_id');
+            $Meetings->admin_id = $request->input('admin_id');
             $Meetings->MR_id = $request->input('MR_id');
             $Meetings->save();
-            return redirect()->route('meetings.create')->with('success', 'บันทึกสำเร็จ');
+            return redirect()->route('meeting.create')->with('success', 'บันทึกสำเร็จ');
         } else {
-            return redirect()->route('meetings.create')->with('warning', 'บันทึกไม่สำเร็จ');
+            return redirect()->route('meeting.create')->with('warning', 'บันทึกไม่สำเร็จ');
         }
 
         // $Meeting = new meetings([
@@ -77,12 +115,12 @@ class MeetingController extends Controller
         //     'Meet_table'  => $request->get('Meet_table'),
         //     'OF_id' => $request->get('OF_id'),
         //     'MR_id'  => $request->gett('MR_id')
-            
-            
+
+
         // ]);
         //     $Meeting->save();
         //     return redirect()->route('meetings.create')->with('success', 'บันทึกสำเร็จ');
-        
+
 
     }
 
