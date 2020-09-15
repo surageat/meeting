@@ -41,26 +41,6 @@ class MeetingController extends Controller
             ->get();
         // dd($data);
         return view('Admin.meetingcontrol.meeting', $data);
-        //$per = Personals_info::all();
-        //dd($dep);
-        // $meet = DB::table('meetings')
-        //     ->join('meetings', 'admin.id', '=', 'meeting_rooms.id')
-        //     ->select(
-        //         'meetings.Meet_heading',
-        //         'meetings.Meet_date',
-        //         'meetings.Meet_no',
-        //         'meetings.Meet_time',
-        //         'meetings.Meet_place',
-        //         'meetings.Meet_table',
-        //         'admin.name',
-        //         'meeting_rooms.name'     
-        //     )
-        //     ->get();
-        // $data = array(
-        //     'meet' => $meet
-        // );
-        // //dd($data);
-        // return view('Admin.meetingcontrol.meeting', $data);
     }
 
     /**
