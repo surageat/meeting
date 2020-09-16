@@ -24,6 +24,7 @@
                     <th>ครั้งที่</th>
                     <th>เวลา</th>
                     <th>สถานที่</th>
+                    <th>ตารางการประชุม</th>
                     <th>ผู้ดูแลการประชุม</th>
                     <th>ห้องประชุม</th>
                     <th>แก้ไข</th>
@@ -32,20 +33,21 @@
                 <tbody>
                     @foreach($Meeting as $r)
                     <tr>
-                        <td>{{ $r['Meet_heading']}}</td>
-                        <td>{{ $r['Meet_date']}}</td>
-                        <td>{{ $r['Meet_no']}}</td>
-                        <td>{{ $r['Meet_time']}}</td>
-                        <td>{{ $r['Meet_place']}}</td>
-                        <td>{{ $r['Meet_table']}}</td>
-                        <td>{{ $r['name']}}</td>
-                        <td>{{ $r['MR_name']}}</td>
+                    
+                        <td>{{ $r->Meet_heading}}</td>
+                        <td>{{ $r->Meet_date}}</td>
+                        <td>{{ $r->Meet_no}}</td>
+                        <td>{{ $r->Meet_time}}</td>
+                        <td>{{ $r->Meet_place}}</td>
+                        <td>{{ $r->Meet_table}}</td>
+                        <td>{{ $r->name}}</td>
+                        <td>{{ $r->MR_name}}</td>
 
                         <td>
-                            <a href="{{action('MeetingController@edit',  $r['id']) }}" class="btn btn-warning"><i class="fa fa-wrench"></i></a>
+                            <a href="{{action('MeetingController@edit',$r->id )}}" class="btn btn-warning"><i class="fa fa-wrench"></i></a>
                         </td>
                         <td>
-                            <form method="post" class="delete_form" action="{{ action('MeetingController@destroy',  $r['id']) }}">
+                            <form method="post" class="delete_form" action="{{ action('MeetingController@destroy',$r->id ) }}">
                                 {{ csrf_field() }}
                                 <input type="hidden" name="_method" value="DELETE">
                                 <button class="btn btn-danger" type="submit"><i class="fa fa-trash"></i></button>

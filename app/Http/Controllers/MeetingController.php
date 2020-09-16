@@ -29,6 +29,7 @@ class MeetingController extends Controller
             ->join('admin', 'meetings.admin_id', 'admin.id')
             ->join('meeting_rooms', 'meetings.MR_id', 'meeting_rooms.id')
             ->select(
+                'meetings.id',
                 'meetings.Meet_heading',
                 'meetings.Meet_date',
                 'meetings.Meet_no',
@@ -129,10 +130,11 @@ class MeetingController extends Controller
     public function edit($id)
     {
        
-        $data['admin'] = admin::find($id);
-        $data['meeting_rooms'] = meeting_rooms::find($id);
-        dd($data);
-        return view('Admin.meetingcontrol.editmeeting',  $data);
+        $data['Meeting'] = meetings::find($id);
+        $data['admin'] = admin::get();
+        $data['meeting_rooms'] = meeting_rooms::get();
+        // dd($data);
+        return view('Admin.meetingcontrol.editmeeting', $data);
     }
 
     /**
@@ -144,7 +146,21 @@ class MeetingController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+         //
+        //$this->validate($request, [
+            $validatedData = $request->validate([
+                  
+            ]);
+            $Meeting = meetings::find($id);
+            $Meeting->Meet_heading = $request->get('Meet_heading');
+            $Meeting->Meet_date = $request->get('Meet_date');
+            $Meeting->Meet_no = $request->get('Meet_no');
+            $Meeting->Meet_place = $request->get('Meet_place');
+            $Meeting->Meet_table = $request->get('Meet_table');
+            $Meeting->admin_id = $request->get('admin_id');
+            $Meeting->MR_id = $request->get('MR_id');
+            $Meeting->save();
+            return redirect()->route('meeting.index')->with('success', 'แก้ไขข้อมูลสำเร็จ');
     }
 
     /**
@@ -155,6 +171,8 @@ class MeetingController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $meeting = meetings::find($id);
+        $meeting->delete();
+        return redirect()->route('meeting.index')->with('success', 'ลบข้อมูลสำเร็จ');
     }
 }
