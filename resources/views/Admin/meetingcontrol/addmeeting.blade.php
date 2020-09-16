@@ -1,5 +1,6 @@
 @extends('layout.adminlayout')
 @section('header')
+
     <div class="row page-titles">
         <div class="col-md-6 col-8 align-self-center">
             <h3 class="text-themecolor mb-0 mt-0">เพิ่มการประชุม</h3>
@@ -9,50 +10,72 @@
                  </ol>
         </div>
     </div>
-
+    <table class="table table-hover">
+    <th>
+        <a href="{{route('meeting.index')}}" class="btn btn-primary btn-lg" type="button">รายการประชุม </a>
+    </th>
+</table>
+<br>
     @endsection
 
     @section('content')
 <div class="container ">
-    <form>
+    <form action="{{url('meeting')}}" method="post">
+        {{csrf_field()}}
         <div class="form-group col-md-4">
-            <label for="date" class="text-info">เรื่อง</label><br>
-            <input type="text" name="meeting" id="date" class="form-control">
+            <label for="date" class="text-info">หัวข้อเรื่องประชุม</label><br>
+            <input type="text" name="Meet_heading"  class="form-control"  required="">
         </div> 
         
         <div class="form-group  col-md-4 ">
             <label for="meeting" class="text-info">วันที่</label><br>
-            <input type="date" name="meeting" id="meeting" class="form-control">
+            <input type="date" name="Meet_date"   class="form-control" required="">
         </div> 
 
         <div class="form-group  col-md-4 ">
             <label for="meeting" class="text-info">ครั้งที่</label><br>
-            <input type="number" name="meeting" id="meeting" class="form-control">
+            <input type="text" name="Meet_no"  class="form-control"   required="">
         </div> 
     
         <div class="form-group  col-md-4 ">
             <label for="meeting" class="text-info">เวลา</label><br>
-            <input type="text" name="meeting" id="meeting" class="form-control">
+            <input type="text" name="Meet_time"  class="form-control" required="">
         </div> 
-
 
         <div class="form-group  col-md-4 ">
             <label for="meeting" class="text-info">สถานที่</label><br>
-            <input type="text" name="meeting" id="meeting" class="form-control">
+            <input type="text" name="Meet_place"   class="form-control" required="">
         </div> 
+        <div class="form-group  col-md-4 ">
+            <label for="meeting" class="text-info">ผู้ดูแลการประชุม</label><br>
+        <select type="text" name="admin_id"   class="form-control" required="" >
+            <option value="">เลือก</option>
+            @foreach($admin as $of)
+                <option value="{{$of->id}}">{{$of->name}}</option>
+            @endforeach
+        </select>
+        </div>
+        <div class="form-group  col-md-4 ">
+            <label for="meeting" class="text-info">ห้องประชุม</label><br>
+        <select type="text" name="MR_id"   class="form-control" required="" >
+            <option value="">เลือก</option>
+            @foreach($meeting_rooms as $mr)
+                <option value="{{ $mr->id}}">{{ $mr->MR_name}}</option>
+            @endforeach
+        </select>
+        </div>
         
-        <label for="meeting" class="text-info">เพิ่มไฟล์ ที่เกี่ยวข้องกับการประชุม</label><br>
         <div class="custom-file  col-md-2">
-            <input type="file" class="custom-file-input" id="customFile">
-            <label class="custom-file-label" for="customFile">เพิ่มไฟล์</label>
+            <input type="file"  name="Meet_table"  id="input-b2" class="file" data-show-preview="false"  required="">
+
         </div>
 
-        <div class="text-center">
-            <button type="button" class="btn btn-primary">ยืนยัน</button>
-            <button type="button" class="btn btn-danger" >ยกเลิก</button>
+         <div class=" text-center">
+            <button type="submit" class="btn btn-primary btn-lg"><i class="fa fa-inbox"></i>เพิ่มข้อมูล</button>
+            <button type="button" class="btn btn-danger btn-lg">ยกเลิก</button>
         </div>
      </form>
 </div>
-
+    @include('sweetalert::alert')
     @endsection
     

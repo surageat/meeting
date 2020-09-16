@@ -59,7 +59,7 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                     <a class="collapse-item active" href="" style="font-size: 125%; line-height: 1.5em;">เชิญประชุม</a>
-                        <a class="collapse-item active" href="add_meeting"
+                        <a class="collapse-item active" href="{{ route('meeting.create') }}"
                             style="font-size: 120%; line-height: 1.5em;">เพิ่มการประชุม</a>
                     </div>
                 </div>
@@ -166,16 +166,8 @@
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="profile">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    โปรไฟล์
-                                </a>
-                                <a class="dropdown-item" href="profile">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    แก้ไขโปรไฟล์
-                                </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="login">
+                                <a class="dropdown-item" href="/">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     ออกจากระบบ
                                 </a>

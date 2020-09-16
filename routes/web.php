@@ -17,13 +17,13 @@ use Illuminate\Support\Facades\Auth;
 
 
 Route::get('/invitation', function () {  return view('user.invitation');});
-Route::get('/profile', function () { return view('user.profile');});
+
 // Route::get('/home', function () { return view('layout.homelayout');});
 Route::get('/comment', function () {  return view('user.comment');});
 Route::get('/agenda', function () { return view('user.agenda');});
 Route::get('/report', function () { return view('user.report');});
 Route::get('/document', function () {return view('user.document');});
-Route::get('/admin', function () { return view('layout.adminlayout');});
+Route::get('/adminlayout', function () { return view('layout.adminlayout');});
 
 Route::get('/meeting', function () { return view('user.meeting');});
 
@@ -37,14 +37,17 @@ Route::get('/Meeting', function() { return view('Admin.Meeting');  });
 
 
 // controller meeting addmin
-Route::resource('add_meeting','MeetingController');
+Route::resource('meeting','MeetingController');
 
 //controler room admin
 Route::resource('room','RoomController'); 
 
-
-
 Route::resource('offices','OfficeController');
+Route::resource('admin','AdminController');
+
+
+//updateprofile user
+Route::resource('profile','ProfileController');
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');

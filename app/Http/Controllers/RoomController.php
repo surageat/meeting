@@ -9,6 +9,7 @@ use App\Providers\RouteServiceProvider;
 use App\meeting_rooms;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Foundation\Validation\ValidatesRequests;
 
 class RoomController extends Controller
 {
@@ -19,8 +20,9 @@ class RoomController extends Controller
      */
     public function index()
     {
-        $meeting_rooms = meeting_rooms::all()->toArray();
-        return view('Admin.meetingroom.editroom', compact('meeting_rooms'));
+        
+        $meeting_rooms = meeting_rooms::get();
+        return view('Admin.meetingroom.room', compact('meeting_rooms'));
     }
 
     /**
@@ -30,7 +32,7 @@ class RoomController extends Controller
      */
     public function create()
     {
-        return view('Admin.meetingroom.addroom');
+        return view('Admin.meetingroom.addroom')->with('meeting_rooms');
     }
 
     /**
@@ -64,7 +66,7 @@ class RoomController extends Controller
      */
     public function show($id)
     {
-        //
+     
     }
 
     /**
@@ -74,9 +76,10 @@ class RoomController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
+  
     {
-        $meeting_rooms = meeting_rooms::all($id);
-        return view('Admin.meetingroom.editroom', compact('meeting_rooms','id'));
+        $data['meeting_rooms'] = meeting_rooms::find($id);
+        return view('Admin.meetingroom.editroom',  $data);
     }
 
     /**
@@ -90,12 +93,9 @@ class RoomController extends Controller
     {
         //
         //$this->validate($request, [
-            $validateData = $request->validate([
-            'MR_name' => ['required'],
-            
+            $validatedData = $request->validate([
+            'MR_name' => ['required'],    
         ]);
-        
-
         $meeting_rooms = meeting_rooms::find($id);
         $meeting_rooms->MR_name = $request->get('MR_name');
         $meeting_rooms->save();

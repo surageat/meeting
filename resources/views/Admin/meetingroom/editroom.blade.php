@@ -16,26 +16,23 @@
     <div class="col-lg-12">
         <div class="card card-outline-info">
             <div class="card-body">
-                <form action="{{action('RoomController@update',$id)}}" method="post">
+                <form action="{{action('RoomController@update',$meeting_rooms->id)}}" method="post">
                     {{csrf_field()}}
                     {{ method_field('PATCH') }}
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
+                    <div class="form-group col-md-4">
                             <label>ห้องประชุม</label>
                             <input type="text" name="MR_name" class="form-control" required="" value="{{$meeting_rooms->MR_name}}">
                         </div>
-                        
-
-                    <div class=" text-center">
-                        <button type="submit" class="btn btn-primary btn-lg"><i class="fa fa-inbox"></i>แก้ไขข้อมูล</button>
-                        <button type="button" class="btn btn-danger btn-lg">ยกเลิก</button>
+                        <div class=" text-center">
+                            <button type="submit" class="btn btn-primary btn-lg"><i class="fa fa-inbox"></i>แก้ไขข้อมูล</button>
+                            <button type="button" class="btn btn-danger btn-lg">ยกเลิก</button>
+                        </div>
                     </div>
                     <input type="hidden" name="_method" value="PATCH">
                 </form>
+
             </div>
         </div>
     </div>
-</div>
-@include('sweetalert::alert')
-
-@endsection
+    @include('sweetalert::alert')
+    @endsection

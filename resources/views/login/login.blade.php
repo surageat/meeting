@@ -19,7 +19,7 @@
                             <h3 class="text-center text-primary ">เข้าสู่ระบบเว็บไซต์การประชุม</h3><br>
                             <div class="form-group">
                                 <label  class="col-form-label text-dark ">
-                                    <h4>E-Mail :</h4>
+                                 <h4>UserName</h4>
                                 </label><br>
                                 <input id="username" type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus>
                                 @error('username')

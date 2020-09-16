@@ -8,6 +8,7 @@
 <br>
 @endsection
 @section('content')
+@include('sweetalert::alert')
 <div class="row">
     <div class="col-lg-12">
         <div class="card card-outline-info">

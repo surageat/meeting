@@ -6,10 +6,13 @@ use Illuminate\Http\Request;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use App\Http\Controllers\Controller;
+use App\meeting_rooms;
 use App\Providers\RouteServiceProvider;
 use App\meetings;
+use App\admin;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 
 
 
@@ -22,8 +25,27 @@ class MeetingController extends Controller
      */
     public function index()
     {
-        $meetings = meetings::all()->toArray();
-        return view('Admin.add_meeting', compact('meetings'));
+        $data['Meeting'] = DB::table('meetings')
+            ->join('admin', 'meetings.admin_id', 'admin.id')
+            ->join('meeting_rooms', 'meetings.MR_id', 'meeting_rooms.id')
+            ->select(
+                'meetings.Meet_heading',
+                'meetings.Meet_date',
+                'meetings.Meet_no',
+                'meetings.Meet_time',
+                'meetings.Meet_place',
+                'meetings.Meet_table',
+                'admin.name',
+                'meeting_rooms.MR_name'
+            )->get();
+            // echo $Data;
+            // $Meeting = array(
+            //     'data' => $data
+            // );
+              
+        // dd($data);
+        return view('Admin.meetingcontrol.meeting', $data);
+    
     }
 
     /**
@@ -33,7 +55,11 @@ class MeetingController extends Controller
      */
     public function create()
     {
-        return view('Admin.add_meeting');
+
+        $data['admin'] = admin::get();
+        $data['meeting_rooms'] = meeting_rooms::get();
+        // dd($data);
+        return view('Admin.meetingcontrol.addmeeting', $data);
     }
 
     /**
@@ -44,26 +70,43 @@ class MeetingController extends Controller
      */
     public function store(Request $request)
     {
+
         $validator = Validator::make($request->all(), [
-            'Meet_table' => 'required',
+            'Meet_heading' => 'required',
         ]);
         if (!$validator->fails()) {
             $Meetings = new meetings;
-            
+
             $Meetings->Meet_heading = $request->input('Meet_heading');
             $Meetings->Meet_date = $request->input('Meet_date');
             $Meetings->Meet_no = $request->input('Meet_no');
+            $Meetings->Meet_time = $request->input('Meet_time');
             $Meetings->Meet_place = $request->input('Meet_place');
             $Meetings->Meet_table = $request->input('Meet_table');
-            $Meetings->Meet_table = $request->input('Meet_table');
-            $Meetings->OF_id = $request->input('OF_id');
+            $Meetings->admin_id = $request->input('admin_id');
             $Meetings->MR_id = $request->input('MR_id');
-            
             $Meetings->save();
-            return redirect()->route('meetings.create')->with('success', 'บันทึกสำเร็จ');
+            return redirect()->route('meeting.create')->with('success', 'บันทึกสำเร็จ');
         } else {
-            return redirect()->route('meetings.create')->with('warning', 'บันทึกไม่สำเร็จ');
+            return redirect()->route('meeting.create')->with('warning', 'บันทึกไม่สำเร็จ');
         }
+
+        // $Meeting = new meetings([
+        //     'Meet_heading' => $request->get('Meet_heading'),
+        //     'Meet_date'=> $request->get('Meet_date'),
+        //     'Meet_no' => $request->get('Meet_no'),
+        //     'Meet_time'  => $request->get('Meet_time'),
+        //     'Meet_place'  => $request->get('Meet_place'),
+        //     'Meet_table'  => $request->get('Meet_table'),
+        //     'OF_id' => $request->get('OF_id'),
+        //     'MR_id'  => $request->gett('MR_id')
+
+
+        // ]);
+        //     $Meeting->save();
+        //     return redirect()->route('meetings.create')->with('success', 'บันทึกสำเร็จ');
+
+
     }
 
     /**
@@ -85,7 +128,11 @@ class MeetingController extends Controller
      */
     public function edit($id)
     {
-        //
+       
+        $data['admin'] = admin::find($id);
+        $data['meeting_rooms'] = meeting_rooms::find($id);
+        dd($data);
+        return view('Admin.meetingcontrol.editmeeting',  $data);
     }
 
     /**

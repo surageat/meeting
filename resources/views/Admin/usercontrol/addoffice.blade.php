@@ -3,6 +3,7 @@
 <table class="table table-hover">
     <th>
         <a href="{{route('offices.index')}}" class="btn btn-primary btn-lg" type="button">รายชื่อผู้ใช้งานระบบ </a>
+        <a href="{{route('admin.create')}}" class="btn btn-success btn-lg" type="button">เพิ่มผู้ดูแลระบบ </a>
     </th>
 </table>
 <br>
