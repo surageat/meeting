@@ -25,9 +25,9 @@ class MeetingController extends Controller
      */
     public function index()
     {
-        $data = DB::table('meetings')
-            ->join('admin', 'admin.id', 'meetings.admin_id')
-            ->join('meeting_rooms', 'meeting_rooms.id', 'meetings.MR_id')
+        $data['Meeting'] = DB::table('meetings')
+            ->join('admin', 'meetings.admin_id', 'admin.id')
+            ->join('meeting_rooms', 'meetings.MR_id', 'meeting_rooms.id')
             ->select(
                 'meetings.Meet_heading',
                 'meetings.Meet_date',
@@ -36,11 +36,16 @@ class MeetingController extends Controller
                 'meetings.Meet_place',
                 'meetings.Meet_table',
                 'admin.name',
-                'meeting_rooms.name'
-            )
-            ->get();
+                'meeting_rooms.MR_name'
+            )->get();
+            // echo $Data;
+            // $Meeting = array(
+            //     'data' => $data
+            // );
+              
         // dd($data);
         return view('Admin.meetingcontrol.meeting', $data);
+    
     }
 
     /**
@@ -123,7 +128,11 @@ class MeetingController extends Controller
      */
     public function edit($id)
     {
-        //
+       
+        $data['admin'] = admin::find($id);
+        $data['meeting_rooms'] = meeting_rooms::find($id);
+        dd($data);
+        return view('Admin.meetingcontrol.editmeeting',  $data);
     }
 
     /**
