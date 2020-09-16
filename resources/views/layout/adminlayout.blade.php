@@ -72,11 +72,15 @@
                             <span style="font-size: 135%; line-height: 1.5em;">ห้องประชุม</span></a>
                     </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="meet_topic">
-                    <i class="fas fa-fw fa-file-word"></i>
-                    <span style="font-size: 135%; line-height: 1.5em;">วาระการประชุม</span></a>
-            </li>
+
+                </a>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('agenda.create') }}">
+                        <i class="fas fa-fw fa-file-word"></i>
+                        <span style="font-size: 135%; line-height: 1.5em;">วาระการประชุม</span></a>
+                </li>
+            </a>
+            
 
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('offices.create') }}">

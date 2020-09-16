@@ -28,7 +28,7 @@ Route::get('/adminlayout', function () { return view('layout.adminlayout');});
 Route::get('/meeting', function () { return view('user.meeting');});
 
 Route::get('/Meetinginvitation', function() { return view('Admin.Meetinginvitation');});
-Route::get('/meet_topic', function() { return view('Admin.meet_topic');});
+//Route::get('/meet_topic', function() { return view('Admin.meet_topic');});
 Route::get('/report', function() { return view('Admin.report');});
 Route::get('/comment', function() {  return view('Admin.comment');});
 Route::get('/report_pdf', function() { return view('Admin.report_pdf');});
@@ -41,6 +41,10 @@ Route::resource('meeting','MeetingController');
 
 //controler room admin
 Route::resource('room','RoomController'); 
+
+//controler agenda admin
+Route::resource('agenda','AgendasContronller'); 
+
 
 Route::resource('offices','OfficeController');
 Route::resource('admin','AdminController');

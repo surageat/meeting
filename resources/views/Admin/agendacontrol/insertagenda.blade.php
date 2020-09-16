@@ -2,7 +2,7 @@
 @section('header')
 <table class="table table-hover">
     <th>
-        <a href="{{route('room.index')}}" class="btn btn-primary btn-lg" type="button">ห้องประชุม </a>
+        <a href="{{route('agenda.index')}}" class="btn btn-primary btn-lg" type="button">วาระการประชุม </a>
     </th>
 </table>
 <br>
@@ -10,16 +10,16 @@
 
 @section('content')
     <div class="container ">
-        <form method="post" action="{{ url('room') }}">
+        <form method="post" action="{{ url('agenda') }}">
             {{ csrf_field() }}
             <div class="form-group col-md-4">
-                <label for="date" class="text-info">ชื่อห้องประชุม</label><br>
-                <input type="text" name="MR_name" id="MR_name" class="form-control">
+                <label for="date" class="text-info">ชื่อวาระประชุม</label><br>
+                <input type="text" name="MA_agenda" id="MA_agenda" class="form-control">
             </div>
 
             <div class="form-group  col-md-12">
-                <label for="details" class="text-info">รายละเอียดวาระ</label><br>
-                <textarea class="form-control"  name="MR_name" id="exampleFormControlTextarea1" rows="10"></textarea>
+                <label for="details" class="text-info">รายละเอียด</label><br>
+                <textarea class="form-control" name="MA_details"  id="exampleFormControlTextarea1" rows="15"></textarea>
             </div> 
 
             <div class=" text-center">
