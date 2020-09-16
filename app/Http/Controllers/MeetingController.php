@@ -134,7 +134,7 @@ class MeetingController extends Controller
         $data['admin'] = admin::get();
         $data['meeting_rooms'] = meeting_rooms::get();
         // dd($data);
-        return view('Admin.meetingcontrol.editmeeting',  $data);
+        return view('Admin.meetingcontrol.editmeeting', $data);
     }
 
     /**
@@ -149,18 +149,17 @@ class MeetingController extends Controller
          //
         //$this->validate($request, [
             $validatedData = $request->validate([
-                'MR_name' => ['required'],    
+                  
             ]);
-            $meeting = meetings::find($id);
-            $meeting->Meet_heading = $request->get('Meet_heading');
-            $meeting->Meet_date = $request->get('Meet_date');
-            $meeting->Meet_no = $request->get('Meet_no');
-            $meeting->Meet_time = $request->get('Meet_time');
-            $meeting->Meet_place = $request->get('Meet_place');
-            $meeting->Meet_table = $request->get('Meet_table');
-            $meeting->admin_id = $request->get('admin_id');
-            $meeting->MR_id = $request->get('MR_id');
-            $meeting->save();
+            $Meeting = meetings::find($id);
+            $Meeting->Meet_heading = $request->get('Meet_heading');
+            $Meeting->Meet_date = $request->get('Meet_date');
+            $Meeting->Meet_no = $request->get('Meet_no');
+            $Meeting->Meet_place = $request->get('Meet_place');
+            $Meeting->Meet_table = $request->get('Meet_table');
+            $Meeting->admin_id = $request->get('admin_id');
+            $Meeting->MR_id = $request->get('MR_id');
+            $Meeting->save();
             return redirect()->route('meeting.index')->with('success', 'แก้ไขข้อมูลสำเร็จ');
     }
 
