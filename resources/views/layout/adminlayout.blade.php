@@ -5,11 +5,10 @@
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="description" content="">
     <meta name="author" content="">
-      <!-- CSRF Token -->
-      <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Favicon icon -->
     <link rel="icon" type="img/png" sizes="16x16" href="{{ asset('img/logo-icon.png') }}">
@@ -17,10 +16,8 @@
 
     <!-- Custom fonts for this template-->
     <link href="{{ asset('all/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <!-- Custom styles for this template-->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -51,36 +48,34 @@
             <hr class="sidebar-divider">
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="meeting" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link collapsed" href="meeting" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-file"></i>
                     <span style="font-size: 135%; line-height: 1.5em;">การประชุม</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item active" href="" style="font-size: 125%; line-height: 1.5em;">เชิญประชุม</a>
-                        <a class="collapse-item active" href="{{ route('meeting.create') }}"
-                            style="font-size: 120%; line-height: 1.5em;">เพิ่มการประชุม</a>
+                        <a class="collapse-item active" href="" style="font-size: 125%; line-height: 1.5em;">เชิญประชุม</a>
+                        <a class="collapse-item active" href="{{ route('meeting.create') }}" style="font-size: 120%; line-height: 1.5em;">เพิ่มการประชุม</a>
                     </div>
                 </div>
 
 
-                    </a>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('room.create') }}">
-                            <i class="fas fa-fw fa-file-word"></i>
-                            <span style="font-size: 135%; line-height: 1.5em;">ห้องประชุม</span></a>
-                    </li>
-
-
                 </a>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('agenda.create') }}">
-                        <i class="fas fa-fw fa-file-word"></i>
-                        <span style="font-size: 135%; line-height: 1.5em;">วาระการประชุม</span></a>
-                </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('room.create') }}">
+                    <i class="fas fa-fw fa-file-word"></i>
+                    <span style="font-size: 135%; line-height: 1.5em;">ห้องประชุม</span></a>
+            </li>
+
+
             </a>
-            
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('agenda.create') }}">
+                    <i class="fas fa-fw fa-file-word"></i>
+                    <span style="font-size: 135%; line-height: 1.5em;">วาระการประชุม</span></a>
+            </li>
+            </a>
+
 
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('offices.create') }}">
@@ -90,41 +85,31 @@
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="report" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
+                <a class="nav-link collapsed" href="report" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-file-pdf"></i>
                     <span style="font-size: 125%; line-height: 1.5em;">รายงานการประชุม</span>
                 </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
+                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
 
-                        <a class="collapse-item active" href="report"
-                            style="font-size: 125%; line-height: 1.5em;">รายงานการประชุม</a>
-                        <a class="collapse-item active" href="comment"
-                            style="font-size: 125%; line-height: 1.5em;">ข้อคิดเห็น</a>
-                        <a class="collapse-item active" href="report_pdf"
-                            style="font-size: 125%; line-height: 1.5em;">รายงาน PDF</a>
+                        <a class="collapse-item active" href="report" style="font-size: 125%; line-height: 1.5em;">รายงานการประชุม</a>
+                        <a class="collapse-item active" href="comment" style="font-size: 125%; line-height: 1.5em;">ข้อคิดเห็น</a>
+                        <a class="collapse-item active" href="report_pdf" style="font-size: 125%; line-height: 1.5em;">รายงาน PDF</a>
                     </div>
                 </div>
             </li>
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item active">
-                <a class="nav-link" href="document" data-toggle="collapse" data-target="#collapsePages"
-                    aria-expanded="true" aria-controls="collapsePages">
+                <a class="nav-link" href="document" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-fw fa-folder"></i>
                     <span style="font-size: 135%; line-height: 1.5em;">เอกสารการ</span>
                 </a>
-                <div id="collapsePages" class="collapse show" aria-labelledby="headingPages"
-                    data-parent="#accordionSidebar">
+                <div id="collapsePages" class="collapse show" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
 
-                        <a class="collapse-item active" href="blank.html"
-                            style="font-size: 125%; line-height: 1.5em;">การประชุม</a>
-                        <a class="collapse-item active" href="blank.html"
-                            style="font-size: 125%; line-height: 1.5em;">วาระการประชุม</a>
-                        <a class="collapse-item active" href="blank.html"
-                            style="font-size: 125%; line-height: 1.5em;">รายงานการประชุม</a>
+                        <a class="collapse-item active" href="blank.html" style="font-size: 125%; line-height: 1.5em;">การประชุม</a>
+                        <a class="collapse-item active" href="blank.html" style="font-size: 125%; line-height: 1.5em;">วาระการประชุม</a>
+                        <a class="collapse-item active" href="blank.html" style="font-size: 125%; line-height: 1.5em;">รายงานการประชุม</a>
                     </div>
             </li>
 
@@ -162,14 +147,12 @@
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 ">แม่ใหญ่สี บ่มักบักมี่</span>
                                 <img class="img-profile rounded-circle" src="{{ asset('img/user/user1.jpg') }}">
                             </a>
                             <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="userDropdown">
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="/">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>

@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\meeting_rooms;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
-use App\meeting_rooms;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Support\Facades\DB;
 
 class RoomController extends Controller
 {
@@ -18,11 +19,14 @@ class RoomController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         
-        $meeting_rooms = meeting_rooms::get();
-        return view('Admin.meetingroom.room', compact('meeting_rooms'));
+        if($request->ajax())
+        {
+            $data['meeting_rooms'] = DB::table('meeting_rooms')->simplePaginate(10);
+            return view('Admin.meetingroom.addroom',$data)->render();
+        }
     }
 
     /**
@@ -32,7 +36,10 @@ class RoomController extends Controller
      */
     public function create()
     {
-        return view('Admin.meetingroom.addroom')->with('meeting_rooms');
+
+        $data['meeting_rooms'] = DB::table('meeting_rooms')->simplePaginate(10);
+        return view('Admin.meetingroom.addroom',  $data);
+        return view('Admin.meetingroom.addroom');
     }
 
     /**
@@ -91,15 +98,14 @@ class RoomController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-        //$this->validate($request, [
+        
             $validatedData = $request->validate([
             'MR_name' => ['required'],    
         ]);
         $meeting_rooms = meeting_rooms::find($id);
         $meeting_rooms->MR_name = $request->get('MR_name');
         $meeting_rooms->save();
-        return redirect()->route('room.index')->with('success', 'แก้ไขข้อมูลสำเร็จ');
+        return redirect()->route('room.create')->with('success', 'แก้ไขข้อมูลสำเร็จ');
     }
 
     /**
@@ -112,6 +118,6 @@ class RoomController extends Controller
     {
         $meeting_rooms = meeting_rooms::find($id);
         $meeting_rooms->delete();
-        return redirect()->route('room.index')->with('success', 'ลบข้อมูลสำเร็จ');
+        return redirect()->route('room.create')->with('success', 'ลบข้อมูลสำเร็จ');
     }
 }

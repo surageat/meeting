@@ -3,27 +3,31 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\meeting_agendas;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
-use App\meeting_agendas;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Support\Facades\DB;
 
-
-class AgendasContronller extends Controller
+class AgendasController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        
-        $meeting_agendas = meeting_agendas::get();
-        return view('Admin.agendacontrol.agenda', compact('meeting_agendas'));
+        $data['meeting_agendas'] = DB::table('meeting_agendas')->simplePaginate(10);
+        return view('Admin.agendacontrol.agenda', $data);
+        if($request->ajax())
+        {
+            $data['meeting_agendas'] = DB::table('meeting_agendas')->simplePaginate(10);
+        return view('Admin.agendacontrol.agenda', $data);
+        }
     }
 
     /**
@@ -32,8 +36,10 @@ class AgendasContronller extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
+    
     {
-        return view('Admin.agendacontrol.insertagenda')->with('meeting_agendas');
+        
+        return view('Admin.agendacontrol.insertagenda');
     }
 
     /**
@@ -47,6 +53,7 @@ class AgendasContronller extends Controller
         {
             $validator = Validator::make($request->all(), [
                 'MA_agenda' => 'required',
+               
             ]);
             if (!$validator->fails()) {
                 $meeting_agendas = new meeting_agendas;
@@ -80,8 +87,8 @@ class AgendasContronller extends Controller
     public function edit($id)
   
     {
-        $data['meeting_agendas'] = meeting_agendas::find($id);
-        return view('Admin.agendacontrol.editagenda',  $data);
+        $meeting_agendas = meeting_agendas::find($id);
+        return  view('Admin.agendacontrol.editagenda', compact('meeting_agendas', 'id'));
     }
 
     /**
@@ -96,11 +103,14 @@ class AgendasContronller extends Controller
         //
         //$this->validate($request, [
             $validatedData = $request->validate([
-            'MA_agenda' => ['required'],    
+                'MA_agenda' => 'required',
+                'MA_details' => 'required',
+
         ]);
         $meeting_agendas = meeting_agendas::find($id);
-        $meeting_agendas->MA_agenda = $meeting_agendas->get('MA_agenda');
-        $meeting_agendas->MA_details = $meeting_agendas->get('MA_details');
+        $meeting_agendas->MA_agenda = $request->get('MA_agenda');
+        $meeting_agendas->MA_details = $request->get('MA_details');
+        $meeting_agendas->id = $id;
         $meeting_agendas->save();
         return redirect()->route('agenda.index')->with('success', 'แก้ไขข้อมูลสำเร็จ');
     }

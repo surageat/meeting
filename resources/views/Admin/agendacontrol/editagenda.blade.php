@@ -16,25 +16,27 @@
     <div class="col-lg-12">
         <div class="card card-outline-info">
             <div class="card-body">
-                <form action="{{action('AgendasContronller@update',$meeting_agendas->id)}}" method="post">
+                <form action="{{action('AgendasController@update',$meeting_agendas->id)}}" method="post">
                     {{csrf_field()}}
-                    {{ method_field('PATCH') }}
-                    <div class="form-group col-md-4">
-                            <label>ชื่อวาระประชุม</label>
-                            <input type="text" name="MA_agenda" class="form-control" required="" value="{{$meeting_agendas->MA_agenda}}">
-                            <label>รายละเอียดวาระประชุม</label>
-                            <input type="text" name="MA_details" class="form-control"  required="" value="{{$meeting_agendas->MA_details}}">
-                        </div>
-                        <div class=" text-center">
-                            <button type="submit" class="btn btn-primary btn-lg"><i class="fa fa-inbox"></i>แก้ไขข้อมูล</button>
-                            <button type="button" class="btn btn-danger btn-lg">ยกเลิก</button>
-                        </div>
+                    {{ method_field('PATCH')}}
+                    <div class="form-group ">
+                        <label class="text-info">ชื่อวาระประชุม</label>
+                        <input type="text" name="MA_agenda" class="form-control col-md-4" required="" value="{{$meeting_agendas->MA_agenda}}">
                     </div>
-                    <input type="hidden" name="_method" value="PATCH">
-                </form>
-
+                    <div class="form-group  col-md-12">
+                        <label class="text-info">รายละเอียด</label><br>
+                        <textarea class="form-control" name="MA_details" id="message" rows="15" >{{$meeting_agendas->MA_details}}</textarea>
+                    </div>
+                    <div class=" text-center">
+                        <button type="submit" class="btn btn-primary btn-lg"><i class="fa fa-inbox"></i>แก้ไขข้อมูล</button>
+                        <button type="button" class="btn btn-danger btn-lg">ยกเลิก</button>
+                    </div>
+            
+            <input type="hidden" name="_method" value="PATCH">
+            </form>
             </div>
         </div>
     </div>
-    @include('sweetalert::alert')
-    @endsection
+</div>
+@include('sweetalert::alert')
+@endsection

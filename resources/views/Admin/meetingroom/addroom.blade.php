@@ -1,35 +1,83 @@
 @extends('layout.adminlayout')
-@section('header')
-<table class="table table-hover">
-    <th>
-        <a href="{{route('room.index')}}" class="btn btn-primary btn-lg" type="button">ห้องประชุม </a>
-    </th>
-</table>
-<br>
+
+@section('script')
+<script>
+    $(document).ready(function() {
+
+        $(document).on('click', '.page-link', function(event) {
+            event.preventDefault();
+            var page = $(this).attr('href').split('page=')[1];
+            fetch_data(page);
+        });
+
+        function fetch_data(page) {
+            var _token = $("input[name=_token]").val();
+            $.ajax({
+                url: "{{ route('room.index') }}",
+                method: "POST",
+                data: {
+                    _token: _token,
+                    page: page
+                },
+                success: function(data) {
+                    $('#table_data').html(data);
+                }
+            });
+        }
+
+    });
+</script>
+
 @endsection
-
 @section('content')
-    <div class="container ">
-        <form method="post" action="{{ url('room') }}">
-            {{ csrf_field() }}
-            <div class="form-group col-md-4">
-                <label for="date" class="text-info">ชื่อห้องประชุม</label><br>
-                <input type="text" name="MR_name" id="MR_name" class="form-control">
-            </div>
+<div class="container ">
+    <form method="post" action="{{ url('room') }}">
+        {{ csrf_field() }}
+        <div class="form-group col-md-4">
+            <label for="date" class="text-info">ชื่อห้องประชุม</label><br>
+            <input type="text" name="MR_name" id="MR_name" class="form-control">
+        </div>
+        <div class=" text-center">
+            <button type="submit" class="btn btn-primary btn-lg"><i class="fa fa-inbox"></i>เพิ่มข้อมูล</button>
+            <button type="button" class="btn btn-danger btn-lg">ยกเลิก</button>
+        </div>
+    </form>
+</div>
+<br>
+<br>
 
-            <div class="form-group  col-md-12">
-                <label for="details" class="text-info">รายละเอียดวาระ</label><br>
-                <textarea class="form-control"  name="MR_name" id="exampleFormControlTextarea1" rows="10"></textarea>
-            </div> 
+<div class="table-responsive">
+    <table class="table  tabel-bordered  table-striped">
+        <tr>
+            <th>id</th>
+            <th>ชื่อห้องประชุม</th>
+            <th>แก้ไข</th>
+            <th>ลบ</th>
+        </tr>
 
-            <div class=" text-center">
-                <button type="submit" class="btn btn-primary btn-lg"><i class="fa fa-inbox"></i>เพิ่มข้อมูล</button>
-                <button type="button" class="btn btn-danger btn-lg">ยกเลิก</button>
-            </div>
-        </form>
-    </div>
-    
-    @include('sweetalert::alert')
-    @endsection
+        @foreach($meeting_rooms as $row)
+        <tr>
+            <td>{{ $row->id}}</td>
+            <td>{{ $row->MR_name}}</td>
 
+            <td>
+                <a href="{{action('RoomController@edit', $row->id) }}" class="btn btn-warning"><i class="fa fa-wrench"></i></a>
+            </td>
+            <td>
+                <form method="post" class="delete_form" action="{{ action('RoomController@destroy', $row->id) }}">
+                    {{ csrf_field() }}
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button class="btn btn-danger" type="submit"><i class="fa fa-trash"></i></button>
+                </form>
+            </td>
+        </tr>
 
+        @endforeach
+        
+    </table>
+    {!! $meeting_rooms ->links() !!}
+   
+</div>
+
+@include('sweetalert::alert')
+@endsection
