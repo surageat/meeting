@@ -125,6 +125,6 @@ class AgendasController extends Controller
     {
         $meeting_agendas = meeting_agendas::find($id);
         $meeting_agendas->delete();
-        return redirect()->route('agenda.index')->with('success', 'ลบข้อมูลสำเร็จ');
+        return redirect()->route('agenda.index')->with('success', 'ลบข้อมูลสำเร็จ',true);
     }
 }

@@ -48,13 +48,13 @@
             <hr class="sidebar-divider">
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="meeting" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link collapsed" href="meeting" data-toggle="collapse" data-target="#collapse" aria-expanded="true" aria-controls="collapse">
                     <i class="fas fa-fw fa-file"></i>
                     <span style="font-size: 135%; line-height: 1.5em;">การประชุม</span>
                 </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div id="collapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item active" href="" style="font-size: 125%; line-height: 1.5em;">เชิญประชุม</a>
+                        <a class="collapse-item active" href="" style="font-size: 125%; line-height: 1.5em;" >เชิญประชุม</a>
                         <a class="collapse-item active" href="{{ route('meeting.create') }}" style="font-size: 120%; line-height: 1.5em;">เพิ่มการประชุม</a>
                     </div>
                 </div>

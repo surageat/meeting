@@ -16,7 +16,7 @@
             $.ajax({
                 url: "{{ route('agenda.index') }}",
                 method: "POST",
-                data: {data,
+                data: {
                     _token: _token,
                     page: page
                 },
@@ -27,6 +27,7 @@
         }
 
     });
+
 </script>
 
 @endsection
@@ -68,8 +69,8 @@
                     <td>
                         <form method="post" class="delete_form" action="{{ action('AgendasController@destroy', $row->id) }}">
                             {{ csrf_field() }}
-                            <input type="hidden" name="_method" value="DELETE">
-                            <button class="btn btn-danger" type="submit"><i class="fa fa-trash"></i></button>
+                            <input type="hidden" name="_method" value="DELETE" class="delete_form">
+                            <button class="btn btn-danger " type="submit"><i class="fa fa-trash"></i></button>
                         </form>
                     </td>
                 </tr>
