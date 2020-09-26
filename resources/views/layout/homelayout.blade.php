@@ -56,14 +56,14 @@
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item active" href="meeting" style="font-size: 125%; line-height: 1.5em;">เรื่องการประชุม</a>
+            <a class="collapse-item active" href="meetings" style="font-size: 125%; line-height: 1.5em;">เรื่องการประชุม</a>
             <a class="collapse-item active" href="document" style="font-size: 125%; line-height: 1.5em;">เอกสารการประชุม</a>
             <a class="collapse-item active" href="blank.html" style="font-size: 120%; line-height: 1.5em;">ดาวน์โหลดเอกสาร</a>
           </div>
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="agenda">
+        <a class="nav-link" href="agendas">
           <i class="fas fa-fw fa-file-word"></i>
           <span style="font-size: 135%; line-height: 1.5em;">วาระการประชุม</span></a>
       </li>
@@ -78,7 +78,7 @@
           <div class="bg-white py-2 collapse-inner rounded">
 
             <a class="collapse-item active" href="report" style="font-size: 125%; line-height: 1.5em;">รายงานการประชุม</a>
-            <a class="collapse-item active" href="blank.html" style="font-size: 125%; line-height: 1.5em;">ข้อคิดเห็นรายงาน</a>
+            <a class="collapse-item active" href="report_comment" style="font-size: 125%; line-height: 1.5em;">ข้อคิดเห็นรายงาน</a>
             <a class="collapse-item active" href="blank.html" style="font-size: 125%; line-height: 1.5em;">รายงาน PDF</a>
           </div>
         </div>
@@ -86,10 +86,11 @@
 
       <!-- Nav Item - บันทึกข้อคิดเห็น -->
       <li class="nav-item">
-        <a class="nav-link" href="comment">
-          <i class="fas fa-fw fa-comments"></i>
-          <span style="font-size: 135%; line-height: 1.5em;">ข้อคิดเห็น</span></a>
-      </li>
+        <a class="nav-link" href="{{ route('comments.create') }}">
+            <i class="fas fa-fw fa-file-word"></i>
+            <span style="font-size: 135%; line-height: 1.5em;">ข้อคิดเห็น</span></a>
+    </li>
+
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item active">
