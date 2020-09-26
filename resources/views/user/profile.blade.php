@@ -9,9 +9,8 @@
         <div class="card">
             <div class="card-body">
                 <center class="mt-4"> <img src="{{asset('img/user/user1.jpg')}}" class="img-circle" width="150" />
-                    <h3><a href="{{ route('profile.create') }}">{{ Auth::user()->name }}&nbsp;&nbsp; {{ Auth::user()->OF_lname }}</a></h3>
+                    <h3><a href="{{ route('profile.index') }}">{{ Auth::user()->name }}&nbsp;&nbsp; {{ Auth::user()->OF_lname }}</a></h3>
                     <h4 class="card-subtitle text-muted"><i class="fa fa-id-card fa-sm fa-fw mr-2 text-black-400"></i>{{ Auth::user()->OF_status }}</h4>
-
                 </center>
             </div>
             <div>
@@ -33,18 +32,12 @@
         </div>
     </div>
     <!-- Column -->
+
     <!-- Column -->
     <div class="col-md-12 col-lg-8 col-xlg-9">
         <div class="card">
-            <!-- Nav tabs -->
-            <ul class="nav nav-tabs profile-tab" role="tablist">
-                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#settings" role="tab">แก้ไขข้อมูลส่วนตัว</a> </li>
-            </ul>
-
-            <div class="tab-content">
-                <div class="tab-pane" id="settings" role="tabpanel">
                     <div class="card-body">
-                        <form class="form-horizontal form-material" action="{{action('ProfileController@update','id')}}" method="post">
+                        <form  action="{{action('ProfileController@update','id')}}" method="post">
                             {{csrf_field()}}
                             {{ method_field('PATCH') }}
                             <div class="form-group">
@@ -108,12 +101,11 @@
                                     <button class="btn btn-success" type="submit">Update Profile</button>
                                 </div>
                             </div>
+                            <input type="hidden" name="_method" value="PATCH">
                         </form>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
     <!-- Column -->
 </div>
 <!-- Row -->
