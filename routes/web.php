@@ -19,13 +19,13 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/invitation', function () {  return view('user.invitation');});
 
 // Route::get('/home', function () { return view('layout.homelayout');});
-Route::get('/comment', function () {  return view('user.comment');});
-Route::get('/agendas', function () { return view('user.agenda');});
+//Route::get('/comments', function () {  return view('user.comments');});
+Route::get('/agendas', function () { return view('user.agendas');});
 Route::get('/report', function () { return view('user.report');});
 Route::get('/document', function () {return view('user.document');});
+Route::get('/report_comment', function () { return view('user.report_comment');});
 Route::get('/adminlayout', function () { return view('layout.adminlayout');});
-
-Route::get('/meeting', function () { return view('user.meeting');});
+Route::get('/meetings', function () { return view('user.meetings');});
 
 Route::get('/Meetinginvitation', function() { return view('Admin.Meetinginvitation');});
 //Route::get('/meet_topic', function() { return view('Admin.meet_topic');});
@@ -39,11 +39,15 @@ Route::get('/Meeting', function() { return view('Admin.Meeting');  });
 // controller meeting addmin
 Route::resource('meeting','MeetingController');
 
-//controler room admin
+//controller room admin
 Route::resource('room','RoomController'); 
 
-//controler agenda admin
+//controller agenda admin
 Route::resource('agenda','AgendasController'); 
+
+//controller comments user
+Route::resource('comments','CommentsController'); 
+
 
 
 Route::resource('offices','OfficeController');

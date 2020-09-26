@@ -1,6 +1,5 @@
 @extends('layout.adminlayout')
 
-
 @section('script')
 <script>
     $(document).ready(function() {

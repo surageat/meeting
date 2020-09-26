@@ -1,7 +1,4 @@
 @extends('layout.adminlayout')
-
-
-
 @section('header')
 <table class="table table-hover">
     <th>
