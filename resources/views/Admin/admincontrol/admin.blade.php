@@ -1,4 +1,5 @@
 @extends('layout.adminlayout')
+
 @section('header')
 <div class="row page-titles">
     <div class="col-md-6 col-8 align-self-center">
@@ -15,8 +16,7 @@
 
 <div class="col-md-12">
     <br><br>
-    <div Align="right">
-        <table class="table  tabel-bordered  table-striped">
+        <table id="example" class="table table-striped table-bordered" style="width:100%">
             <tr>
                 <th>ผู้ใช้</th>
                 <th>ชื่อ</th>
@@ -49,7 +49,6 @@
             </tr>
             @endforeach
         </table>
-    </div>
 </div>
 
 @include('sweetalert::alert')

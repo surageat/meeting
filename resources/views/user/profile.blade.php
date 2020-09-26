@@ -9,7 +9,7 @@
         <div class="card">
             <div class="card-body">
                 <center class="mt-4"> <img src="{{asset('img/user/user1.jpg')}}" class="img-circle" width="150" />
-                    <h3><a href="profile">{{ Auth::user()->name }}&nbsp;&nbsp; {{ Auth::user()->OF_lname }}</a></h3>
+                    <h3><a href="{{ route('profile.create') }}">{{ Auth::user()->name }}&nbsp;&nbsp; {{ Auth::user()->OF_lname }}</a></h3>
                     <h4 class="card-subtitle text-muted"><i class="fa fa-id-card fa-sm fa-fw mr-2 text-black-400"></i>{{ Auth::user()->OF_status }}</h4>
 
                 </center>
@@ -23,7 +23,7 @@
                 <h1 class="text-muted p-t-30 db"></h1>
                 <h4 class="text-muted p-t-30 db"> <i class="fa fa-database fa-sm fa-fw mr-2 text-black-400"></i>{{ Auth::user()->OF_department }}</h4>
 
-                <h4> <i class="fa fa-envelope fa-sm fa-fw mr-2 text-black-400"></i><a href="{{url('https://accounts.google.com/signin/v2/identifier?service=accountsettings&continue=https%3A%2F%2Fmyaccount.google.com%2F&flowName=GlifWebSignIn&flowEntry=AddSession')}}" class="__cf_email__" >{{ Auth::user()->email}}</a></h4>
+                <h4> <i class="fa fa-envelope fa-sm fa-fw mr-2 text-black-400"></i><a href="{{url('https://accounts.google.com/signin/v2/identifier?service=accountsettings&continue=https%3A%2F%2Fmyaccount.google.com%2F&flowName=GlifWebSignIn&flowEntry=AddSession')}}" class="__cf_email__">{{ Auth::user()->email}}</a></h4>
                 <h4 class="text-muted p-t-30 db"> <i class="fa fa-university fa-sm fa-fw mr-2 text-black-400"></i>{{ Auth::user()->OF_institution }}</h4>
 
                 <h4 class="text-muted p-t-30 db"> <i class="fa fa-mobile fa-sm fa-fw mr-2 text-black-400"></i> {{ Auth::user()->OF_tel }}</h4>
@@ -56,7 +56,7 @@
                             <div class="form-group">
                                 <label class="col-md-12">นามสกุล</label>
                                 <div class="col-md-12">
-                                    <input type="text"  class="form-control form-control-line"  name="OF_lname"required="" value="{{ Auth::user()->OF_lname }}">
+                                    <input type="text" class="form-control form-control-line" name="OF_lname" required="" value="{{ Auth::user()->OF_lname }}">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -65,8 +65,8 @@
                             </div>
                             <div class="form-group ">
                                 <label>แผนกงาน</label>
-                                <select class="col-sm-12" name="OF_department" required="" value="{{ Auth::user()->OF_department }}">
-                                    <option>---ไม่ระบุ-----</option>
+                                <select class="col-sm-12" name="OF_department" required="" >
+                                    <option>{{ Auth::user()->OF_department }}</option>
                                     <option>เทคโนโลยีสารสนเทศ</option>
                                     <option>ภูมิสารสนเทศ</option>
                                     <option>สารสนเทศศาสตร์</option>
@@ -78,28 +78,28 @@
                             <div class="form-group">
                                 <label for="example-email" class="col-md-12">หน่วยงาน</label>
                                 <div class="col-md-12">
-                                <input type="text" name="OF_institution" class="form-control" required="" value="{{ Auth::user()->OF_institution }}">
+                                    <input type="text" name="OF_institution" class="form-control" required="" value="{{ Auth::user()->OF_institution }}">
                                 </div>
                             </div>
-                           
+
                             <div class="form-group">
                                 <label class="col-md-12">Password</label>
                                 <div class="col-md-12">
                                     <input type="password" name="password" class="form-control" required="" value="{{ Auth::user()->password}}">
                                 </div>
                             </div>
-                            
+
 
                             <div class="form-group">
                                 <label class="col-md-12">เบอร์โทรศัพท์</label>
                                 <div class="col-md-12">
-                                <input type="text" name="OF_tel" class="form-control" required="" value="{{ Auth::user()->OF_tel }}">
+                                    <input type="text" name="OF_tel" class="form-control" required="" value="{{ Auth::user()->OF_tel }}">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-12">E-mail</label>
                                 <div class="col-md-12">
-                                <input type="email" name="email" class="form-control"  required="" value="{{ Auth::user()->email }}">
+                                    <input type="email" name="email" class="form-control" required="" value="{{ Auth::user()->email }}">
                                 </div>
                             </div>
 

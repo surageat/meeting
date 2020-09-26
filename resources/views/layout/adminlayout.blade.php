@@ -18,6 +18,8 @@
     <link href="{{ asset('all/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="{{asset('css/dataTable.bootstrap4.min.css') }}"></script>
+
     <!-- Custom styles for this template-->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -209,6 +211,9 @@
     <!-- Bootstrap core JavaScript-->
     <script src="{{ asset('all/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('all/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{asset('js/dataTable.bootstrap4.min.js') }}"></script>
+    <script src="{{asset('js/jquery.dataTables.min.js') }}"></script>
+
 
     <!-- Core plugin JavaScript-->
     <script src="{{ asset('all/jquery-easing/jquery.easing.min.js') }}"></script>
