@@ -1,34 +1,4 @@
 @extends('layout.adminlayout')
-
-@section('script')
-<script>
-    $(document).ready(function() {
-
-        $(document).on('click', '.page-link', function(event) {
-            event.preventDefault();
-            var page = $(this).attr('href').split('page=')[1];
-            fetch_data(page);
-        });
-
-        function fetch_data(page) {
-            var _token = $("input[name=_token]").val();
-            $.ajax({
-                url: "{{ route('room.index') }}",
-                method: "POST",
-                data: {
-                    _token: _token,
-                    page: page
-                },
-                success: function(data) {
-                    $('#table_data').html(data);
-                }
-            });
-        }
-
-    });
-</script>
-
-@endsection
 @section('content')
 <div class="container ">
     <form method="post" action="{{ url('room') }}">
@@ -79,5 +49,4 @@
    
 </div>
 
-@include('sweetalert::alert')
 @endsection

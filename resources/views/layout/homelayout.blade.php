@@ -6,10 +6,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+  <!-- CSRF Token -->
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <!-- Favicon icon -->
   <link rel="icon" type="img/png" sizes="16x16" href="{{asset('img/logo-icon.png')}}">
@@ -22,7 +21,25 @@
   <!-- Custom styles for this template-->
   <link href="{{asset('css/sb-admin-2.min.css')}}" rel="stylesheet">
   <link href="{{asset('css/app.css')}}" rel="stylesheet">
-  @yield('script')
+  <script>
+    $(document).on('ready', function() {
+          $('.pager a').on('click', function(e) {
+                var page = $(this).attr('href').split('page=')[1];
+                e.preventDefault();
+                var url = '?page=' + page;
+                $.post(url, function(data) {
+                    alert("success" + data);
+                  })
+                  .done(function() {
+                    alert("second success");
+                  })
+                  .fail(function() {
+                    alert("error");
+                  })
+                  .always(function() {
+                    alert("finished");
+                  });
+  </script>
 
 </head>
 
@@ -87,9 +104,9 @@
       <!-- Nav Item - บันทึกข้อคิดเห็น -->
       <li class="nav-item">
         <a class="nav-link" href="{{ route('comments.create') }}">
-            <i class="fas fa-fw fa-file-word"></i>
-            <span style="font-size: 135%; line-height: 1.5em;">ข้อคิดเห็น</span></a>
-    </li>
+          <i class="fas fa-fw fa-file-word"></i>
+          <span style="font-size: 135%; line-height: 1.5em;">ข้อคิดเห็น</span></a>
+      </li>
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item active">
@@ -223,7 +240,7 @@
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="{{ route('profile.create') }}">
+                <a class="dropdown-item" href="{{ route('profile.index') }}">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   โปรไฟล์
                 </a>
@@ -233,7 +250,7 @@
                 </a>
                 <div class="dropdown-divider"></div>
 
-                <a class="dropdown-item" href="{{ route('logout') }}"  onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>{{ __('ออกจากระบบ') }}
                 </a>
               </div>
@@ -247,22 +264,25 @@
         </nav>
         <!-- End of Topbar -->
 
-        <!-- Begin Page header -->
-        <div class="container-fluid">
+        <main class="py-4">
 
-          @yield('header')
+          <!-- Begin Page header -->
+          <div class="container-fluid">
 
-        </div>
-        <!-- Begin Page content -->
-        <div class="container-fluid">
+            @yield('header')
 
-          @yield('content')
+          </div>
+          <!-- Begin Page content -->
+          <div class="container-fluid">
 
-        </div>
-        <!-- /.container-fluid -->
-
+            @yield('content')
+            @yield('reportcontent')
+            @include('sweetalert::alert')
+          </div>
+          <!-- /.container-fluid -->
       </div>
       <!-- End of Main Content -->
+      </main>
 
       <!-- Footer -->
       <footer class="sticky-footer bg-white">

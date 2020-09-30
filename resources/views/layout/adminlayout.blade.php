@@ -5,9 +5,7 @@
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Favicon icon -->
@@ -25,7 +23,25 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
-    @yield('script')
+    <script>
+        $(document).on('ready', function() {
+                    $('.pager a').on('click', function(e) {
+                                var page = $(this).attr('href').split('page=')[1];
+                                e.preventDefault();
+                                var url = '?page=' + page;
+                                $.post(url, function(data) {
+                                        alert("success" + data);
+                                    })
+                                    .done(function() {
+                                        alert("second success");
+                                    })
+                                    .fail(function() {
+                                        alert("error");
+                                    })
+                                    .always(function() {
+                                        alert("finished");
+                                    });
+    </script>
 
 </head>
 
@@ -56,7 +72,7 @@
                 </a>
                 <div id="collapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item active" href="" style="font-size: 125%; line-height: 1.5em;" >เชิญประชุม</a>
+                        <a class="collapse-item active" href="" style="font-size: 125%; line-height: 1.5em;">เชิญประชุม</a>
                         <a class="collapse-item active" href="{{ route('meeting.create') }}" style="font-size: 120%; line-height: 1.5em;">เพิ่มการประชุม</a>
                     </div>
                 </div>
@@ -167,25 +183,25 @@
 
                 </nav>
                 <!-- End of Topbar -->
+                <main class="py-4">
 
-                <!-- Begin Page header -->
-                <div class="container-fluid">
+                    <!-- Begin Page header -->
+                    <div class="container-fluid">
 
-                    @yield('header')
+                        @yield('header')
 
-                </div>
-                <!-- Begin Page content -->
-                <div class="container-fluid">
+                    </div>
+                    <!-- Begin Page content -->
+                    <div class="container-fluid">
 
-                    @yield('content')
-                    @yield('reportcontent')
-
-                </div>
-                <!-- /.container-fluid -->
-
+                        @yield('content')
+                        @yield('reportcontent')
+                        @include('sweetalert::alert')
+                    </div>
+                    <!-- /.container-fluid -->
             </div>
             <!-- End of Main Content -->
-
+            </main>
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">

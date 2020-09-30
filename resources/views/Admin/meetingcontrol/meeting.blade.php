@@ -1,4 +1,5 @@
 @extends('layout.adminlayout')
+
 @section('header')
 <div class="row page-titles">
     <div class="col-md-6 col-8 align-self-center">
@@ -58,6 +59,7 @@
                     @endforeach
                 </tbody>
             </table>
+            {!! $Meeting ->links() !!}
         </div>
     </div>
 </div>
