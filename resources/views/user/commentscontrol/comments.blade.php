@@ -25,7 +25,6 @@
                     <th>แก้ไข</th>
                     <th>ลบ</th>
                 </tr>
-                 <body>
                 @foreach($comments as $row)
                 <tr>
                     <td>{{ $row->id}}</td>
@@ -39,15 +38,15 @@
                     <td>
                         <form method="post" class="delete_form" action="{{ action('CommentsController@destroy', $row->id) }}">
                             {{ csrf_field() }}
-                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="hidden" name="_method" value="DELETE"  class="delete_form">
                             <button class="btn btn-danger " type="submit"><i class="fa fa-trash"></i></button>
                         </form>
                     </td>
                 </tr>
 
                 @endforeach
-                 <body>
             </table>
+            {!! $comments ->link() !!} 
         </div>
     </div>
 </div>

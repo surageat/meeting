@@ -29,23 +29,14 @@
                     {{ method_field('PATCH')}}
 
             <div class="form-group col-md-4">
-                 <label for="comments" class="text-info">รหัสการประชุม</label><br>
-                 <select type="text" name="Meet_id" class="form-control" required="" value="{{$comments->Meet_id}}">
-                     <option value="">เลือก</option>
-                     @foreach($meetings as $meet)
-                     <option value="{{$meet->id}}">{{$meet->id}}</option>
-                     @endforeach
-            </select>
+                 <label for="Meet_id" class="text-info">รหัสการประชุม</label><br>
+                 <input type="text" name="Meet_id" class="form-control" required="" value="{{$comments->Meet_id}}">
         </div>
 
             <div class="form-group col-md-4">
-                 <label for="comments" class="text-info">รหัสบุคลากร</label><br>
-                 <select type="text" name="OF_id"   class="form-control" required=""  value="{{$comments->OF_id}}">
-                     <option value="">เลือก</option>
-                     @foreach($offices as $of)
-                     <option value="{{$of->id}}">{{$of->name}}</option>
-                     @endforeach
-            </select>
+                 <label for="OF_id" class="text-info">รหัสบุคลากร</label><br>
+                 <input type="text" name="OF_id" id="OF_id" class="form-control" required=""  value="{{$comments->OF_id}}">
+                   
         </div> 
 
                     <div class="form-group  col-md-12">
