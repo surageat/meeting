@@ -1,4 +1,6 @@
 @extends('layout.adminlayout')
+
+
 @section('header')
 <div class="row page-titles">
     <div class="col-md-6 col-8 align-self-center">
@@ -12,7 +14,6 @@
 @endsection
 
 @section('content')
-
     <div class="col-md-12">
         <br><br>
         <div Align="right">
@@ -54,6 +55,7 @@
                         </tr>
                         @endforeach
                     </table>
+                    {!! $offices  ->links() !!}
         </div>
     </div>
 
