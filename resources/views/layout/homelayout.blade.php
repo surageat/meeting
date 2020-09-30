@@ -91,7 +91,6 @@
             <span style="font-size: 135%; line-height: 1.5em;">ข้อคิดเห็น</span></a>
     </li>
 
-
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item active">
         <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">

@@ -1,5 +1,6 @@
 @extends('layout.homelayout')
 @section('header')
+
 <div class="row page-titles">
     <div class="col-md-6 col-8 align-self-center">
         <h3 class="text-themecolor mb-0 mt-0">บันทึกข้อคิดเห็น</h3>
@@ -27,15 +28,25 @@
                     {{csrf_field()}}
                     {{ method_field('PATCH')}}
 
-                    <div class="form-group col-md-4">
-                        <label for="Meet_id" class="text-info">รหัสการประชุม</label><br>
-                        <input type="text" name="Meet_id" id="Meet_id" class="form-control" required="" value="{{$comments->Meet_id}}">
-                    </div>
+            <div class="form-group col-md-4">
+                 <label for="comments" class="text-info">รหัสการประชุม</label><br>
+                 <select type="text" name="Meet_id" class="form-control" required="" value="{{$comments->Meet_id}}">
+                     <option value="">เลือก</option>
+                     @foreach($meetings as $meet)
+                     <option value="{{$meet->id}}">{{$meet->id}}</option>
+                     @endforeach
+            </select>
+        </div>
 
-                    <div class="form-group col-md-4">
-                        <label for="OF_id" class="text-info">รหัสบุคลากร</label><br>
-                        <input type="text" name="OF_id" id="OF_id" class="form-control" required="" value="{{$comments->OF_id}}">
-                    </div> 
+            <div class="form-group col-md-4">
+                 <label for="comments" class="text-info">รหัสบุคลากร</label><br>
+                 <select type="text" name="OF_id"   class="form-control" required=""  value="{{$comments->OF_id}}">
+                     <option value="">เลือก</option>
+                     @foreach($offices as $of)
+                     <option value="{{$of->id}}">{{$of->name}}</option>
+                     @endforeach
+            </select>
+        </div> 
 
                     <div class="form-group  col-md-12">
                         <label class="text-info">ความคิดเห็น</label><br>
@@ -46,9 +57,8 @@
                         <button type="submit" class="btn btn-primary btn-lg"><i class="fa fa-inbox"></i>แก้ไขข้อมูล</button>
                         <button type="button" class="btn btn-danger btn-lg">ยกเลิก</button>
                     </div>
-            
-            <input type="hidden" name="_method" value="PATCH">
-            </form>
+                    <input type="hidden" name="_method" value="PATCH">
+               </form>
             </div>
         </div>
     </div>

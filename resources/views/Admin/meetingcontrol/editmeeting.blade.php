@@ -47,6 +47,7 @@
             <label for="meeting" class="text-info">สถานที่</label><br>
             <input type="text" name="Meet_place" class="form-control" required="" value="{{$Meeting->Meet_place}}">
         </div>
+
         <div class="form-group  col-md-4 ">
             <label for="meeting" class="text-info">ผู้ดูแลการประชุม</label><br>
             <select type="text" name="admin_id" class="form-control" required="" value="{{$Meeting->admin_id}}">
@@ -56,6 +57,7 @@
                 @endforeach
             </select>
         </div>
+        
         <div class="form-group  col-md-4 ">
             <label for="meeting" class="text-info">ห้องประชุม</label><br>
             <select type="text" name="MR_id" class="form-control" required="" value="{{$Meeting->MR_id}}">

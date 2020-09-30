@@ -3,14 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\comments;
+use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use App\Http\Controllers\Controller;
+use App\comments;
 use App\Providers\RouteServiceProvider;
+use App\meetings;
+use App\offices;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Support\Facades\DB;
+
 
 class CommentsController extends Controller
 {
@@ -19,17 +22,28 @@ class CommentsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        $data['comments'] = DB::table('comments')->simplePaginate(10);
-        return view('user.commentscontrol.comments', $data);
-        if($request->ajax())
-        {
-            $data['comments'] = DB::table('comments')->simplePaginate(10);
-        return view('user.commentscontrol.comments', $data);
-        }
+        $data['comments'] = DB::table('comments')
+            ->join('meetings', 'comments.Meet_id', 'meetings.id')
+            ->join('offices',  'comments.OF_id',   'offices.id' )
+            ->select(
+                'comments.id',
+                'comments.Meet_id',
+                'comments.OF_id',
+                'comments.C_meet',
+                'offices.name',
+                'meetings.id'
+            )->get();
+            // echo $Data;
+            // $comments = array(
+            //     'data' => $data
+            // );
+              
+        // dd($data);
+        return view('user.commentscontrol.comments',$data);
+    
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -38,8 +52,10 @@ class CommentsController extends Controller
     public function create()
     
     {
-        
-        return view('user.commentscontrol.insertcomments');
+        $data['meetings']  = meetings::get();
+        $data['offices']   = offices::get();
+        // dd($data);
+        return view('user.commentscontrol.insertcomments',$data);
     }
 
     /**
@@ -57,9 +73,10 @@ class CommentsController extends Controller
             ]);
             if (!$validator->fails()) {
                 $comments = new comments;
-                $comments->C_meet = $request->input('C_meet');
+
+                $comments->C_meet  = $request->input('C_meet');
                 $comments->Meet_id = $request->input('Meet_id');
-                $comments->OF_id = $request->input('OF_id');
+                $comments->OF_id   = $request->input('OF_id');
                 $comments->save();
                 return redirect()->route('comments.create')->with('success', 'บันทึกสำเร็จ');
             } else {
@@ -88,8 +105,12 @@ class CommentsController extends Controller
     public function edit($id)
   
     {
-        $comments = comments::find($id);
-        return  view('user.commentscontrol.editcomments', compact('comments', 'id'));
+      
+        $data['comments'] = comments::find($id);
+        $data['meetings'] = meetings::get();
+        $data['offices']  = offices::get();
+        // dd($data);
+        return view('user.commentscontrol.editcomments', $data);
     }
 
     /**
@@ -99,21 +120,17 @@ class CommentsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,$id)
     {
         //
         //$this->validate($request, [
-            $validatedData = $request->validate([
-                'C_meet' => 'required',
-                'Meet_id' => 'required',
-                'OF_id' => 'required',
-
+        $validatedData = $request->validate([
+            
         ]);
         $comments = comments::find($id);
-        $comments->C_meet = $request->get('C_meet');
+        $comments->C_meet  = $request->get('C_meet');
         $comments->Meet_id = $request->get('Meet_id');
-        $comments->OF_id = $request->get('OF_id');
-        $comments->id = $id;
+        $comments->OF_id   = $request->get('OF_id');
         $comments->save();
         return redirect()->route('comments.index')->with('success', 'แก้ไขข้อมูลสำเร็จ');
     }
@@ -128,7 +145,7 @@ class CommentsController extends Controller
     {
         $comments = comments::find($id);
         $comments->delete();
-        return redirect()->route('comments.index')->with('success', 'ลบข้อมูลสำเร็จ',true);
+        return redirect()->route('comments.index')->with('success', 'ลบข้อมูลสำเร็จ');
     }
 }
 
