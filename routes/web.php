@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/invitation', function () {  return view('user.invitation');});
 
-// Route::get('/home', function () { return view('layout.homelayout');});
+Route::get('/homelayout', function () { return view('layout.homelayout');});
 //Route::get('/comments', function () {  return view('user.comments');});
 Route::get('/agendas', function () { return view('user.agendas');});
 Route::get('/report', function () { return view('user.report');});

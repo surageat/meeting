@@ -54,7 +54,7 @@
         <ul class="navbar-nav bg-dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="admin">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{url('/adminlayout')}}">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <img src="{{ asset('img/logo-icon.png') }}" alt="homepage" class="dark-logo" />
                 </div>
