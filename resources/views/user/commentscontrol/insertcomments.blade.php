@@ -19,20 +19,29 @@
         
         <div class="form-group col-md-4">
             <label for="Meet_id" class="text-info">รหัสการประชุม</label><br>
-            <input type="text" name="Meet_id"  id="Meet_id"  class="form-control" >
-               
+            <select type="text" name="Meet_id"  id="Meet_id"  class="form-control"  required="">
+            <option value="">เลือก</option>
+            @foreach($meetings as $meet)
+                <option value="{{$meet->id}}">{{$meet->id}}</option>
+            @endforeach
+        </select>
         </div>
 
 
         <div class="form-group col-md-4">
             <label for="OF_id" class="text-info">รหัสบุคลากร</label><br>
-            <input type="text" name="OF_id"  id="OF_id"  class="form-control" >
+            <select type="text" name="OF_id"  id="OF_id"  class="form-control" required="" >
+            <option value="">เลือก</option>
+            @foreach($offices as $of)
+                <option value="{{$of->id}}">{{$of->name}}</option>
+            @endforeach
+        </select>
         </div>
 
 
         <div class="form-group  col-md-12">
             <label for="C_meet" class="text-info">ความคิดเห็น</label><br>
-            <textarea class="form-control" name="C_meet" id="exampleFormControlTextarea1" rows="15"></textarea>
+            <textarea class="form-control" name="C_meet" id="exampleFormControlTextarea1" rows="15" required=""></textarea>
         </div>
 
         <div class=" text-center">

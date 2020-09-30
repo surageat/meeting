@@ -8,6 +8,8 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use App\meetings;
+use App\offices;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
@@ -22,14 +24,24 @@ class CommentsController extends Controller
      */
     public function index(Request $request)
     {
-        $data['comments'] = DB::table('comments') ->simplePaginate(10);
-        return view('user.commentscontrol.comments',$data);
-        if($request->ajix())
-        {
-         
-            $data['comments'] = DB::table('comments') ->simplePaginate(10);
-            return view('user.commentscontrol.comments',$data);
-        }
+        $data['comments'] = DB::table('comments')
+        ->join('meetings', 'comments.Meet_id', 'meetings.id')
+        ->join('offices', 'comments.OF_id', 'offices.id')
+        ->select(
+            'comments.id',
+            'comments.Meet_id',
+            'comments.OF_id',
+            'comments.C_meet',
+            'meetings.id',
+            'offices.name',
+        )->get();
+        // echo $Data;
+        // $comments = array(
+        //     'data' => $data
+        // );
+          
+    // dd($data);
+    return view('user.commentscontrol.comments', $data);
     
     }
     /**
@@ -40,8 +52,10 @@ class CommentsController extends Controller
     public function create()
     
     {
-       
-        return view('user.commentscontrol.insertcomments');
+        $data['meetings'] = meetings::get();
+        $data['offices']  = offices::get();
+        // dd($data);
+        return view('user.commentscontrol.insertcomments',$data);
     }
 
     /**
@@ -91,9 +105,11 @@ class CommentsController extends Controller
     public function edit($id)
   
     {
-      
-        $datcomments = comments::find($id);
-        return view('user.commentscontrol.editcomments', compact('comments','id'));
+        $data['comments'] = comments::find($id);
+        $data['meetings'] = meetings::get();
+        $data['offices']  = offices::get();
+        // dd($data);
+        return view('user.commentscontrol.editcomments',$data);
     }
 
     /**
@@ -108,10 +124,7 @@ class CommentsController extends Controller
         //
         //$this->validate($request, [
         $validatedData = $request->validate([
-            'C_meet'  => 'reuired',
-            'Meet_id' => 'reuired',
-            'OF_id'   => 'reuired'
-            
+    
         ]);
         $comments = comments::find($id);
         $comments->C_meet  = $request->get('C_meet');

@@ -46,13 +46,11 @@
 
                 @endforeach
             </table>
-            {!! $comments ->link() !!} 
         </div>
     </div>
 </div>
 @include('sweetalert::alert')
 @endsection
-
 
 
 @section('content')
@@ -77,5 +75,4 @@
             }
         });
     </script>
-</div>
 @endsection
