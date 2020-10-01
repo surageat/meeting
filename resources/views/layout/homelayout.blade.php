@@ -61,8 +61,6 @@
       <!-- Divider -->
       <hr class="sidebar-divider my-0">
 
-
-
       <!-- Divider -->
       <hr class="sidebar-divider">
       <!-- Nav Item - Pages Collapse Menu -->
@@ -254,7 +252,7 @@
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>{{ __('ออกจากระบบ') }}
                 </a>
               </div>
-              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+              <form id="logout-form" action="{{ route('logout')}}" method="POST" class="d-none">
                 @csrf
               </form>
             </li>

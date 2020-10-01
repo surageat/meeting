@@ -23,8 +23,26 @@ class MeetingController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+
+        if($request->ajax())
+        {
+            $data['Meeting'] = DB::table('meetings')
+            ->join('admin', 'meetings.admin_id', 'admin.id')
+            ->join('meeting_rooms', 'meetings.MR_id', 'meeting_rooms.id')
+            ->select(
+                'meetings.id',
+                'meetings.Meet_heading',
+                'meetings.Meet_date',
+                'meetings.Meet_no',
+                'meetings.Meet_time',
+                'meetings.Meet_place',
+                'meetings.Meet_table',
+                'admin.name',
+                'meeting_rooms.MR_name'
+            )->simplePaginate(8);
+        }
         $data['Meeting'] = DB::table('meetings')
             ->join('admin', 'meetings.admin_id', 'admin.id')
             ->join('meeting_rooms', 'meetings.MR_id', 'meeting_rooms.id')
@@ -38,14 +56,8 @@ class MeetingController extends Controller
                 'meetings.Meet_table',
                 'admin.name',
                 'meeting_rooms.MR_name'
-            )->get();
-            // echo $Data;
-            // $Meeting = array(
-            //     'data' => $data
-            // );
-              
-        // dd($data);
-        return view('Admin.meetingcontrol.meeting', $data);
+            )->simplePaginate(8);
+        return view('Admin.meetingcontrol.meeting', $data)->render();;
     
     }
 

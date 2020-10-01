@@ -33,7 +33,7 @@ class CommentsController extends Controller
             'comments.OF_id',
             'comments.C_meet',
             'meetings.id',
-            'offices.name',
+            'offices.name'
         )->get();
         // echo $Data;
         // $comments = array(

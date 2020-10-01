@@ -33,8 +33,7 @@
                 </tr>
                 <tbody>
                     @foreach($Meeting as $r)
-                    <tr>
-                    
+                    <tr>                   
                         <td>{{ $r->Meet_heading}}</td>
                         <td>{{ $r->Meet_date}}</td>
                         <td>{{ $r->Meet_no}}</td>
@@ -59,9 +58,8 @@
                     @endforeach
                 </tbody>
             </table>
-            {!! $Meeting ->links() !!}
+            {!!$Meeting->links() !!}
         </div>
     </div>
 </div>
-@include('sweetalert::alert')
 @endsection
