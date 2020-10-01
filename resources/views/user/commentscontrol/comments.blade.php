@@ -28,8 +28,8 @@
                 @foreach($comments as $row)
                 <tr>
                     <td>{{ $row->id}}</td>
-                    <td>{{ $row->Meet_id}}</td>
-                    <td>{{ $row->OF_id}}</td>
+                    <td>{{ $row->Meet_heading}}</td>
+                    <td>{{ $row->name}}</td>
                     <td>{{ $row->C_meet}}</td>
 
                     <td>
@@ -43,36 +43,11 @@
                         </form>
                     </td>
                 </tr>
-
                 @endforeach
             </table>
+            {!! $comments->links() !!}
         </div>
     </div>
 </div>
-@include('sweetalert::alert')
 @endsection
 
-
-@section('content')
-<!--js Ckeditor comment-->
-<script src="//cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
-
-<div>
-    <form>
-        <textarea name="editor" ></textarea><br>
-        <div class=" text-center">
-            <button class="btn float-center hidden-sm-down btn-primary">บันทึก</button>
-            <button class="btn float-center hidden-sm-down btn-danger">ยกเลิก</button>
-        </div>
-    </form>
-    <script>
-        CKEDITOR.replace('editor');
-        $("form").submit(function(e) {
-            var messageLength = CKEDITOR.instances['editor'].getData().replace(/<[^>]*>/gi, '').length;
-            if (!messageLength) {
-                alert('Please enter a message');
-                e.preventDefault();
-            }
-        });
-    </script>
-@endsection

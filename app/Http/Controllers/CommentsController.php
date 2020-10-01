@@ -24,24 +24,29 @@ class CommentsController extends Controller
      */
     public function index(Request $request)
     {
+
+        if($request->ajax())
+        {
+            $data['comments'] = DB::table('comments')
+            ->join('meetings', 'comments.Meet_id', 'meetings.id')
+            ->join('offices', 'comments.OF_id', 'offices.id')
+            ->select(
+                'comments.id',
+                'comments.C_meet',
+                'meetings.Meet_heading',
+                'offices.name'
+            )->simplePaginate(8);
+        }
         $data['comments'] = DB::table('comments')
         ->join('meetings', 'comments.Meet_id', 'meetings.id')
         ->join('offices', 'comments.OF_id', 'offices.id')
         ->select(
             'comments.id',
-            'comments.Meet_id',
-            'comments.OF_id',
             'comments.C_meet',
-            'meetings.id',
+            'meetings.Meet_heading',
             'offices.name'
-        )->get();
-        // echo $Data;
-        // $comments = array(
-        //     'data' => $data
-        // );
-          
-    // dd($data);
-    return view('user.commentscontrol.comments', $data);
+        )->simplePaginate(8);
+    return view('user.commentscontrol.comments', $data)->render();
     
     }
     /**
@@ -73,7 +78,6 @@ class CommentsController extends Controller
             ]);
             if (!$validator->fails()) {
                 $comments = new comments;
-
                 $comments->C_meet  = $request->input('C_meet');
                 $comments->Meet_id = $request->input('Meet_id');
                 $comments->OF_id   = $request->input('OF_id');
@@ -124,13 +128,11 @@ class CommentsController extends Controller
         //
         //$this->validate($request, [
         $validatedData = $request->validate([
-    
         ]);
         $comments = comments::find($id);
         $comments->C_meet  = $request->get('C_meet');
         $comments->Meet_id = $request->get('Meet_id');
         $comments->OF_id   = $request->get('OF_id');
-        $comments->id=$id;
         $comments->save();
         return redirect()->route('comments.index')->with('success', 'แก้ไขข้อมูลสำเร็จ');
     }
@@ -145,7 +147,7 @@ class CommentsController extends Controller
     {
         $comments = comments::find($id);
         $comments->delete();
-        return redirect()->route('comments.index')->with('success', 'ลบข้อมูลสำเร็จ',true);
+        return redirect()->route('comments.index')->with('success', 'ลบข้อมูลสำเร็จ');
     }
 }
 

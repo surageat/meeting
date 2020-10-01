@@ -27,39 +27,36 @@
                 <form action="{{action('CommentsController@update',$comments->id)}}" method="post">
                     {{csrf_field()}}
                     {{ method_field('PATCH')}}
-
-            <div class="form-group col-md-4">
-                 <label for="Meet_id" class="text-info">รหัสการประชุม</label><br>
-                 <select type="text" name="Meet_id" class="form-control" required="" value="{{$comments->Meet_id}}">
-                 <option value="">เลือก</option>
-                 @foreach($meetings as $meet)
-                 <option value="{{$meet->id}}">{{$meet->id}}</option>
-                 @endforeach
-             </select>
-        </div>
-
-            <div class="form-group col-md-4">
-                 <label for="OF_id" class="text-info">รหัสบุคลากร</label><br>
-                 <select type="text" name="OF_id" id="OF_id" class="form-control" required=""  value="{{$comments->OF_id}}">
-                    <option value="">เลือก</option>
-                    @foreach($offices as $of)
-                    <option value="{{$of->id}}">{{$of->name}}</option>
-                    @endforeach
-                </select>
-                   
-        </div> 
+                    <div class="form-group col-md-4">
+                        <label for="Meet_id" class="text-info">การประชุม</label><br>
+                        <select type="text" name="Meet_id" class="form-control" required="">
+                            <option value="">เลือก</option>
+                            @foreach($meetings as $meet)
+                            <option value="{{$meet->id}}">{{$meet->Meet_heading}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="OF_id" class="text-info">บุคลากร</label><br>
+                        <select type="text" name="OF_id" id="OF_id" class="form-control" required="">
+                            <option value="">เลือก</option>
+                            @foreach($offices as $of)
+                            <option value="{{$of->id}}">{{$of->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
 
                     <div class="form-group  col-md-12">
                         <label class="text-info">ความคิดเห็น</label><br>
-                        <textarea class="form-control" name="C_meet" id="message" rows="14"  required="">{{$comments->C_meet}}</textarea>
+                        <textarea class="form-control" name="C_meet" id="message" rows="14" required="">{{$comments->C_meet}}</textarea>
                     </div>
-                
+
                     <div class=" text-center">
                         <button type="submit" class="btn btn-primary btn-lg"><i class="fa fa-inbox"></i>แก้ไขข้อมูล</button>
                         <button type="button" class="btn btn-danger btn-lg">ยกเลิก</button>
                     </div>
                     <input type="hidden" name="_method" value="PATCH">
-               </form>
+                </form>
             </div>
         </div>
     </div>
