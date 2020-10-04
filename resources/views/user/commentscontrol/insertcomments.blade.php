@@ -16,26 +16,26 @@
 <div class="container ">
     <form method="post" action="{{ url('comments') }}">
         {{ csrf_field() }}
-        
+
         <div class="form-group col-md-4">
-            <label for="Meet_id" class="text-info">รหัสการประชุม</label><br>
-            <select type="text" name="Meet_id"  id="Meet_id"  class="form-control"  required="">
-            <option value="">เลือก</option>
-            @foreach($meetings as $meet)
-                <option value="{{$meet->id}}">{{$meet->id}}</option>
-            @endforeach
-        </select>
+            <label for="Meet_id" class="text-info">การประชุม</label><br>
+            <select type="text" name="Meet_id" id="Meet_id" class="form-control" required="">
+                <option value="">เลือก</option>
+                @foreach($meetings as $meet)
+                <option value="{{$meet->id}}">{{$meet->Meet_heading}}</option>
+                @endforeach
+            </select>
         </div>
 
 
         <div class="form-group col-md-4">
-            <label for="OF_id" class="text-info">รหัสบุคลากร</label><br>
-            <select type="text" name="OF_id"  id="OF_id"  class="form-control" required="" >
-            <option value="">เลือก</option>
-            @foreach($offices as $of)
+            <label for="OF_id" class="text-info">บุคลากร</label><br>
+            <select type="text" name="OF_id" id="OF_id" class="form-control" required="">
+                <option value="">เลือก</option>
+                @foreach($offices as $of)
                 <option value="{{$of->id}}">{{$of->name}}</option>
-            @endforeach
-        </select>
+                @endforeach
+            </select>
         </div>
 
 
@@ -53,5 +53,3 @@
 
 @include('sweetalert::alert')
 @endsection
-
-

@@ -36,7 +36,7 @@
                         <a href="{{action('AgendasController@edit', $row->id) }}" class="btn btn-warning"><i class="fa fa-wrench"></i></a>
                     </td>
                     <td>
-                        <form method="post" class="delete_form" action="{{ action('AgendasController@destroy', $row->id) }}">
+                        <form method="post" class="delete_form" action="{{ action('AgendasController@destroy', $row->id) }}"  onclick="return confirm('ต้องการลบข้อมูลใช่ หรือ ไม่')">
                             {{ csrf_field() }}
                             <input type="hidden" name="_method" value="DELETE" class="delete_form">
                             <button class="btn btn-danger " type="submit"><i class="fa fa-trash"></i></button>

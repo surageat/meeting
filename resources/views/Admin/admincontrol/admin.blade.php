@@ -42,7 +42,7 @@
                     <a href="{{action('AdminController@edit',$row['id'])}}" class="btn btn-warning"><i class="fa fa-wrench"></i></a>
                 </td>
                 <td>
-                    <form method="post" class="delete_form" action="{{action('AdminController@destroy',$row['id'])}}">
+                    <form method="post" class="delete_form" action="{{action('AdminController@destroy',$row['id'])}}"  onclick="return confirm('ต้องการลบข้อมูลใช่ หรือ ไม่')">
                         {{csrf_field()}}
                         <input type="hidden" name="_method" value="DELETE">
                         <button class="btn btn-danger" type="submit"><i class="fa fa-trash"></i></button>
