@@ -10,6 +10,7 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
@@ -18,10 +19,16 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $admin = admin::all()->toArray();
-        return view('Admin.admincontrol.admin', compact('admin'));
+        $data['admin'] = DB::table('admin')->simplePaginate(10);
+        return view('Admin.admincontrol.admin', $data)->render();
+        if($request->ajax())
+        {
+            $data['admin'] = DB::table('admins')->simplePaginate(10);
+            return view('Admin.admincontrol.admin', $data)->render();
+        }
+       
     }
 
     /**

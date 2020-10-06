@@ -34,9 +34,13 @@ class RoomController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-
+        if($request->ajax())
+        {
+            $data['meeting_rooms'] = DB::table('meeting_rooms')->simplePaginate(10);
+            return view('Admin.meetingroom.addroom',$data)->render();
+        }
         $data['meeting_rooms'] = DB::table('meeting_rooms')->simplePaginate(10);
         return view('Admin.meetingroom.addroom',  $data);
         return view('Admin.meetingroom.addroom');

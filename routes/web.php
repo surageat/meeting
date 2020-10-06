@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\InviteController;
 use Illuminate\Support\Facades\Route;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -62,5 +63,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 // Route::get('/', function() { return view('layouts.app');  });
 Route::get('/', function () { return view('login.login'); });
 
+
+//invite controller admin
+Route::resource('invite','InviteController');
 
 

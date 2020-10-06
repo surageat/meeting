@@ -33,20 +33,20 @@
                         </tr>
                         @foreach($offices as $row)
                         <tr>
-                            <td>{{$row['username']}}</td>
-                            <td>{{$row['name']}}</td>
-                            <td>{{$row['OF_lname']}}</td>
-                            <td>{{$row['OF_rank']}}</td>
-                            <td>{{$row['OF_department']}}</td>
-                            <td>{{$row['OF_institution']}}</td>
-                            <td>{{$row['OF_tel']}}</td>
-                            <td>{{$row['email']}}</td>
-                            <td>{{$row['OF_status']}}</td>
+                            <td>{{$row->username}}</td>
+                            <td>{{$row->name}}</td>
+                            <td>{{$row->OF_lname}}</td>
+                            <td>{{$row->OF_rank}}</td>
+                            <td>{{$row->OF_department}}</td>
+                            <td>{{$row->OF_institution}}</td>
+                            <td>{{$row->OF_tel}}</td>
+                            <td>{{$row->email}}</td>
+                            <td>{{$row->OF_status}}</td>
                             <td>
-                                <a href="{{action('OfficeController@edit',$row['id'])}}" class="btn btn-warning"><i class="fa fa-wrench"></i></a>
+                                <a href="{{action('OfficeController@edit',$row->id)}}" class="btn btn-warning"><i class="fa fa-wrench"></i></a>
                             </td>
                             <td>
-                                <form method="post" class="delete_form" action="{{action('OfficeController@destroy',$row['id'])}}"  onclick="return confirm('ต้องการลบข้อมูลใช่ หรือ ไม่')">
+                                <form method="post" class="delete_form" action="{{action('OfficeController@destroy',$row->id)}}"  onclick="return confirm('ต้องการลบข้อมูลใช่ หรือ ไม่')">
                                     {{csrf_field()}}
                                     <input type="hidden" name="_method" value="DELETE">
                                     <button class="btn btn-danger" type="submit"><i class="fa fa-trash"></i></button>
@@ -55,7 +55,7 @@
                         </tr>
                         @endforeach
                     </table>
-                    {!! $offices  ->links() !!}
+                    {!! $offices->links() !!}
         </div>
     </div>
 

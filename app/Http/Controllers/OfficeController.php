@@ -10,6 +10,7 @@ use App\offices;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 
 class OfficeController extends Controller
 {
@@ -18,11 +19,16 @@ class OfficeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        if($request->ajax())
+        {
+            $data['offices'] = DB::table('offices')->simplePaginate(10);
+            return view('Admin.usercontrol.office',$data)->render();
+        }
         //
-        $offices = offices::all()->toArray();
-        return view('Admin.usercontrol.office', compact('offices'));
+        $data['offices'] = DB::table('offices')->simplePaginate(10);
+        return view('Admin.usercontrol.office',$data);
     }
 
     /**

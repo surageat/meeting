@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\DB;
 
 
 
-class MeetingController extends Controller
+class InviteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -25,7 +25,6 @@ class MeetingController extends Controller
      */
     public function index(Request $request)
     {
-
         if($request->ajax())
         {
             $data['Meeting'] = DB::table('meetings')
@@ -57,8 +56,7 @@ class MeetingController extends Controller
                 'admin.name',
                 'meeting_rooms.MR_name'
             )->simplePaginate(8);
-        return view('Admin.meetingcontrol.meeting', $data)->render();;
-    
+            return view('Admin.invitecontrol.invite', $data)->render();;
     }
 
     /**
@@ -68,11 +66,12 @@ class MeetingController extends Controller
      */
     public function create()
     {
-
+        //
+        $data['Meeting'] = meetings::find($id);
         $data['admin'] = admin::get();
         $data['meeting_rooms'] = meeting_rooms::get();
         // dd($data);
-        return view('Admin.meetingcontrol.addmeeting', $data);
+        return view('Admin.meetingcontrol.editmeeting', $data);
     }
 
     /**
@@ -83,43 +82,7 @@ class MeetingController extends Controller
      */
     public function store(Request $request)
     {
-
-        $validator = Validator::make($request->all(), [
-            'Meet_heading' => 'required',
-        ]);
-        if (!$validator->fails()) {
-            $Meetings = new meetings;
-
-            $Meetings->Meet_heading = $request->input('Meet_heading');
-            $Meetings->Meet_date = $request->input('Meet_date');
-            $Meetings->Meet_no = $request->input('Meet_no');
-            $Meetings->Meet_time = $request->input('Meet_time');
-            $Meetings->Meet_place = $request->input('Meet_place');
-            $Meetings->Meet_table = $request->input('Meet_table');
-            $Meetings->admin_id = $request->input('admin_id');
-            $Meetings->MR_id = $request->input('MR_id');
-            $Meetings->save();
-            return redirect()->route('meeting.create')->with('success', 'บันทึกสำเร็จ');
-        } else {
-            return redirect()->route('meeting.create')->with('warning', 'บันทึกไม่สำเร็จ');
-        }
-
-        // $Meeting = new meetings([
-        //     'Meet_heading' => $request->get('Meet_heading'),
-        //     'Meet_date'=> $request->get('Meet_date'),
-        //     'Meet_no' => $request->get('Meet_no'),
-        //     'Meet_time'  => $request->get('Meet_time'),
-        //     'Meet_place'  => $request->get('Meet_place'),
-        //     'Meet_table'  => $request->get('Meet_table'),
-        //     'OF_id' => $request->get('OF_id'),
-        //     'MR_id'  => $request->gett('MR_id')
-
-
-        // ]);
-        //     $Meeting->save();
-        //     return redirect()->route('meetings.create')->with('success', 'บันทึกสำเร็จ');
-
-
+        //
     }
 
     /**
@@ -141,12 +104,7 @@ class MeetingController extends Controller
      */
     public function edit($id)
     {
-       
-        $data['Meeting'] = meetings::find($id);
-        $data['admin'] = admin::get();
-        $data['meeting_rooms'] = meeting_rooms::get();
-        // dd($data);
-        return view('Admin.meetingcontrol.editmeeting', $data);
+        //
     }
 
     /**
@@ -157,23 +115,8 @@ class MeetingController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    
     {
-         //
-        //$this->validate($request, [
-            $validatedData = $request->validate([
-                  
-            ]);
-            $Meeting = meetings::find($id);
-            $Meeting->Meet_heading = $request->get('Meet_heading');
-            $Meeting->Meet_date = $request->get('Meet_date');
-            $Meeting->Meet_no = $request->get('Meet_no');
-            $Meeting->Meet_place = $request->get('Meet_place');
-            $Meeting->Meet_table = $request->get('Meet_table');
-            $Meeting->admin_id = $request->get('admin_id');
-            $Meeting->MR_id = $request->get('MR_id');
-            $Meeting->save();
-            return redirect()->route('meeting.index')->with('success', 'แก้ไขข้อมูลสำเร็จ');
+        //
     }
 
     /**
@@ -184,11 +127,6 @@ class MeetingController extends Controller
      */
     public function destroy($id)
     {
-        $meeting = meetings::find($id);
-        $meeting->delete();
-        return redirect()->route('meeting.index')->with('success', 'ลบข้อมูลสำเร็จ');
+        //
     }
-
 }
-
-
