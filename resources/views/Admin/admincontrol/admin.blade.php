@@ -53,6 +53,4 @@
         </table>
         {!! $admin ->links() !!}
 </div>
-
-@include('sweetalert::alert')
 @endsection
