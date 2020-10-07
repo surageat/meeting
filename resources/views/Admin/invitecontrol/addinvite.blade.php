@@ -16,7 +16,7 @@
 <div class="container">
     <div class="col-md-12">
         <div Align="right">
-            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search " title="Type in a name">
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search.. " title="Type in a name">
             <br><br>
             <form id="active">
                 <table class="table table-bordered " width="100%" id="myTable">
