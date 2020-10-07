@@ -16,39 +16,50 @@
 <div class="container">
     <div class="col-md-12">
         <div Align="right">
-            <table class="table  tabel-bordered  table-striped">
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search " title="Type in a name" >
+        <br><br>
+            <form id="active">
+            <table class="table  tabel-bordered  table-striped display" cellspacing="0" width="100%"  data-click-to-select="true"  id="myTable">
                 <tr>
-                    <th>หัวข้อเรื่องประชุม</th>
-                    <th>วันที่</th>
-                    <th>ครั้งที่</th>
-                    <th>เวลา</th>
-                    <th>สถานที่</th>
-                    <th>ตารางการประชุม</th>
-                    <th>ผู้ดูแลการประชุม</th>
-                    <th>ห้องประชุม</th>
-                    <th>เข้าร่วม</th>
+                <th>ผู้ใช้งาน</th>
+                            <th>ชื่อ-นามสกุล</th>
+                            <th>ตำแหน่ง</th>
+                            <th>แผนกงาน</th>
+                            <th>หน่วยงาน</th>
+                            <th>เบอร์โทรศัพท์</th>
+                            <th>อีเมลล์</th>
+                            <th>สถานะ</th>
+                            <th>เลือก</th>
                 </tr>
                 <tbody>
-                    @foreach($Meeting as $r)
+                    @foreach($offices as $row)
                     <tr>                   
-                        <td>{{ $r->Meet_heading}}</td>
-                        <td>{{ $r->Meet_date}}</td>
-                        <td>{{ $r->Meet_no}}</td>
-                        <td>{{ $r->Meet_time}}</td>
-                        <td>{{ $r->Meet_place}}</td>
-                        <td>{{ $r->Meet_table}}</td>
-                        <td>{{ $r->name}}</td>
-                        <td>{{ $r->MR_name}}</td>
+                    <td>{{$row->username}}</td>
+                            <td>{{$row->name}} &nbsp; {{$row->OF_lname}}</td>
+                            <td>{{$row->OF_rank}}</td>
+                            <td>{{$row->OF_department}}</td>
+                            <td>{{$row->OF_institution}}</td>
+                            <td>{{$row->OF_tel}}</td>
+                            <td>{{$row->email}}</td>
+                            <td>{{$row->OF_status}}</td>
 
-                        <td>
-                            <a href="" class="input "type="checkbox></a>
+                            <td>
+                            <form method="post" class="" >
+                                {{ csrf_field() }}
+                                <input type="checkbox" name=""value="DELETE">
+                            </form>
                         </td>
                     </tr>
                     @endforeach
                 </tbody>
             </table>
-            {!!$Meeting->links() !!}
+            <div class=" text-center">
+            <button type="submit" class="btn btn-primary btn-lg"><i class="fa fa-inbox"></i>เพิ่มข้อมูล</button>
+            <button type="button" class="btn btn-danger btn-lg">ยกเลิก</button>
+        </div>
+            </form>
         </div>
     </div>
 </div>
+
 @endsection

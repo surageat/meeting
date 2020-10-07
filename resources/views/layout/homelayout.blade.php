@@ -17,7 +17,9 @@
   <!-- Custom fonts for this template-->
   <link href="{{asset('all/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
+  <link rel="stylesheet" type="text/css" href="{{asset('all/datatables/dataTables.bootstrap4.css')}}">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
   <!-- Custom styles for this template-->
   <link href="{{asset('css/sb-admin-2.min.css')}}" rel="stylesheet">
   <link href="{{asset('css/app.css')}}" rel="stylesheet">
@@ -310,10 +312,34 @@
 
   <!-- Core plugin JavaScript-->
   <script src="{{asset('all/jquery-easing/jquery.easing.min.js')}}"></script>
-
+  <script src="{{ asset('all/datatables/dataTables.bootstrap4.min.js') }}"></script>
   <!-- Custom scripts for all pages-->
   <script src="{{asset('js/sb-admin-2.min.js')}}"></script>
-
+  <script>
+  $(document).ready(function() {
+    $('#example').DataTable();
+} );
+</script>
+  <script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
 </body>
 
 </html>

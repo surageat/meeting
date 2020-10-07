@@ -10,6 +10,7 @@ use App\meeting_rooms;
 use App\Providers\RouteServiceProvider;
 use App\meetings;
 use App\admin;
+use App\offices;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
@@ -56,7 +57,7 @@ class InviteController extends Controller
                 'admin.name',
                 'meeting_rooms.MR_name'
             )->simplePaginate(8);
-            return view('Admin.invitecontrol.invite', $data)->render();;
+            return view('Admin.invitecontrol.invite', $data)->render();
     }
 
     /**
@@ -67,11 +68,11 @@ class InviteController extends Controller
     public function create()
     {
         //
-        $data['Meeting'] = meetings::find($id);
-        $data['admin'] = admin::get();
-        $data['meeting_rooms'] = meeting_rooms::get();
+        $data['Meeting'] = meetings::get();
+        $data['offices'] = offices::get();
+ 
+        return view('Admin.invitecontrol.addinvite', $data);
         // dd($data);
-        return view('Admin.meetingcontrol.editmeeting', $data);
     }
 
     /**
@@ -80,7 +81,7 @@ class InviteController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
         //
     }

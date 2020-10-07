@@ -41,7 +41,7 @@
                         <td>{{ $r->MR_name}}</td>
 
                         <td>
-                            <a href="" class="btn btn-info">เชิญประชุม</i></a>
+                            <a href="{{route('invite.create')}}" class="btn btn-info">เชิญประชุม</i></a>
                         </td>
                     </tr>
                     @endforeach

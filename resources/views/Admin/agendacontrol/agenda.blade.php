@@ -15,9 +15,10 @@
 @section('content')
 <div class="container">
     <div class="col-md-12">
-
-        <div Align="right">
-            <table class="table  tabel-bordered  table-striped">
+    <div Align="right">
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search " title="Type in a name" >
+        <br><br>
+        <table  class="table table-striped table-bordered" style="width:100%"  id="myTable">
                 <tr>
                     <th>id</th>
                     <th>ชื่อวาระการประชุม</th>

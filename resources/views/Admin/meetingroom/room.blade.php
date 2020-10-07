@@ -18,7 +18,9 @@
 <div class="col-md-12">
     <br><br>
     <div Align="right">
-        <table class="table  tabel-bordered  table-striped">
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search " title="Type in a name" >
+        <br><br>
+        <table  class="table table-striped table-bordered" style="width:100%"  id="myTable">
             <tr>
                 <th>id</th>
                 <th>ชื่อห้องประชุม</th>

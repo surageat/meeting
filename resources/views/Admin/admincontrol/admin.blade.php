@@ -17,8 +17,10 @@
 @section('content')
 
 <div class="col-md-12">
-    <br><br>
-        <table id="example" class="table table-striped table-bordered" style="width:100%">
+<div Align="right">
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search " title="Type in a name" >
+        <br><br>
+        <table  class="table table-striped table-bordered" style="width:100%"  id="myTable">
             <tr>
                 <th>ผู้ใช้</th>
                 <th>ชื่อ</th>

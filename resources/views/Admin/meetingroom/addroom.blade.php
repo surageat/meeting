@@ -17,7 +17,10 @@
 <br>
 
 <div class="table-responsive">
-    <table class="table  tabel-bordered  table-striped">
+<div Align="right">
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search " title="Type in a name" >
+        <br><br>
+        <table  class="table table-striped table-bordered" style="width:100%"  id="myTable">
         <tr>
             <th>id</th>
             <th>ชื่อห้องประชุม</th>
