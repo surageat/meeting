@@ -16,47 +16,43 @@
 <div class="container">
     <div class="col-md-12">
         <div Align="right">
-        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search " title="Type in a name" >
-        <br><br>
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search " title="Type in a name">
+            <br><br>
             <form id="active">
-            <table class="table  tabel-bordered  table-striped display" cellspacing="0" width="100%"  data-click-to-select="true"  id="myTable">
-                <tr>
-                <th>ผู้ใช้งาน</th>
+                <table class="table table-bordered " width="100%" id="myTable">
+                    <thead class="thead-light">
+                        <tr>
                             <th>ชื่อ-นามสกุล</th>
                             <th>ตำแหน่ง</th>
                             <th>แผนกงาน</th>
                             <th>หน่วยงาน</th>
-                            <th>เบอร์โทรศัพท์</th>
-                            <th>อีเมลล์</th>
                             <th>สถานะ</th>
                             <th>เลือก</th>
-                </tr>
-                <tbody>
-                    @foreach($offices as $row)
-                    <tr>                   
-                    <td>{{$row->username}}</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($offices as $row)
+                        <tr>
                             <td>{{$row->name}} &nbsp; {{$row->OF_lname}}</td>
                             <td>{{$row->OF_rank}}</td>
                             <td>{{$row->OF_department}}</td>
                             <td>{{$row->OF_institution}}</td>
-                            <td>{{$row->OF_tel}}</td>
-                            <td>{{$row->email}}</td>
                             <td>{{$row->OF_status}}</td>
 
                             <td>
-                            <form method="post" class="" >
-                                {{ csrf_field() }}
-                                <input type="checkbox" name=""value="DELETE">
-                            </form>
-                        </td>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
-            <div class=" text-center">
-            <button type="submit" class="btn btn-primary btn-lg"><i class="fa fa-inbox"></i>เพิ่มข้อมูล</button>
-            <button type="button" class="btn btn-danger btn-lg">ยกเลิก</button>
-        </div>
+                                <form method="post" class="">
+                                    {{ csrf_field() }}
+                                    <input type="checkbox" name="" value="DELETE">
+                                </form>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+                <div class=" text-center">
+                    <button type="submit" class="btn btn-primary btn-lg"><i class="fa fa-inbox"></i>เพิ่มข้อมูล</button>
+                    <button type="button" class="btn btn-danger btn-lg">ยกเลิก</button>
+                </div>
             </form>
         </div>
     </div>
